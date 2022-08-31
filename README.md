@@ -1,8 +1,8 @@
-# schema
+# Heritage Science Schema Repository
 
 This repository has been created to host completed heritage science metadata gathering json schema.
 
-For each type of schema, such as **Project**, create a new folder and then place the actual JSON schema documents in the corespondng folder (**project**) and name them in the form **project_v1.0.0.json**, etc.
+For each type of schema, such as **Project**, create a new folder and then place the actual JSON schema documents in the corresponding folder (**project**) and name them in the form **project_v1.0.0.json**, etc.
 
 Direct links to these schema can then be used in the form of:
 * https://raw.githubusercontent.com/E-RIHS/schema/main/project/project_v1.0.0.json
