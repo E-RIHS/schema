@@ -10,4 +10,4 @@ Direct links to these schema can then be used in the form of:
 GitHub pages have also been set up based on the root directory of this repository, this provides a much cleaner URL, but there can be a temporary lag between when new files are added and when the links will work. However, once the files have been added in there is no additional delay. 
 * [https://e-rihs.github.io/schema/project/project_v1.0.0.json](https://e-rihs.github.io/schema/project/project_v1.0.0.json)
 
-Work and discussion relating to the development of these schema is being carried out within: https://github.com/E-RIHS/hs-interoperability
+Work and discussion relating to the development of these schema is being carried out within: [https://github.com/E-RIHS/hs-interoperability](https://github.com/E-RIHS/hs-interoperability)
