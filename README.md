@@ -27,5 +27,5 @@ This schema is intended to model the metadata and details required to document a
 This work project was supported by:
 
 ### The H2020 [IPERION-HS](https://www.iperionhs.eu/) project
-[<img height="64px" src="https://github.com/jpadfield/simple-modelling/blob/master/docs/graphics/IPERION-HS%20Logo.png" alt="IPERION-HS">](https://www.iperionhs.eu/)<br/>
-[<img height="32px" src="https://github.com/jpadfield/simple-modelling/blob/master/docs/graphics/iperionhs-eu-tag2.png" alt="IPERION-HS">](https://www.iperionhs.eu/)
+[<img height="64px" src="https://github.com/jpadfield/simple-modelling/raw/master/docs/graphics/IPERION-HS%20Logo.png" alt="IPERION-HS">](https://www.iperionhs.eu/)<br/>
+[<img height="32px" src="https://github.com/jpadfield/simple-modelling/raw/master/docs/graphics/iperionhs-eu-tag2.png" alt="IPERION-HS">](https://www.iperionhs.eu/)
