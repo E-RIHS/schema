@@ -1,0 +1,191 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.eu/schema/project-v0.2",
+    "title": "E-RIHS access project",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "const": "https://e-rihs.eu/schema/project-v0.2"
+        },
+        "id": {
+            "title": "Id",
+            "description": "Project ID",
+            "type": "string"
+        },
+        "title": {
+            "title": "Title",
+            "description": "Project title",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100
+        },
+        "version": {
+            "title": "Version",
+            "description": "Project version",
+            "type": "number"
+        },
+        "summary": {
+            "title": "Summary",
+            "description": "Project summary, including the novelty and/or added value of the proposed work",
+            "type": "string",
+            "minLength": 100,
+            "maxLength": 1500,
+            "x-display": "markdown"
+        },
+        "research_categories":{
+            "title": "Research categories",
+            "description": "...",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Material analysis",
+                    "Mural paintings",
+                    "Polychromed artefacts",
+                    "Manuscripts",
+                    "..."
+                ]
+            }
+        },
+        "scientific_background": {
+            "title": "Scientific background",
+            "type": "string",
+            "minLength": 100,
+            "maxLength": 1500,
+            "x-display": "markdown"
+        },
+        "description": {
+            "title": "Description of the work",
+            "description": "The experimental technique(s) requested with justification, required set-up(s), measurement strategy, sampling area/point details (number, location, etc.)",
+            "type": "string",
+            "minLength": 100,
+            "maxLength": 3000,
+            "x-display": "markdown"
+        },
+        "expected_achievements": {
+            "title": "Expected achievements",
+            "type": "string",
+            "minLength": 100,
+            "maxLength": 2000,
+            "x-display": "markdown"
+        },
+        "impact_plan": {
+            "title": "Impact plan",
+            "type": "string",
+            "x-display": "markdown"
+        },
+        "references": {
+            "title": "References",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "previous_relavant_analysis": {
+            "title": "Previous relevant analysis",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 100,
+                "maxLength": 1500,
+                "x-display": "markdown"
+            }
+        },
+        "objects": {
+            "title": "Objects and archives",
+            "type": "array",
+            "items": {
+                "title": "Object/archive ID",
+                "type": "string"
+            }
+        },
+        "proposed_services": {
+            "title": "E-RIHS services",
+            "type": "array",
+            "items": {
+                "title": "Service ID",
+                "type": "string"
+            }
+        },
+        "start_date": {
+            "title": "Proposed start date",
+            "type": "string",
+            "format": "date"
+        },
+        "end_date": {
+            "title": "Proposed end date",
+            "type": "string",
+            "format": "date"
+        },
+        "participants": {
+            "title": "Participants",
+            "type": "array",
+            "minLength": 1,
+            "items": {
+                "title": "Participant",
+                "type": "object",
+                "properties": {
+                    "orcid": {
+                        "title": "Participant ORCID",
+                        "type": "string"
+                    },
+                    "roles": {
+                        "title": "Roles",
+                        "type": "array",
+                        "items": {
+                            "title": "Role",
+                            "enum": [
+                                "Principal investigator",
+                                "Project member"
+                            ],
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "orcid"
+                ]
+            }
+        },
+        "state": {
+            "title": "State",
+            "description": "Project state",
+            "type": "string",
+            "enum": [
+                "draft",
+                "submitted",
+                "accepted",
+                "revision requested",
+                "declined"
+            ],
+            "default": "draft"
+        },
+        "assessment": {
+            "title": "Assessment",
+            "type": "string",
+            "maxLength": 2000,
+            "x-display": "markdown"
+        },
+        "creation_timestamp": {
+            "title": "Creation date",
+            "type": "string",
+            "format": "date-time"
+        },
+        "creator": {
+            "title": "Creator",
+            "type": "string"
+        }
+    },
+    "required": [
+        "$schema",
+        "title",
+        "summary",
+        "research_questions",
+        "participants",
+        "scientific_background",
+        "description",
+        "expected_achievements",
+        "impact_plan"
+    ]
+}
