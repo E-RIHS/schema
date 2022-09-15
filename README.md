@@ -23,8 +23,8 @@ This schema is intended to model the metadata and details required to document a
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
-| 17-08-2022 | W Fremount | 0.1 | Based on task discussions this is an initial work up of the Project model into a schema file. |
-| 24-08-2022 | W Fremount | 0.2 | The project text descriptions have been moved to the top level, rather than being nested under the idea of a "Research Question", which has been removed. The notion of research categories has also been added. The idea "scope notes" describing each section or piece of metadata still need to be added.|
+| 17-08-2022 | W Fremout | 0.1 | Based on task discussions this is an initial work up of the Project model into a schema file. |
+| 24-08-2022 | W Fremout | 0.2 | The project text descriptions have been moved to the top level, rather than being nested under the idea of a "Research Question", which has been removed. The notion of research categories has also been added. The idea "scope notes" describing each section or piece of metadata still need to be added.|
 | <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
 ## Acknowledgement
