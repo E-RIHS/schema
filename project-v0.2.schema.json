@@ -1,12 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://e-rihs.github.io/schema/project-v0.2.schema.json",
+    "$id": "https://e-rihs.io/schema/project-v0.2.schema.json",
     "title": "E-RIHS access project",
     "type": "object",
     "properties": {
         "$schema": {
             "type": "string",
-            "const": "https://e-rihs.github.io/schema/project-v0.2.schema.json"
+            "const": "https://e-rihs.io/schema/project-v0.2.schema.json"
         },
         "id": {
             "title": "Id",
