@@ -1,0 +1,216 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://e-rihs.io/schema/service-v0.1.schema.json",
+	"title": "E-RIHS access service",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string",
+			"const": "https://e-rihs.io/schema/service-v0.1.schema.json"
+		},
+		"id": {
+			"title": "Id",
+			"description": "Service ID",
+			"type": "string"
+		},
+		"title": {
+			"title": "Title",
+			"description": "Service title",
+			"type": "string",
+			"minLength": 3,
+			"maxLength": 100
+		},
+		"version": {
+			"title": "Version",
+			"description": "Service version - changing the version of a service is interned to indicate a measurable change in the service itself such as but not restricted to changes of equipment, personnel, methodology, data processing, etc.",
+			"type": "number"
+		},
+		"summary": {
+			"title": "Summary",
+			"description": "A brief description of a specific technical or access service offered, such as the use of X to investigate Y",
+			"type": "string",
+			"minLength": 100,
+			"maxLength": 300,
+			"x-display": "markdown"
+		},
+		"description": {
+			"title": "Description",
+			"description": "A longer description of a specific technical or access service offered within the IPERION-HS project or under E-RIHS",
+			"type": "string",
+			"minLength": 100,
+			"maxLength": 1500,
+			"x-display": "markdown"
+		},
+		"service_techniques": {
+			"title": "Service techniques",
+			"description": "A list of the individual relevant heritage science examination and analytical techniques carried out within this Service - selected from a publicly defined controlled list.",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"GCMS",
+					"OCT",
+					"Neutron Beam Analysis",
+					"Hyper-spectral imaging",
+					"..."
+				]
+			}
+		},
+		"service_categories": {
+			"title": "Service categories",
+			"description": "An externally defined service top level categories defining what types of work the included techniques are used to carry out - selected from a publicly defined controlled list.",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"Identification of Inorganic Pigments",
+					"Analysis of Archaeological Pottery",
+					"Classification of Ancient Organic Material",
+					"Hyper-spectral imaging of Wall paintings",
+					"..."
+				]
+			}
+		},
+		"service_platform": {
+			"title": "Service Platform",
+			"description": "E-RIHS platform code",
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"ARCHLAB",
+					"DIGILAB",
+					"FIXLAB",
+					"MOLAB"
+				]
+			}
+		},
+
+
+		"data_management_plan": {
+			"title": "Data management plan",
+			"type": "string",
+			"description": "Link to an open description of the data management procedures followed with the defined service, including licence issues, preferred data repositories, publication embargoes, common file formats, software and systems used, etc.",
+			"type": "string",
+			"minLength": 10,
+			"maxLength": 200
+		},
+		"service_bibliography": {
+			"title": "Service Bibliography",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+
+		"resources": {
+			"title": "Objects, samples and archives",
+			"description": "Service resources should be defined by PIDs and represent the heritage collections, objects, samples, archives, other research resources directly provided by the service.",
+			"type": "array",
+			"items": {
+				"title": "Collection/object/sample/archive ID",
+				"type": "string"
+        }
+			},
+
+			"equipment": {
+				"title": "Service equipment",
+				"description": "Service equipment should be defined by PIDs and represent the actual individual pieces of equipment used within the service - detail of setup, methodology, procedures, etc. should all be attached directly to the equipment records.",
+				"type": "array",
+				"items": {
+					"title": "Service Equipment",
+					"type": "string"
+				}
+			},
+
+			"creation_date": {
+				"title": "Service creation date",
+				"description": "The creation date is the date from which this particular Service was offered in a formal capacity by the defined Access provider.",
+				"type": "string",
+				"format": "date"
+			},
+			"version_date": {
+				"title": "Service version date",
+				"description": "The version date is the date from which this particular version of this Service was offered in a formal capacity by the defined Access provider.",
+				"type": "string",
+				"format": "date"
+			},
+
+			"provider": {
+				"title": "Service Providers",
+				"type": "array",
+				"minLength": 1,
+				"items": {
+					"title": "Provider",
+					"type": "object",
+					"properties": {
+						"orcid": {
+							"title": "Provider ORCID",
+							"type": "string"
+						},
+						"roles": {
+							"title": "Roles",
+							"type": "array",
+							"items": {
+								"title": "Role",
+								"enum": [
+									"Host organisation",
+									"Service operator"
+								],
+								"type": "string"
+							}
+						}
+					},
+					"required": [
+						"orcid"
+					]
+				}
+			},
+
+
+			"contact": {
+				"title": "Service Contacts",
+				"type": "array",
+				"minLength": 1,
+				"items": {
+					"title": "Provider",
+					"type": "object",
+					"properties": {
+						"orcid": {
+							"title": "Contact ORCID",
+							"type": "string"
+						},
+						"roles": {
+							"title": "Roles",
+							"type": "array",
+							"items": {
+								"title": "Role",
+								"enum": [
+									"Equipment Operator",
+									"Archive Manager",
+									"Data Manager",
+									"General Contact"
+								],
+								"type": "string"
+							}
+						}
+					},
+					"required": [
+						"orcid"
+					]
+				}
+			},
+
+			"required": [
+				"$schema",
+				"title",
+				"summary",
+				"research_questions",
+				"participants",
+				"scientific_background",
+				"description",
+				"expected_achievements",
+				"impact_plan"
+			]
+		}
+  }
