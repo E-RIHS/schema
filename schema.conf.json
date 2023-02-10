@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Project v0.1",
+        "resource": "project",
+        "json_schema": "https://e-rihs.io/schema/project-v0.1.schema.json",
+        "draft": true,
+        "depreciated": true
+    },
+    {
+        "name": "Project v0.2",
+        "resource": "project",
+        "json_schema": "https://e-rihs.io/schema/project-v0.2.schema.json",
+        "draft": true,
+        "depreciated": false
+    },
+    {
+        "name": "Service v0.1",
+        "resource": "service",
+        "json_schema": "https://e-rihs.io/schema/service-v0.1.schema.json",
+        "draft": true,
+        "depreciated": true
+    },
+    {
+        "name": "Service v0.2",
+        "resource": "service",
+        "json_schema": "https://e-rihs.io/schema/service-v0.2.schema.json",
+        "draft": true,
+        "depreciated": false
+    }
+]
