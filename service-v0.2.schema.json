@@ -297,10 +297,10 @@
       "type": "string",
       "description": "Free text opportunity to advocate for what is novel or special about this particular access"
     },
-    "required": [
-      "$schema",
-      "service_title",
-      "service_summary"
-    ]
-  }
+  },
+  "required": [
+    "$schema",
+    "service_title",
+    "service_summary"
+  ]
 }
