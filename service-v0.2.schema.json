@@ -296,7 +296,7 @@
       "title": "Other Comments",
       "type": "string",
       "description": "Free text opportunity to advocate for what is novel or special about this particular access"
-    },
+    }
   },
   "required": [
     "$schema",
