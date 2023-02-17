@@ -177,7 +177,6 @@
         "$schema",
         "title",
         "summary",
-        "research_questions",
         "participants",
         "scientific_background",
         "description",
