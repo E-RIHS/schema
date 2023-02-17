@@ -184,7 +184,6 @@
         }
     },
     "required": [
-        "$schema",
         "title",
         "summary",
         "research_questions",

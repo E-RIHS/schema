@@ -87,7 +87,6 @@
 			"title": "Data management plan",
 			"type": "string",
 			"description": "Link to an open description of the data management procedures followed with the defined service, including licence issues, preferred data repositories, publication embargoes, common file formats, software and systems used, etc.",
-			"type": "string",
 			"minLength": 10,
 			"maxLength": 200
 		},
@@ -195,18 +194,16 @@
 						"orcid"
 					]
 				}
-			},
-
-			"required": [
-				"$schema",
-				"title",
-				"summary",
-				"research_questions",
-				"participants",
-				"scientific_background",
-				"description",
-				"expected_achievements",
-				"impact_plan"
-			]
-		}
+			}
+		},
+		"required": [
+			"title",
+			"summary",
+			"research_questions",
+			"participants",
+			"scientific_background",
+			"description",
+			"expected_achievements",
+			"impact_plan"
+		]
   }

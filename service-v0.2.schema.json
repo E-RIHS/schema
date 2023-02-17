@@ -295,7 +295,6 @@
     }
   },
   "required": [
-    "$schema",
     "service_title",
     "service_summary"
   ]
