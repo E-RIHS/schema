@@ -4,10 +4,6 @@
   "title": "E-RIHS access service",
   "type": "object",
   "properties": {
-    "$schema": {
-      "type": "string",
-      "const": "https://e-rihs.io/schema/service-v0.2.schema.json"
-    },
     "service_id": {
       "title": "Id",
       "description": "Service ID",

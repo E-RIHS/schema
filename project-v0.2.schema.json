@@ -4,10 +4,6 @@
     "title": "E-RIHS access project",
     "type": "object",
     "properties": {
-        "$schema": {
-            "type": "string",
-            "const": "https://e-rihs.io/schema/project-v0.2.schema.json"
-        },
         "id": {
             "title": "Id",
             "description": "Project ID",
