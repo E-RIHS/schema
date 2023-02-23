@@ -17,7 +17,7 @@ The schema GitHub repository can be access directly [here](https://github.com/E-
 
 This schema is intended to model the metadata and details required to document and describe **service** or **access** providers within E-RIHS and IPERION-HS. These services will be offered by one or more **funding programmes** and exploited in one or more research **projects**. It is anticipated that services will be defined as part of the registoring a service in the categlogue of service.
 
-* Current Version: [https://e-rihs.io/schema/service-v0.2.schema.json](https://e-rihs.io/schema/service-v0.2.schema.json)
+* Current Version: [https://e-rihs.io/schema/service-v0.3.schema.json](https://e-rihs.io/schema/service-v0.3.schema.json)
 * Draft Version: TBC
 * Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
 
