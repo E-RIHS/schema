@@ -25,6 +25,7 @@ This schema is intended to model the metadata and details required to document a
 | :-----------: | :-----------: | :-----------: | ----------- |
 | 28-11-2022 | J Padfield | 0.1 | The service record is intended to define the top level descriptions and catergoisations of the a given service. It is anticipated that the more detailed descriptions of the equipment and workflows etc. will be described separeatly and linked to the service record.|
 | 01-02-2023 | J Padfield | 0.2 | THis model has been updated to match the discussed needs of E-RIHS along with additional fields to support the development of DIgital services.|
+| 23-02-2023 | W Fremout, J Padfield | 0.3 | This model has been updated to match the discussed needs of E-RIHS along with additional fields to support the development of Digital services.|
 | <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
 
