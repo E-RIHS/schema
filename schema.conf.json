@@ -26,12 +26,18 @@
         "json_schema": "https://e-rihs.io/schema/service-v0.2.schema.json",
         "draft": true,
         "depreciated": true
-    }
-    ,
+    },
     {
         "name": "Service v0.3",
         "resource": "Service",
         "json_schema": "https://e-rihs.io/schema/service-v0.3.schema.json",
+        "draft": true,
+        "depreciated": true
+    },
+    {
+        "name": "Service v0.4",
+        "resource": "Service",
+        "json_schema": "https://e-rihs.io/schema/service-v0.4.schema.json",
         "draft": true,
         "depreciated": false
     }
