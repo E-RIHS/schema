@@ -88,21 +88,24 @@
                 "properties": {
                     "type": {
                         "title": "Support type",
-                        "type": "string",
-                        "enum": [
-                            "Access",
-                            "Administration",
-                            "Development",
-                            "Maintenance"
-                        ]
+                        "type": "array",
+                        "items": {
+                            "type":"string",
+                            "enum": [
+                                "Access",
+                                "Administration",
+                                "Development",
+                                "Maintenance"
+                            ]
+                        }
                     },
                     "provider": {
                         "title": "Support Provider",
                         "description": "PID of the support provider",
                         "type": "string"
                     },
-                    "description": {
-                        "title": "Description of the support",
+                    "summary": {
+                        "title": "Summary of the support",
                         "description": "General description of the support or any required caption/citation",
                         "type": "string"
                     },
