@@ -7,7 +7,7 @@
         "depreciated": true
     },
     {
-        "name": "Project v0.2",
+        "name": "Project v0.3",
         "resource": "Project",
         "json_schema": "https://e-rihs.io/schema/project-v0.2.schema.json",
         "draft": true,
