@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://e-rihs.io/schema/project-v0.2.schema.json",
+    "$id": "https://e-rihs.io/schema/project-v0.3.schema.json",
     "title": "E-RIHS access project",
     "type": "object",
     "properties": {
