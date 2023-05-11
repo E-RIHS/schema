@@ -44,6 +44,37 @@ This schema is intended to model the metadata and details required to document a
 | 24-08-2022 | W Fremout | 0.3 | The project text descriptions have been moved to the top level, rather than being nested under the idea of a "Research Question", which has been removed. The notion of research categories has also been added. The idea "scope notes" describing each section or piece of metadata still need to be added.|
 | <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
+
+## Actor metadata schemas
+
+For practical reasons the Actor model is implemented in two separate schemas: **Person** and **Organisation**.
+
+### Person metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **persons (actors)** events within E-RIHS and IPERION-HS. 
+
+* Current Version: [https://e-rihs.io/schema/person-v0.2.schema.json](https://e-rihs.io/schema/person-v0.2.schema.json)
+* Draft Version: TBC
+* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
+
+| Date  | Author | Version | Comment |
+| :-----------: | :-----------: | :-----------: | ----------- |
+| 11-05-2023 | W Fremout | 0.2 | Based on task discussions this is an initial work up of the Actor model (v0.2) into a schema file. For compatibility reasons, we have chosen to make a separate schema for persons. |
+| <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
+
+### Organisation metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **organisations (actors)** events within E-RIHS and IPERION-HS. 
+
+* Current Version: [https://e-rihs.io/schema/organisation-v0.2.schema.json](https://e-rihs.io/schema/organisation-v0.2.schema.json)
+* Draft Version: TBC
+* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
+
+| Date  | Author | Version | Comment |
+| :-----------: | :-----------: | :-----------: | ----------- |
+| 11-05-2023 | W Fremout | 0.2 | Based on task discussions this is an initial work up of the Actor model (v0.2) into a schema file. For compatibility reasons, we have chosen to make a separate schema for organisations. |
+| <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
+
 ## Acknowledgement
 This work project was supported by:
 

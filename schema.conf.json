@@ -40,5 +40,19 @@
         "json_schema": "https://e-rihs.io/schema/service-v0.4.schema.json",
         "draft": true,
         "depreciated": false
+    },
+    {
+        "name": "Person v0.2",
+        "resource": "Actor",
+        "json_schema": "https://e-rihs.io/schema/person-v0.2.schema.json",
+        "draft": true,
+        "depreciated": false
+    },
+    {
+        "name": "Organisation v0.2",
+        "resource": "Actor",
+        "json_schema": "https://e-rihs.io/schema/organisation-v0.2.schema.json",
+        "draft": true,
+        "depreciated": false
     }
 ]

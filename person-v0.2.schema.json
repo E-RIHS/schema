@@ -1,0 +1,180 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/person-v0.2.schema.json",
+    "title": "E-RIHS person",
+    "type": "object",
+    "required": [
+        "actor_type",
+        "first_name",
+        "last_name",
+        "mbox",
+        "research_disciplines"
+    ],
+    "properties": {
+        "e-rihs_pid": {
+            "title": "E-RIHS PID",
+            "description": "E-RIHS PID",
+            "type": "string"
+        },
+        "external_pids": {
+            "title": "External PIDs",
+            "description": "External PIDs",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "pid_type",
+                    "pid"
+                ],
+                "properties": {
+                    "pid_type": {
+                        "title": "PID type",
+                        "description": "PID type",
+                        "type": "string",
+                        "examples": [
+                            "ORCID",
+                            "ISNI",
+                            "ROR",
+                            "Wikidata",
+                            "DOI",
+                            "ARK",
+                            "Handle",
+                            "URN",
+                            "PURL",
+                            "URL"
+                        ]
+                    },
+                    "pid": {
+                        "title": "PID",
+                        "description": "PID",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "actor_type": {
+            "title": "Actor type",
+            "description": "Actor type",
+            "type": "string",
+            "const": "Person"
+        },
+        "title": {
+            "title": "Title",
+            "description": "Title",
+            "type": "string",
+            "enum": [
+                "Mr",
+                "Mrs",
+                "Ms",
+                "Dr",
+                "Prof"
+            ]
+        },
+        "first_name": {
+            "title": "First name",
+            "description": "First name",
+            "type": "string"
+        },
+        "last_name": {
+            "title": "Last name",
+            "description": "Last name",
+            "type": "string"
+        },
+        "affiliations": {
+            "title": "Affiliations",
+            "description": "Affiliations",
+            "type": "array",
+            "items": {
+                "organisation_pid": {
+                    "title": "Organisation PID",
+                    "description": "Organisation PID",
+                    "type": "string"
+                }
+            }
+        },
+        "mbox": {
+            "title": "Email",
+            "description": "Email",
+            "type": "string",
+            "format": "email"
+        },
+        "img_url": {
+            "title": "Image URL",
+            "description": "Image URL",
+            "type": "string",
+            "format": "uri"
+        },
+        "webpage": {
+            "title": "Webpage",
+            "description": "Webpage",
+            "type": "array",
+            "items": {
+                "title": "URL",
+                "description": "URL",
+                "type": "string",
+                "format": "uri"
+            }
+        },
+        "research_disciplines": {
+            "title": "Research Disciplines",
+            "description": "Which domains or disciplines has a given service worked within, has experience within.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "conservation science", 
+                    "archaeology",
+                    "anthropology",
+                    "heritage science",
+                    "materials science",
+                    "computer science",
+                    "digital humanities",
+                    "information management",
+                    "data processing", 
+                    "data management"
+                ]
+            }
+        },
+        "research_bibliography": {
+            "title": "Research Bibliography",
+            "description": "Research Bibliography",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "reference"
+                ],
+                "properties": {
+                    "reference": {
+                        "title": "Reference",
+                        "description": "Reference",
+                        "type": "string"
+                    },
+                    "url": {
+                        "title": "URL",
+                        "description": "URL",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
+        },
+        "cited_as": {
+            "title": "Cited as",
+            "description": "Cited as",
+            "type": "string"
+        },
+        "activity_start_date": {
+            "title": "Start date",
+            "description": "Since when was this actor active in the field",
+            "type": "string",
+            "format": "date"
+        },
+        "activity_end_date": {
+            "title": "End date",
+            "description": "Until when was this actor active in the field",
+            "type": "string",
+            "format": "date"
+        }
+    }
+}
