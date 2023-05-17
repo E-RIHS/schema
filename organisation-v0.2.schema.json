@@ -47,7 +47,8 @@
                     "pid": {
                         "title": "PID",
                         "description": "PID",
-                        "type": "string"
+                        "type": "string",
+                        "format": "uri"
                     }
                 }
             }
@@ -68,25 +69,54 @@
             "description": "Name",
             "type": "string"
         },
-        "legal_status": {
-            "title": "Legal status",
+        "organisation_type": {
+            "title": "Organisation type",
             "description": "Legal status",
-            "type": "string",
-            "examples": [
-                "Research organisation",
-                "University",
-                "Public body",
-                "Private body"
-            ]
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": [
+                    "Research organisation",
+                    "University",
+                    "Public body",
+                    "Private body"
+                ]
+            }
         },
         "part_of_organisation": {
-            "title": "Part of organisation",
-            "description": "Part of organisation",
-            "type": "string"
+            "title": "Parent organisations",
+            "description": "Parent organisations",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "organisation_pid"
+                ],
+                "properties": {
+                    "organisation_pid": {
+                        "title": "Organisation PID",
+                        "description": "Organisation PID",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "start_date": {
+                        "title": "Start date",
+                        "description": "Start date",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "end_date": {
+                        "title": "End date",
+                        "description": "End date",
+                        "type": "string",
+                        "format": "date"
+                    }
+                }
+            }
         },
         "mbox": {
             "title": "Email",
-            "description": "Email",
+            "description": "Contact email address",
             "type": "string",
             "format": "email"
         },
@@ -153,18 +183,24 @@
         },
         "cited_as": {
             "title": "Cited as",
-            "description": "Cited as",
+            "description": "Cited as, funding name, etc.",
             "type": "string"
         },
-        "activity_start_date": {
-            "title": "Start date",
-            "description": "Since when was this actor active in the field",
+        "joined_the_field_date": {
+            "title": "Date of joining this research field",
+            "description": "When did this organisation start working in this field?",
             "type": "string",
             "format": "date"
         },
-        "activity_end_date": {
-            "title": "End date",
-            "description": "Until when was this actor active in the field",
+        "first_active_date": {
+            "title": "First active date",
+            "description": "First date this organisation was active in E-RIHS (administrative field which will be automatically filled in)",
+            "type": "string",
+            "format": "date"
+        },
+        "last_active_date": {
+            "title": "Last active date",
+            "description": "Last date this organisation was active in E-RIHS (administrative field which will be automatically filled in)",
             "type": "string",
             "format": "date"
         }
