@@ -1,0 +1,142 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/technique-v0.4.schema.json",
+    "title": "E-RIHS access service",
+    "type": "object",
+    "required": [
+        "description",
+        "preferred_label",
+        "measurable_properties"
+    ],
+    "properties": {
+        "e-rihs_pid": {
+            "title": "E-RIHS PID",
+            "description": "E-RIHS PID",
+            "type": "string"
+        },
+        "glossary_pids": {
+            "title": "Glossary PIDs",
+            "description": "Glossary PIDs",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "uri"
+            }
+        },
+        "description": {
+            "title": "Description",
+            "description": "Description",
+            "type": "string"
+        },
+        "preferred_label": {
+            "title": "Preferred label",
+            "description": "Preferred label",
+            "type": "string"
+        },
+        "alternative_labels": {
+            "title": "Alternative labels",
+            "description": "Alternative labels",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "parent_techniques": {
+            "title": "Parent techniques",
+            "description": "Parent techniques",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "uri"
+            }
+        },
+        "measurable_properties": {
+            "title": "Measurable properties",
+            "description": "Measurable properties",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "title": "Measurable property",
+                "type":"object",
+                "required": ["property"],
+                "properties": {
+                    "property": {
+                        "title": "Property",
+                        "type": "string",
+                        "examples": [
+                            "composition",
+                            "width",
+                            "thickness",
+                            "colour",
+                            "roughness",
+                            "lifespan"
+                        ]
+                    },
+                    "material_categories": {
+                        "title": "Material categories",
+                        "type": "array",
+                        "items": {
+                            "title": "Material category",
+                            "type": "string",
+                            "examples": [
+                                "wood",
+                                "stone",
+                                "glass",
+                                "ceramics",
+                                "canvas",
+                                "paint"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "example_outputs": {
+            "title": "Example outputs",
+            "description": "Example outputs",
+            "type": "array",
+            "items": {
+                "title": "Example output",
+                "type":"object",
+                "required": [
+                    "pid"
+                ],
+                "properties": {
+                    "pid": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "comment": {
+                        "title": "Comment",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "bibliography": {
+            "title": "Technique Bibliography",
+            "description": "Technique Bibliography",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "reference"
+                ],
+                "properties": {
+                    "reference": {
+                        "title": "Reference",
+                        "description": "Reference",
+                        "type": "string"
+                    },
+                    "url": {
+                        "title": "URL",
+                        "description": "URL",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
+        }
+    }
+}
