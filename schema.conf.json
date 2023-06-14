@@ -61,5 +61,12 @@
         "json_schema": "https://e-rihs.io/schema/technique-v0.4.schema.json",
         "draft": true,
         "depreciated": false
+    },
+    {
+        "name": "Equipment v0.3",
+        "resource": "Tool",
+        "json_schema": "https://e-rihs.io/schema/equipment-v0.3.schema.json",
+        "draft": true,
+        "depreciated": false
     }
 ]
