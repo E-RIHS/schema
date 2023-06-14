@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://e-rihs.io/schema/technique-v0.4.schema.json",
-    "title": "E-RIHS access service",
+    "title": "E-RIHS technique",
     "type": "object",
     "required": [
         "description",

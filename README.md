@@ -75,6 +75,21 @@ This schema is intended to model the metadata and details required to document a
 | 11-05-2023 | W Fremout | 0.2 | Based on task discussions this is an initial work up of the Actor model (v0.2) into a schema file. For compatibility reasons, we have chosen to make a separate schema for organisations. |
 | <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
+
+## Technique metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **techniques** that are used within access offerings in E-RIHS and IPERION-HS. 
+
+* Current Version: [https://e-rihs.io/schema/technique-v0.4.schema.json](https://e-rihs.io/schema/technique-v0.4.schema.json)
+* Draft Version: TBC
+* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
+
+| Date  | Author | Version | Comment |
+| :-----------: | :-----------: | :-----------: | ----------- |
+| 31-05-2023 | W Fremout | 0.4 | Schema developed during an online meeting to match with the corresponding model 0.4.|
+| <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
+
+
 ## Acknowledgement
 This work project was supported by:
 

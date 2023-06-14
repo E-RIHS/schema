@@ -54,5 +54,12 @@
         "json_schema": "https://e-rihs.io/schema/organisation-v0.2.schema.json",
         "draft": true,
         "depreciated": false
+    },
+    {
+        "name": "Technique v0.4",
+        "resource": "Technique",
+        "json_schema": "https://e-rihs.io/schema/technique-v0.4.schema.json",
+        "draft": true,
+        "depreciated": false
     }
 ]
