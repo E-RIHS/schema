@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/equipment-v0.3.schema.json",
+    "title": "E-RIHS equipment",
+    "type": "object",
+    "required": [
+        "tool_type",
+        "description",
+        "output_data",
+        "method_statemement"
+    ],
+    "properties": {
+        "e-rihs_pid": {
+            "title": "E-RIHS PID",
+            "description": "E-RIHS PID",
+            "type": "string"
+        },
+        "tool_type": {
+            "title": "Tool type",
+            "description": "Tool type (equipment, software)",
+            "type": "string",
+            "const": "Equipment"
+        },
+        "description": {
+            "title": "Description",
+            "description": "Description",
+            "type": "string"
+        },
+        "output_data": {
+            "title": "Output data type",
+            "description": "The output type that the equipment or software creates",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "string",
+                "examples": [
+                    "X/Y data",
+                    "X/Y/Z data",
+                    "images",
+                    "moving images"
+                ]
+            }
+        },
+        "method_statement": {
+            "title": "Method statement",
+            "description": "Method, settings, documentation, including description of the input and output of the tool",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "uri"
+            }
+        },
+        "acquisition_areas": {
+            "title": "Acquisition/target areas",
+            "description": "Needs to be refined further at this level it will probably be best to define a list of Classes here - specific relative locations would need to be defined in actual examination models",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "working_distances": {
+            "title": "Working distances",
+            "description": "This will need to be a drop of distance Classes rather than a specific value - actual values with dimensions will need to be stored in method statements",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": []
+            }
+        },
+        "manufacturer": {
+            "title": "Manufacturer",
+            "description": "Manufacturer of the equipment",
+            "type": "string"
+        },
+        "model": {
+            "title": "Model",
+            "description": "Model or version of the equipment",
+            "type": "string"
+        },
+        "serial_number": {
+            "title": "Serial number",
+            "description": "Serial number of the equipment",
+            "type": "string"
+        }
+    }
+}
