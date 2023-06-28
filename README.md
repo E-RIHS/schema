@@ -35,7 +35,7 @@ This schema is intended to model the metadata and details required to document a
 
 This schema is intended to model the metadata and details required to document and describe smaller scale research activities and **access** events within E-RIHS and IPERION-HS. The identity of larger scale projects and initiatives are currently modelled as **funding programme**. It is anticipated that the process of documenting a **project** could be initiated as part of the application process rather than an additional extra step to be carried out at a latter date.
 
-* Current Version: [https://e-rihs.io/schema/project-v0.3.schema.json](https://e-rihs.io/schema/project-v0.3.schema.json)
+* Current Version: [https://e-rihs.io/schema/project-v0.5.schema.json](https://e-rihs.io/schema/project-v0.5.schema.json)
 * Draft Version: TBC
 * Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
 
@@ -43,6 +43,7 @@ This schema is intended to model the metadata and details required to document a
 | :-----------: | :-----------: | :-----------: | ----------- |
 | 17-08-2022 | W Fremout | 0.1 | Based on task discussions this is an initial work up of the Project model into a schema file. |
 | 24-08-2022 | W Fremout | 0.3 | The project text descriptions have been moved to the top level, rather than being nested under the idea of a "Research Question", which has been removed. The notion of research categories has also been added. The idea "scope notes" describing each section or piece of metadata still need to be added.|
+| 28-06-2023 | J Padfield | 0.5 | The schema has been further developed to match changes made to other models and to conform with naming conventiones.|
 | <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
 
