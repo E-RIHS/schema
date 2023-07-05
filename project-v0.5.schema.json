@@ -14,199 +14,7 @@
     "research_focus",
     "state"    
   ],
-  "properties": {
-    "e-rihs_id": {
-      "title": "E-RIHS PID",
-      "description": "E-RIHS PID",
-      "type": "string"
-      },
-    "e-rihs_pref_label": {
-      "title": "Title",
-      "description": "Project title",
-      "type": "string",
-      "minLength": 3,
-      "maxLength": 100
-      },
-    "version": {
-      "title": "Version",
-      "description": "Project version",
-      "type": "number"
-      },
-    "e-rihs_scope_note": {
-      "title": "Project Summary",
-      "description": "A brief description of the projects, including the key activities",
-      "type": "string",
-      "minLength": 100,
-      "maxLength": 300
-    },
-    "project_description": {
-      "title": "Project Description",
-      "description": "A longer description of the project, including the novelty and/or added value of the proposed work",
-      "type": "string",
-      "minLength": 100,
-      "maxLength": 1500,
-      "x-display": "markdown"
-    },
-    "project_justification": {
-      "title": "Project Justification",
-      "description": "Optional - For re-submissions please provide a brief description of what has been updated or changed. For continuation projects please specify the scientific motivation for continuing the work.",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 1500,
-      "x-display": "markdown"
-    },
-    "keywords": {
-      "title": "Keywords",
-      "description": "Recommended a controlled list with the option to add more.",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "examples": [
-          "A extendable controlled list of terms"
-          ]
-      }
-    },
-    "research_categories": {
-      "title": "Research categories",
-      "description": "An externally defined service top level categories defining what types of work the included techniques are used to carry out - selected from a publicly defined controlled list.",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "Identification of Inorganic Pigments",
-          "Analysis of Archaeological Pottery",
-          "Classification of Ancient Organic Material",
-          "Hyper-spectral imaging of Wall paintings",
-          "Online Preventive Conservation Tool",
-          "Collection Management Tool",
-          "..."
-        ]
-      }
-    },
-    "research_discipline": {
-      "title": "Research disciplines",
-      "description": "Which domains or disciplines has a given service worked within, has experience within.",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "conservation science", 
-          "archaeology",
-          "anthropology",
-          "heritage science",
-          "materials science",
-          "computer science",
-          "digital humanities",
-          "information management",
-          "data processing", 
-          "data management",
-          "..."
-        ]
-      }
-    },
-    "scientific_background": {
-      "title": "Scientific background",
-      "description": "A short description of any relevant scientific research which led to or supports this project",
-      "type": "string",
-      "minLength": 100,
-      "maxLength": 1500,
-      "x-display": "markdown"
-    },
-    "project_method_statement": {
-      "title": "Project Methodology",
-      "description": "The experimental technique(s) requested with justification, required set-up(s), measurement strategy, sampling area/point details (number, location, etc.)",
-      "type": "string",
-      "minLength": 100,
-      "maxLength": 3000,
-      "x-display": "markdown"
-    },
-    "project_questions": {
-      "title": "Research Questions",
-      "description": "A brief descriptions of the research questions, focus, aims or issues that this project is intended to answer or address.",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "minLength": 10,
-        "maxLength": 300,
-        "x-display": "markdown"
-        },
-      "minItems": 1,
-      "maxItems": 10
-      },
-    "project_impacts": {
-      "title": "Proposed Projects Impacts",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "minLength": 10,
-        "maxLength": 300,
-        "x-display": "markdown"
-        },
-      "minItems": 1,
-      "maxItems": 10
-      },
-    "bibliography": {
-      "title": "Project bibliography",
-      "description": "Bibliography related to the project",
-      "type": "array",
-        "items": {
-          "type": "object",
-          "required": [
-            "reference"
-            ],
-          "properties": {
-            "reference": {
-              "title": "Reference",
-              "description": "Reference",
-              "type": "string"
-              },
-            "url": {
-              "title": "URL",
-              "description": "URL",
-              "type": "string",
-              "format": "uri"
-              },
-            "key_reference": {
-              "title": "Is this a key reference.",
-              "description": "Only the first 5 key references will be considered during project assessment.",
-              "type": "boolean"
-              }
-            }
-          }
-        },    
-    "related_projects": {
-      "title": "Related Projects",
-      "description": "A list of relevant related projects, particularly any previous E-RIHS projects",
-      "type": "array",
-        "items": {
-          "type": "object",
-          "required": [
-            "related_project_title"
-            ],
-          "properties": {
-            "related_project_title": {
-              "title": "Related Project Title",
-              "type": "string"
-              },
-            "url": {
-              "title": "URL",
-              "description": "URL ideally a PID which links to the description of the defined project.",
-              "type": "string",
-              "format": "uri"
-              }
-            }
-          }
-        },
-    "previous_relevant_analysis": {
-      "title": "Previous relevant analysis",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "minLength": 1,
-        "maxLength": 500,
-        "x-display": "markdown"
-      }
-    },   
+  "properties": {    
     "selected_services": {
       "title": "E-RIHS services",
       "description": "A list of proposed or actual E-RIHS service IDs requested or selected for this project. The actual use of information in this section, beyond the PID will need to be revisited issues of dat for users vs admin.",
@@ -248,6 +56,77 @@
             }
           }
         },
+    "e-rihs_pref_label": {
+      "title": "Title",
+      "description": "Project title",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100
+      },
+    "e-rihs_scope_note": {
+      "title": "Project Summary",
+      "description": "A brief description of the projects, including the key activities",
+      "type": "string",
+      "minLength": 100,
+      "maxLength": 300
+    },
+    "project_justification": {
+      "title": "Project Justification",
+      "description": "Optional - For re-submissions please provide a brief description of what has been updated or changed. For continuation projects please specify the scientific motivation for continuing the work.",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 1500,
+      "x-display": "markdown"
+    },
+    "research_discipline": {
+      "title": "Research disciplines",
+      "description": "Which domains or disciplines has a given service worked within, has experience within.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "conservation science", 
+          "archaeology",
+          "anthropology",
+          "heritage science",
+          "materials science",
+          "computer science",
+          "digital humanities",
+          "information management",
+          "data processing", 
+          "data management",
+          "..."
+        ]
+      }
+    },
+    "research_categories": {
+      "title": "Research categories",
+      "description": "An externally defined service top level categories defining what types of work the included techniques are used to carry out - selected from a publicly defined controlled list.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Identification of Inorganic Pigments",
+          "Analysis of Archaeological Pottery",
+          "Classification of Ancient Organic Material",
+          "Hyper-spectral imaging of Wall paintings",
+          "Online Preventive Conservation Tool",
+          "Collection Management Tool",
+          "..."
+        ]
+      }
+    },
+    "keywords": {
+      "title": "Keywords",
+      "description": "Recommended a controlled list with the option to add more.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "examples": [
+          "A extendable controlled list of terms"
+          ]
+      }
+    },
     "start_date": {
       "title": "Start date",
       "type": "string",
@@ -258,6 +137,292 @@
       "type": "string",
       "format": "date"
     },
+    "scientific_background": {
+      "title": "Scientific background",
+      "description": "A short description of any relevant scientific research which led to or supports this project",
+      "type": "string",
+      "minLength": 100,
+      "maxLength": 1500,
+      "x-display": "markdown"
+    },
+    "project_description": {
+      "title": "Project Description",
+      "description": "A longer description of the project, including the novelty and/or added value of the proposed work",
+      "type": "string",
+      "minLength": 100,
+      "maxLength": 1500,
+      "x-display": "markdown"
+    },
+    "project_questions": {
+      "title": "Research Questions",
+      "description": "Brief descriptions of the research questions, focus, aims or issues that this project is intended to answer or address.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 300,
+        "x-display": "markdown"
+        },
+      "minItems": 1,
+      "maxItems": 10
+      },
+    "previous_relevant_analysis": {
+      "title": "Previous relevant analysis",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500,
+        "x-display": "markdown"
+      }
+    },   
+    "related_projects": {
+      "title": "Related Projects",
+      "description": "A list of relevant related projects, particularly any previous E-RIHS projects",
+      "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "related_project_title"
+            ],
+          "properties": {
+            "related_project_title": {
+              "title": "Related Project Title",
+              "type": "string"
+              },
+            "url": {
+              "title": "URL",
+              "description": "URL ideally a PID which links to the description of the defined project.",
+              "type": "string",
+              "format": "uri"
+              }
+            }
+          }
+        },   
+    "project_method_statements": {
+      "title": "Project Methodology/Steps",
+      "description": "The experimental technique(s) requested with justification, required set-up(s), measurement strategy, sampling area/point details (number, location, etc.)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 500,
+        "x-display": "markdown"
+        },
+      "minItems": 1,
+      "maxItems": 10
+      },
+    },
+    "project_impacts": {
+      "title": "Proposed Projects Impacts",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 300,
+        "x-display": "markdown"
+        },
+      "minItems": 1,
+      "maxItems": 10
+      },
+    "bibliography": {
+      "title": "Project bibliography",
+      "description": "Bibliography related to the project",
+      "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "reference"
+            ],
+          "properties": {
+            "reference": {
+              "title": "Reference",
+              "description": "Reference",
+              "type": "string"
+              },
+            "url": {
+              "title": "URL",
+              "description": "URL",
+              "type": "string",
+              "format": "uri"
+              },
+            "key_reference": {
+              "title": "Is this a key reference.",
+              "description": "Only the first 5 key references will always be considered during project assessment.",
+              "type": "boolean"
+              }
+            }
+          }
+        },
+    "project_attachment": {
+      "title": "Project Attachments",
+      "description": "",
+      "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "attachment_file",
+            "attachment_licence"
+            ],
+          "properties": {
+            "attachment_file": {
+              "title": "Attachment File",
+              "description": "Please link any additional images, files, etc…",
+              "type": "string",
+              "format": "uri"
+              },
+            "attachment_description": {
+              "title": "Attachment Description",
+              "description": "A brief description of the attached file and its purpose",
+              "type": "string"
+              },
+            "attachment_licence": {
+              "title": "Attachment Licence",
+              "description": "URL ideally a PID which links to a definition of the selected licence.",
+              "type": "string",
+              "format": "uri"
+              }
+            }
+          }
+        },
+    "project_dmp": {
+      "title": "Project Data Management Plan (DMP)",
+      "description": "",
+      "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "related_project_title"
+            ],
+          "properties": {
+            "dmp_file": {
+              "title": "Project DMP",
+              "description": "Please link the project DMP",
+              "type": "string",
+              "format": "uri"
+              },
+            "dmp_source": {
+              "title": "Project DMP Source",
+              "description": "Where appropriate please link the original DMP or DMP template that the project DMP is based on.",
+              "type": "string",
+              "format": "uri"
+              },
+            "dmp_licence": {
+              "title": "DMP Licence",
+              "description": "URL ideally a PID which links to a definition of the selected licence.",
+              "type": "string",
+              "format": "uri"
+              }
+            }
+          }
+        }, 
+    "e-rihs_id": {
+      "title": "E-RIHS PID",
+      "description": "E-RIHS PID",
+      "type": "string"
+      },   
+    "state": {
+      "title": "State",
+      "description": "Project state",
+      "type": "string",
+      "enum": [
+        "draft",
+        "submitted",
+        "accepted",
+        "revision requested",
+        "declined"
+      ],
+      "default": "draft"
+    },
+    "creation_timestamp": {
+      "title": "Creation date",
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_updated_timestamp": {
+      "title": "Last updated",
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "title": "Version",
+      "description": "Project version",
+      "type": "number"
+      },
+    "assessment": {
+      "title": "Assessment",
+      "type": "string",
+      "description": "This is a free text assessment of the project as it was proposed, written as part of the proposal stage.",
+      "maxLength": 2000,
+      "x-display": "markdown"
+    },
+    "eligibility_criteria": {
+      "title": "Eligibility criteria",
+      "description": "Further definition required (May not be required) - probably nationality, but unclear whose? this might relate to automatic checks etc. - this field may be redundant based on leader/institutional details.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "nationality", 
+          "research novelty",
+          "other",
+          "..."
+        ]
+      }
+    },
+    "societal_challenges": {
+      "title": "Societal challenges",
+      "description": "Further definition required (May not be required) - probably nationality, but unclear whose? this might relate to automatic checks etc. - this field may be redundant based on leader/institutional details.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "health", 
+          "culture, creativity and inclusive society", 
+          "civil security for society", 
+          "digital, industry and space", 
+          "climate, energy and mobility", 
+          "food, bioeconomic, natural resources, agricultural and environment"
+          ]
+      }
+    },
+    "industrial_involvement": {
+      "title": "Industrial involvement or sponsorship",
+      "description": "Provide any relevant details, an empty field will be treated as indicating no Industrial involvement. (This information is used only for statistical purposes. Your answer will not affect your proposal)",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 1500,
+      "x-display": "markdown"
+    },
+    "initiated_via": {
+      "title": "E-RIHS Connection",
+      "description": "Flag other E-RIHS connections if applicable. (Would we need a connection note, not sure how important this field is)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "personal contact", 
+          "web page", 
+          "conference", 
+          "article", 
+          "other"
+          ]
+      }
+    },
+    "related_training": {
+      "title": "Related Training Programs",
+      "description": "Describe any directly related initial training (PhD) or a training activities.",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 1500,
+      "x-display": "markdown"
+    },
+    "creator": {
+      "title": "Creator",
+      "description": "A relevant person ID, either a local database ID or an ORCID, automatically recorded at the creation of this version of the project.",
+      "type": "string",
+      "format": "url"
+    },      
     "participants": {
       "title": "Participants",
       "type": "array",
@@ -296,165 +461,6 @@
           "roles"
         ]
       }
-    },
-    "project_dmp": {
-      "title": "Project Data Management Plan (DMP)",
-      "description": "",
-      "type": "array",
-        "items": {
-          "type": "object",
-          "required": [
-            "related_project_title"
-            ],
-          "properties": {
-            "dmp_file": {
-              "title": "Project DMP",
-              "description": "Please link the project DMP",
-              "type": "string",
-              "format": "uri"
-              },
-            "dmp_source": {
-              "title": "Project DMP Source",
-              "description": "Where appropriate please link the original DMP or DMP template that the project DMP is based on.",
-              "type": "string",
-              "format": "uri"
-              },
-            "dmp_licence": {
-              "title": "DMP Licence",
-              "description": "URL ideally a PID which links to a definition of the selected licence.",
-              "type": "string",
-              "format": "uri"
-              }
-            }
-          }
-        },
-    "project_attachment": {
-      "title": "Project Attachments",
-      "description": "",
-      "type": "array",
-        "items": {
-          "type": "object",
-          "required": [
-            "attachment_file",
-            "attachment_licence"
-            ],
-          "properties": {
-            "attachment_file": {
-              "title": "Attachment File",
-              "description": "Please link any additional images, files, etc…",
-              "type": "string",
-              "format": "uri"
-              },
-            "attachment_description": {
-              "title": "Attachment Description",
-              "description": "A brief description of the attached file and its purpose",
-              "type": "string"
-              },
-            "attachment_licence": {
-              "title": "Attachment Licence",
-              "description": "URL ideally a PID which links to a definition of the selected licence.",
-              "type": "string",
-              "format": "uri"
-              }
-            }
-          }
-        },
-    "eligibility_criteria": {
-      "title": "Eligibility criteria",
-      "description": "Further definition required (May not be required) - probably nationality, but unclear whose? this might relate to automatic checks etc. - this field may be redundant based on leader/institutional details.",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "nationality", 
-          "research novelty",
-          "other",
-          "..."
-        ]
-      }
-    },
-    "societal_challenges": {
-      "title": "Societal challenges",
-      "description": "Further definition required (May not be required) - probably nationality, but unclear whose? this might relate to automatic checks etc. - this field may be redundant based on leader/institutional details.",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "health", 
-          "culture, creativity and inclusive society", 
-          "civil security for society", 
-          "digital, industry and space", 
-          "climate, energy and mobility", 
-          "food, bioeconomic, natural resources, agricultural and environment"
-          ]
-      }
-    },    
-    "initiated_via": {
-      "title": "E-RIHS Connection",
-      "description": "Flag other E-RIHS connections if applicable. (Would we need a connection note, not sure how important this field is)",
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "personal contact", 
-          "web page", 
-          "conference", 
-          "article", 
-          "other"
-          ]
-      }
-    }, 
-    "industrial_involvement": {
-      "title": "Industrial involvement or sponsorship",
-      "description": "Provide any relevant details, an empty field will be treated as indicating no Industrial involvement. (This information is used only for statistical purposes. Your answer will not affect your proposal)",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 1500,
-      "x-display": "markdown"
-    }, 
-    "related_training": {
-      "title": "Related Training Programs",
-      "description": "Describe any directly related initial training (PhD) or a training activities.",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 1500,
-      "x-display": "markdown"
-    },   
-    "state": {
-      "title": "State",
-      "description": "Project state",
-      "type": "string",
-      "enum": [
-        "draft",
-        "submitted",
-        "accepted",
-        "revision requested",
-        "declined"
-      ],
-      "default": "draft"
-    },
-    "assessment": {
-      "title": "Assessment",
-      "type": "string",
-      "description": "This is a free text assessment of the project as it was proposed, written as part of the proposal stage.",
-      "maxLength": 2000,
-      "x-display": "markdown"
-    },
-    "creation_timestamp": {
-      "title": "Creation date",
-      "type": "string",
-      "format": "date-time"
-    },
-    "last_updated_timestamp": {
-      "title": "Last updated",
-      "type": "string",
-      "format": "date-time"
-    },
-    "creator": {
-      "title": "Creator",
-      "description": "A relevant person ID, either a local database ID or an ORCID, automatically recorded at the creation of this version of the project.",
-      "type": "string",
-      "format": "url"
     }
   }
 }
