@@ -1,15 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://e-rihs.io/schema/project-v0.4.schema.json",
+  "$id": "https://e-rihs.io/schema/project-v0.5.schema.json",
   "title": "E-RIHS access project",
   "type": "object",
   "required": [
     "e-rihs_pref_label",
     "e-rihs_scope_note",
-    "offered_to",
-    "service_application_required",
-    "service_description"
-    ],
+    "participants",
+    "scientific_background",
+    "project_description",
+    "project_goals",
+    "project_impacts",
+    "research_focus",
+    "state"    
+  ],
   "properties": {
     "e-rihs_id": {
       "title": "E-RIHS PID",
@@ -122,11 +126,11 @@
       "items": {
         "type": "string",
         "minLength": 10,
-        "maxLength": 300
+        "maxLength": 300,
+        "x-display": "markdown"
         },
       "minItems": 1,
-      "maxItems": 10,
-      "x-display": "markdown"
+      "maxItems": 10
       },
     "project_impacts": {
       "title": "Proposed Projects Impacts",
@@ -134,11 +138,11 @@
       "items": {
         "type": "string",
         "minLength": 10,
-        "maxLength": 300
+        "maxLength": 300,
+        "x-display": "markdown"
         },
       "minItems": 1,
-      "maxItems": 10,
-      "x-display": "markdown"
+      "maxItems": 10
       },
     "bibliography": {
       "title": "Project bibliography",
@@ -197,20 +201,11 @@
       "type": "array",
       "items": {
         "type": "string",
-        "minLength": 100,
-        "maxLength": 1500,
+        "minLength": 1,
+        "maxLength": 500,
         "x-display": "markdown"
       }
-    },
-    "research_focus": {
-      "title": "Research Focus",
-      "description": "A list of URLs (ideally PIDs) relating to the data, objects, samples or archives that will be the focus of this project.",
-      "type": "array",
-      "items": {
-        "title": "Object/archive ID",
-        "type": "string"
-      }
-    },    
+    },   
     "selected_services": {
       "title": "E-RIHS services",
       "description": "A list of proposed or actual E-RIHS service IDs requested or selected for this project",
@@ -450,16 +445,5 @@
       "type": "string",
       "format": "url"
     }
-  },
-  "required": [
-    "e-rihs_pref_label",
-    "e-rihs_scope_note",
-    "participants",
-    "scientific_background",
-    "project_description",
-    "project_goals",
-    "project_impacts",
-    "research_focus",
-    "state"    
-  ]
+  }
 }
