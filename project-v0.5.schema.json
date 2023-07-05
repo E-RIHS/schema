@@ -9,7 +9,7 @@
     "participants",
     "scientific_background",
     "project_description",
-    "project_goals",
+    "project_questions",
     "project_impacts",
     "research_focus",
     "state"    
@@ -120,8 +120,9 @@
       "maxLength": 3000,
       "x-display": "markdown"
     },
-    "project_goals": {
-      "title": "Expected achievements",
+    "project_questions": {
+      "title": "Research Questions",
+      "description": "A brief descriptions of the research questions, focus, aims or issues that this project is intended to answer or address.",
       "type": "array",
       "items": {
         "type": "string",
@@ -208,12 +209,13 @@
     },   
     "selected_services": {
       "title": "E-RIHS services",
-      "description": "A list of proposed or actual E-RIHS service IDs requested or selected for this project",
+      "description": "A list of proposed or actual E-RIHS service IDs requested or selected for this project. The actual use of information in this section, beyond the PID will need to be revisited issues of dat for users vs admin.",
       "type": "array",
         "items": {
           "type": "object",
           "required": [
-            "related_project_title"
+            "e-rihs_pid",
+            "selection_help"
             ],
           "properties": {
             "e-rihs_pid": {
@@ -233,7 +235,15 @@
             "selection_help": {
               "title": "E-RIHS Helpdesk Assistance",
               "description": "Was the selection of this Service aided by the E-RIHS Helpdesk?",
-              "type": "boolean"
+              "type": "array",
+              "items": {
+                "type": "string",
+                  "enum": [
+                    "Undefined",
+                    "Yes",
+                    "No",
+                    ]
+                }              
               }
             }
           }
@@ -274,7 +284,8 @@
                 "Principal investigator",
                 "Project member",
                 "Travelling Participant",
-                "Non Travelling Participant"
+                "Non Travelling Participant",
+                "Project Contact"
               ],
               "type": "string"
             }
