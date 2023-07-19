@@ -9,7 +9,14 @@
     {
         "name": "Project v0.3",
         "resource": "Project",
-        "json_schema": "https://e-rihs.io/schema/project-v0.2.schema.json",
+        "json_schema": "https://e-rihs.io/schema/project-v0.3.schema.json",
+        "draft": true,
+        "depreciated": true
+    },
+    {
+        "name": "Project v0.5",
+        "resource": "Project",
+        "json_schema": "https://e-rihs.io/schema/project-v0.5.schema.json",
         "draft": true,
         "depreciated": false
     },
