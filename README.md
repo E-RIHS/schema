@@ -113,6 +113,14 @@ This schema is intended to model the metadata and details required to document a
 
 This schema is intended to model the metadata and details required to document and describe **software (tools)** used within an offered service in E-RIHS and IPERION-HS.
 
+* Current Version: [https://e-rihs.io/schema/software-v0.3.schema.json](https://e-rihs.io/schema/software-v0.3.schema.json)
+* Draft Version: TBC
+* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
+
+| Date  | Author | Version | Comment |
+| :-----------: | :-----------: | :-----------: | ----------- |
+| 19-07-2023 | W Fremout, J Padfield | 0.3 | Based on task discussions this is an initial work up of the Software/Tools model (v0.3) into a schema file. For compatibility reasons, we have chosen to make a separate schema for equipment and software. |
+| <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
 ## Acknowledgement
 This work project was supported by:
