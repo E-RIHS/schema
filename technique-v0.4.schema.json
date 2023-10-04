@@ -4,7 +4,7 @@
     "title": "E-RIHS technique",
     "type": "object",
     "required": [
-        "description",
+        "short_description",
         "preferred_label",
         "measurable_properties"
     ],
@@ -23,9 +23,14 @@
                 "format": "uri"
             }
         },
-        "description": {
-            "title": "Description",
-            "description": "Description",
+        "short_description": {
+            "title": "Short Description",
+            "description": "Short Description",
+            "type": "string"
+        },
+        "general_scope": {
+            "title": "General Scope",
+            "description": "General Scope, optional broader description relating to moregeneral applications of a given technique",
             "type": "string"
         },
         "preferred_label": {
