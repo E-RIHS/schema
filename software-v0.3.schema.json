@@ -56,6 +56,12 @@
                 "format": "uri"
             }
         },
+        "last_checked_date": {
+            "title": "Last Checked date",
+            "description": "For software tools the last checked date relates to when the software was last confirmed to be working and performing as designed.",
+            "type": "string",
+            "format": "date"
+        },
         "developer": {
             "title": "Developer",
             "description": "Developer (or current maintainer) of the software",
