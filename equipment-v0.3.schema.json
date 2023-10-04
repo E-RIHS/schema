@@ -7,7 +7,8 @@
         "tool_type",
         "description",
         "output_data_type",
-        "method_statemement"
+        "method_statemement",
+        "last_checked_date"
     ],
     "properties": {
         "e-rihs_pid": {
@@ -56,6 +57,12 @@
                 "format": "uri"
             }
         },
+        "last_checked_date": {
+            "title": "Last Checked date",
+            "description": "For hardware tools the last checked date relates to when equipment was last tested or callibrated, to confirm that it is working and performing as designed.",
+            "type": "string",
+            "format": "date"
+        },
         "acquisition_areas": {
             "title": "Acquisition/target areas",
             "description": "Needs to be refined further at this level it will probably be best to define a list of Classes here - specific relative locations would need to be defined in actual examination models",
@@ -87,6 +94,12 @@
             "title": "Serial number",
             "description": "Serial number of the equipment",
             "type": "string"
+        }
+        "callibration_pid": {
+            "title": "Callibration Event PID",
+            "description": "Please link to the Callibration Event or Research Activty, PID which relates to the documentation of the last time the equipment was callibrated.",
+            "type": "string",
+            "format": "uri"
         }
     }
 }
