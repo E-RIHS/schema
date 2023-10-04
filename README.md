@@ -89,7 +89,7 @@ This schema is intended to model the metadata and details required to document a
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
-| 31-05-2023 | W Fremout | 0.4 | Schema developed during an online meeting to match with the corresponding model 0.4.|
+| 04-10-2023 | W Fremout | 0.4 | [UPDATED - split description into a short value and a longer General Scope description] Schema developed during an online meeting to match with the corresponding model 0.4.|
 | <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
 
@@ -107,7 +107,7 @@ This schema is intended to model the metadata and details required to document a
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
-| 14-06-2023 | W Fremout | 0.3 | Based on task discussions this is an initial work up of the Equipment/Tools model (v0.3) into a schema file. For compatibility reasons, we have chosen to make a separate schema for equipment and software. |
+| 04-10-2023 | W Fremout | 0.3 | [UPDATED - added callibration date, etc] Based on task discussions this is an initial work up of the Equipment/Tools model (v0.3) into a schema file. For compatibility reasons, we have chosen to make a separate schema for equipment and software. |
 | <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
 ### Software metadata schema
@@ -120,7 +120,7 @@ This schema is intended to model the metadata and details required to document a
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
-| 19-07-2023 | W Fremout, J Padfield | 0.3 | Based on task discussions this is an initial work up of the Software/Tools model (v0.3) into a schema file. For compatibility reasons, we have chosen to make a separate schema for equipment and software. |
+| 04-10-2023 | W Fremout, J Padfield | 0.3 | [UPDATED - added last checked date, etc] Based on task discussions this is an initial work up of the Software/Tools model (v0.3) into a schema file. For compatibility reasons, we have chosen to make a separate schema for equipment and software. |
 | <img width=325 /> |<img width=175 /> | <img width=60 /> | <img width=500 /> |
 
 ## Acknowledgement
