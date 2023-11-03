@@ -1,0 +1,130 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/software-v0.5.schema.json",
+    "title": "E-RIHS software",
+    "type": "object",
+    "required": [
+        "tool_type",
+        "description",
+        "output_data_type",
+        "method_statemement",
+        "last_checked_date"
+    ],
+    "properties": {
+        "e-rihs_pid": {
+            "title": "E-RIHS PID",
+            "description": "E-RIHS PID",
+            "type": "string"
+        },
+        "tool_type": {
+            "title": "Tool type",
+            "description": "Tool type (equipment, software)",
+            "type": "string",
+            "const": "Software"
+        },
+        "name": {
+            "title": "Name or Title",
+            "description": "The simple name or title for the piece of software.",
+            "type": "string"
+        },
+        "description": {
+            "title": "Description",
+            "description": "Description",
+            "type": "string",
+            "minLength": 100,
+            "maxLength": 1000,
+            "x-display": "markdown"
+        },
+        "has_defined_components": {
+            "title": "Has defined components",
+            "description": "Other tools that are components of this tool",
+            "type": "string",
+            "format": "uri"
+        },
+        "output_data_type": {
+            "title": "Output data type",
+            "description": "The type of output data that the equipment or software creates",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "string",
+                "examples": [
+                    "X/Y data",
+                    "X/Y/Z data",
+                    "images",
+                    "moving images"
+                ]
+            }
+        },
+        "release_date": {
+            "title": "Release Date",
+            "description": "When was the software tool first released or developed.",
+            "type": "string",
+            "format": "date"
+        },
+        "last_checked_date": {
+            "title": "Last Checked Date",
+            "description": "For software tools the last checked date relates to when the software was last confirmed to be working and performing as designed.",
+            "type": "string",
+            "format": "date"
+        },
+        "developer": {
+            "title": "Developer",
+            "description": "Developer (or current maintainer) of the software",
+            "type": "string"
+        },
+        "licence": {
+            "title": "Licence",
+            "description": "Licence of the software",
+            "type": "string",
+            "format": "uri"
+        },
+        "has_url": {
+            "title": "Has link",
+            "description": "Links to the software website or documentation",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "link_type": {
+                        "title": "Type",
+                        "type": "string",
+                        "enum": [
+                            "website",
+                            "documentation",
+                            "source code",
+                            "demo",
+                            "online resource",
+                            "other"
+                        ]
+                    },
+                    "url": {
+                        "title": "Link",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
+        },
+        "version": {
+            "title": "Version",
+            "description": "Software version",
+            "type": "string"
+        },
+        "input_data_type": {
+            "title": "Input data type",
+            "description": "The type of input data that the software requires",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "string",
+                "examples": [
+                    "X/Y data",
+                    "X/Y/Z data",
+                    "images",
+                    "moving images"
+                ]
+            }
+        }
+    }
+}
