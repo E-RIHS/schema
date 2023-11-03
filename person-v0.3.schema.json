@@ -1,0 +1,230 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/person-v0.3.schema.json",
+    "title": "E-RIHS person",
+    "type": "object",
+    "required": [
+        "first_name",
+        "last_name",
+        "mbox",
+        "research_discipline"
+    ],
+    "properties": {
+        "e-rihs_pid": {
+            "title": "E-RIHS PID",
+            "description": "E-RIHS PID",
+            "type": "string"
+        },
+        "external_pids": {
+            "title": "External PIDs",
+            "description": "External PIDs",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "pid_type",
+                    "pid"
+                ],
+                "properties": {
+                    "pid_type": {
+                        "title": "PID type",
+                        "description": "PID type",
+                        "type": "string",
+                        "examples": [
+                            "ORCID",
+                            "ISNI",
+                            "ROR",
+                            "Wikidata",
+                            "DOI",
+                            "ARK",
+                            "Handle",
+                            "URN",
+                            "PURL",
+                            "URL"
+                        ]
+                    },
+                    "pid": {
+                        "title": "PID",
+                        "description": "PID",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
+        },
+        "actor_type": {
+            "title": "Actor type",
+            "description": "Actor type",
+            "type": "string",
+            "const": "Person"
+        },
+        "title": {
+            "title": "Title",
+            "description": "Title",
+            "type": "string",
+            "examples": [
+                "Mr",
+                "Mrs",
+                "Ms",
+                "Dr",
+                "Prof"
+            ]
+        },
+        "first_name": {
+            "title": "First name",
+            "description": "First name",
+            "type": "string"
+        },
+        "last_name": {
+            "title": "Last name",
+            "description": "Last name",
+            "type": "string"
+        },
+        "based_in": {
+            "title": "Country of Operation",
+            "description": "The country in which the person is based for legal and professional reasons, the value will be used in relation to distribution of people and in relation to initial assemesnt of elegability when it is related to location.",
+            "type": "string",
+            "examples": [
+                "Mr",
+                "Mrs",
+                "Ms",
+                "Dr",
+                "Prof"
+            ]
+        },
+        "research_profile": {
+            "title": "Short Biography",
+            "description": "A short bio or profile describing the defined person",
+            "type": "string",
+            "minLength": 100,
+            "maxLength": 1000,
+            "x-display": "markdown"
+        },
+        "part_of_organisation": {
+            "title": "Affiliations",
+            "description": "Affiliations",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "organisation_pid"
+                ],
+                "properties": {
+                    "organisation_pid": {
+                        "title": "Organisation PID",
+                        "description": "Organisation PID",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "start_date": {
+                        "title": "Start date",
+                        "description": "Start date",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "end_date": {
+                        "title": "End date",
+                        "description": "End date",
+                        "type": "string",
+                        "format": "date"
+                    }
+                }
+            }
+        },
+        "mbox": {
+            "title": "Email",
+            "description": "Contact email address",
+            "type": "string",
+            "format": "email"
+        },
+        "img_url": {
+            "title": "Image URL",
+            "description": "Image URL",
+            "type": "string",
+            "format": "uri"
+        },
+        "webpage": {
+            "title": "Webpage",
+            "description": "Webpage",
+            "type": "array",
+            "items": {
+                "title": "URL",
+                "description": "URL",
+                "type": "string",
+                "format": "uri"
+            }
+        },
+        "research_disciplines": {
+            "title": "Research Disciplines",
+            "description": "Which domains or disciplines have you worked within, have experience within.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "conservation science", 
+                    "archaeology",
+                    "anthropology",
+                    "heritage science",
+                    "materials science",
+                    "computer science",
+                    "digital humanities",
+                    "information management",
+                    "data processing", 
+                    "data management"
+                ]
+            }
+        },
+        "research_reference": {
+            "title": "Research Reference",
+            "description": "Research Reference",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "reference"
+                ],
+                "properties": {
+                    "reference": {
+                        "title": "Citation",
+                        "description": "Preferred Citation text",
+                        "type": "string"
+                    },
+                    "url": {
+                        "title": "URL",
+                        "description": "URL",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "reference_role": {
+                      "title": "Reference Role",
+                      "description": "What is the prupose of the reference what does it relate to pr provide more information for.",
+                      "type": "string",
+                      "examples": [
+                        "Example research",
+                        "Collaboration",
+                        "E-RIHS Report"
+                      ]
+                    }
+                }
+            }
+        },
+        "joined_the_field_date": {
+            "title": "Date of joining this research field",
+            "description": "When did you start working in this field?",
+            "type": "string",
+            "format": "date"
+        },
+        "first_active_date": {
+            "title": "First active date",
+            "description": "First date this person was active in E-RIHS (administrative field which will be automatically filled in)",
+            "type": "string",
+            "format": "date"
+        },
+        "last_active_date": {
+            "title": "Last active date",
+            "description": "Last date this person was active in E-RIHS (administrative field which will be automatically filled in)",
+            "type": "string",
+            "format": "date"
+        }
+    }
+}
