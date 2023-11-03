@@ -3,7 +3,8 @@
     "$id": "https://e-rihs.io/schema/person-v0.3.schema.json",
     "title": "E-RIHS person",
     "type": "object",
-    "required": [
+    "required": [        
+        "actor_type",
         "first_name",
         "last_name",
         "mbox",
