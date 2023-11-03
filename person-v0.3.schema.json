@@ -85,12 +85,13 @@
             "title": "Country of Operation",
             "description": "The country in which the person is based for legal and professional reasons, the value will be used in relation to distribution of people and in relation to initial assemesnt of elegability when it is related to location.",
             "type": "string",
-            "examples": [
-                "Mr",
-                "Mrs",
-                "Ms",
-                "Dr",
-                "Prof"
+            "examples": [                
+                "Greece",
+                "France",
+                "Germany",
+                "Italy",
+                "Belgium",
+                "United Kingdom"
             ]
         },
         "research_profile": {
