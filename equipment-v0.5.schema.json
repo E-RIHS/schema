@@ -22,16 +22,37 @@
             "type": "string",
             "const": "Equipment"
         },
-        "description": {
-            "title": "Description",
-            "description": "Description",
+        "name": {
+            "title": "Name or Title",
+            "description": "The simple name or title for the piece of equipment.",
             "type": "string"
+        },
+        "description": {
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"
         },
         "has_defined_components": {
             "title": "Has defined components",
             "description": "Other tools that are components of this tool",
-            "type": "string",
-            "format": "uri"
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "component_type": {
+                        "type": "string",
+                        "description": "The type of component",
+                        "examples": [
+                            "Detector",
+                            "Column",
+                            "Camera"
+                        ]
+                    },
+                    "Tool PID": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "The PID/URL of the component"
+                    }
+                }
+            }
         },
         "output_data_type": {
             "title": "Output data type",
@@ -48,20 +69,38 @@
                 ]
             }
         },
-        "method_statement": {
-            "title": "Method statement",
-            "description": "Method, settings, documentation, including description of the input and output of the tool",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "format": "uri"
-            }
-        },
         "last_checked_date": {
             "title": "Last Checked date",
             "description": "For hardware tools the last checked date relates to when equipment was last tested or callibrated, to confirm that it is working and performing as designed.",
             "type": "string",
             "format": "date"
+        },
+        "has_url": {
+            "title": "Has link",
+            "description": "Links to the software website or documentation",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "link_type": {
+                        "title": "Type",
+                        "type": "string",
+                        "enum": [
+                            "website",
+                            "documentation",
+                            "source code",
+                            "demo",
+                            "online resource",
+                            "other"
+                        ]
+                    },
+                    "url": {
+                        "title": "Link",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
         },
         "acquisition_areas": {
             "title": "Acquisition/target areas",
