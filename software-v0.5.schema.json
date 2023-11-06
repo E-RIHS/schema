@@ -28,18 +28,31 @@
             "type": "string"
         },
         "description": {
-            "title": "Description",
-            "description": "Description",
-            "type": "string",
-            "minLength": 100,
-            "maxLength": 1000,
-            "x-display": "markdown"
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"
         },
         "has_defined_components": {
             "title": "Has defined components",
             "description": "Other tools that are components of this tool",
-            "type": "string",
-            "format": "uri"
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "component_type": {
+                        "type": "string",
+                        "description": "The type of component",
+                        "examples": [
+                            "Detector",
+                            "Column",
+                            "Camera"
+                        ]
+                    },
+                    "Tool PID": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "The PID/URL of the component"
+                    }
+                }
+            }
         },
         "output_data_type": {
             "title": "Output data type",
