@@ -1,0 +1,212 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/document-v0.1.schema.json",
+    "title": "E-RIHS General Document",
+    "description": "The schema outlines the required metadata for a simple document, either as a direct link to an existing document or a local digital object broken up into various required sections. This structure is currently intended as a sub-section of other schema and as such does not have a stand alone PID etc.",
+    "type": "object",
+    "required": [
+        "document_title",
+        "participants",
+        "creation_date",
+        "document_type"
+    ],
+    "properties": {
+        "e-rihs_pid": {
+            "title": "E-RIHS Service PID",
+            "description": "Please link to the E-RIHS Service ID",
+            "type": "string",
+            "format": "uri"
+        },
+        "document_title": {
+            "title": "Document Statement or Title",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 200
+        },
+        "participants": {
+            "title": "Participants",
+            "type": "array",
+            "minLength": 1,
+            "items": {
+                "title": "Participant",
+                "type": "object",
+                "properties": {
+                    "orcid": {
+                        "title": "Participant PID",
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "roles": {
+                        "title": "Roles",
+                        "type": "array",
+                        "items": {
+                            "title": "Role",
+                            "example": [
+                                "Author",
+                                "Editor"
+                            ],
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "orcid",
+                    "roles"
+                ]
+            }
+        },
+        "creation_date": {
+            "title": "Creation Date",
+            "type": "string",
+            "format": "date",
+            "description": "The creation date of the General Document"
+        },
+        "last_updated": {
+            "title": "Last Updated",
+            "type": "string",
+            "format": "date",
+            "description": "The date when the General Document was last updated"
+        },
+        "document_type": {
+            "title": "Document Type",
+            "type": "array",
+            "items": {
+                "title": "Role Type",
+                "type": "string",
+                "examples": [
+                    "published examples",
+                    "example report",
+                    "general description",
+                    "documentation",
+                    "method statement",
+                    "procedure description",
+                    "further information",
+                    "other"
+                ]
+            }
+        },
+        "reference": {
+            "title": "Document Reference",
+            "description": "References to relevant publications, reports or other documents which help define, describe or support this document.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "citation"
+                ],
+                "properties": {
+                    "reference": {
+                        "title": "Citation",
+                        "description": "A full text citation describing the relevant reference.",
+                        "type": "string"
+                    },
+                    "url": {
+                        "title": "URL",
+                        "description": "URL",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "reference role": {
+                        "title": "Reference Role",
+                        "type": "array",
+                        "items": {
+                            "title": "Role Type",
+                            "type": "string",
+                            "examples": [
+                                "published examples",
+                                "example report",
+                                "further description"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "section": {
+            "title": "Document Sections",
+            "type": "array",
+            "minLength": 0,
+            "items": {
+                "title": "Document Section",
+                "description": "Local document are split up into defined sections as required, these can represent simple statements or more details content with optional illustrations, based on IIIF manifests.",
+                "type": "object",
+                "properties": {
+                    "section_title": {
+                        "title": "Section Statement or Title",
+                        "type": "string",
+                        "minLength": 3,
+                        "maxLength": 200
+                    },
+                    "section_type": {
+                        "title": "Section Type",
+                        "type": "array",
+                        "items": {
+                            "title": "Type",
+                            "example": [
+                                "Summery",
+                                "Section",
+                                "Statement"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "section_detail": {
+                        "title": "Section Detail",
+                        "description": "Text content for a given document section.",
+                        "type": "string",
+                        "minLength": 0,
+                        "maxLength": 2500,
+                        "x-display": "markdown"
+                    },
+                    "section_illustration": {
+                        "title": "IIIF Illustration",
+                        "description": "The URL for an optional IIIF manifest which can illustrate a given document section - the IIIF manifest can include a simple list of images or more complex captions and annotations.",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "section_reference": {
+                        "title": "Section Reference",
+                        "description": "References to relevant publications, reports or other documents which help define, describe or support this section or statement",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "citation"
+                            ],
+                            "properties": {
+                                "reference": {
+                                    "title": "Citation",
+                                    "description": "A full text citation describing the relevant reference.",
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "title": "URL",
+                                    "description": "URL",
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "reference role": {
+                                    "title": "Reference Role",
+                                    "type": "array",
+                                    "items": {
+                                        "title": "Role Type",
+                                        "type": "string",
+                                        "examples": [
+                                            "published examples",
+                                            "example report",
+                                            "further description"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "orcid",
+                    "roles"
+                ]
+            }
+        }
+    }
+}
