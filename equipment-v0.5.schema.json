@@ -133,7 +133,7 @@
             "title": "Serial number",
             "description": "Serial number of the equipment",
             "type": "string"
-        }
+        },
         "callibration_pid": {
             "title": "Callibration Event PID",
             "description": "Please link to the Callibration Event or Research Activty, PID which relates to the documentation of the last time the equipment was callibrated.",
