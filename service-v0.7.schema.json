@@ -1,0 +1,552 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/service-v0.7.schema.json",
+    "title": "E-RIHS access service",
+    "type": "object",
+    "required": [
+        "e-rihs_pref_label",
+        "e-rihs_scope_note",
+        "offered_to",
+        "service_application_required",
+        "service_description"
+    ],
+    "properties": {
+        "e-rihs_pid": {
+            "title": "E-RIHS PID",
+            "description": "E-RIHS PID",
+            "type": "string"
+        },
+        "e-rihs_pref_label": {
+            "title": "Title",
+            "description": "Service title",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100
+        },
+        "e-rihs_scope_note": {
+            "title": "Service Summary",
+            "description": "A brief description of a specific technical or access service offered, such as the use of X to investigate Y",
+            "type": "string",
+            "minLength": 100,
+            "maxLength": 300
+        },
+        "service_readiness_level": {
+            "title": "Service Readiness Level",
+            "description": "This scale is directly based on the standard - Technology readiness levels (TRLs), adapted for heritage science, which are a method for estimating the maturity of the services being offered. For more details see https://en.wikipedia.org/wiki/Technology_readiness_level",
+            "type": "string",
+            "enum": [
+                "1 - Basic principles observed",
+                "2 - Concept formulated (planning)",
+                "3 - Experimental proof of concept",
+                "4 - Concept validated in controlled environment",
+                "5 - Service validated in HS environment (alpha)",
+                "6 - Service demonstrated in HS environment",
+                "7 - Operational service prototype demonstrated (beta)",
+                "8 - Service complete and qualified (release candidate)",
+                "9 - Service proven in operational environment (production)"
+            ]
+        },
+        "service_operating_languages": {
+            "title": "Operating Languages",
+            "description": "What languages can the team operate in or what language is a tool presented in",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": [
+                    "bg - Bulgarian",
+                    "cz - Czech",
+                    "da - Danish",
+                    "de - German",
+                    "el - Greek",
+                    "en - English",
+                    "es - Spanish",
+                    "et - Estonian",
+                    "fi - Finnish",
+                    "fr - French",
+                    "ga - Irish",
+                    "hr - Croatian",
+                    "hu - Hungarian",
+                    "it - Italian",
+                    "lt - Lithuanian",
+                    "lv - Latvian",
+                    "mt - Maltese",
+                    "nl - Dutch",
+                    "no - Norwegian",
+                    "pl - Polish",
+                    "pt - Portugese",
+                    "ro - Romanian",
+                    "sk - Slovak",
+                    "sl - Slovenian",
+                    "sv - Swedish"
+                ]
+            }
+        },
+        "support_activity": {
+            "title": "Support Activity",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "title": "Support type",
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "Access",
+                                "Administration",
+                                "Development",
+                                "Maintenance"
+                            ]
+                        }
+                    },
+                    "provider": {
+                        "title": "Support Provider",
+                        "description": "PID of the support provider",
+                        "type": "string"
+                    },
+                    "summary": {
+                        "title": "Summary of the support",
+                        "description": "General description of the support or any required caption/citation",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "title": "Start date",
+                        "description": "When did the support begin",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "end_date": {
+                        "title": "End date",
+                        "description": "When did the support end (optional)",
+                        "type": "string",
+                        "format": "date"
+                    }
+                },
+                "required": [
+                    "type",
+                    "provider",
+                    "start_date"
+                ]
+            }
+        },
+        "service_techniques": {
+            "title": "Service Techniques",
+            "description": "A list of the individual relevant heritage science examination and analytical techniques carried out within this Service - selected from a publicly defined controlled list. This free text option will need to be replaced with a controlled list.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "url"
+            }
+        },
+        "service_platform": {
+            "title": "Service Platform",
+            "description": "E-RIHS platform code",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "ARCHLAB",
+                    "DIGILAB",
+                    "FIXLAB",
+                    "MOLAB"
+                ]
+            }
+        },
+        "offered_to": {
+            "title": "Offered to",
+            "description": "At what level are accesses available",
+            "type": "string",
+            "enum": [
+                "Global",
+                "EU",
+                "National",
+                "Institutional"
+            ]
+        },
+        "service_application_required": {
+            "title": "Service application required",
+            "description": "Is an application for access required",
+            "type": "boolean"
+        },
+        "service_provider": {
+            "title": "Service Providers",
+            "type": "array",
+            "minLength": 1,
+            "items": {
+                "title": "Service Provider",
+                "type": "object",
+                "required": [
+                    "provider_id"
+                ],
+                "properties": {
+                    "provider_id": {
+                        "title": "Provider ID",
+                        "description": "An actor (organisation or person) offering this service, as defined in the system.",
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "provider_roles": {
+                        "title": "Provider Roles",
+                        "description": "This value should be replaced with a controlled list",
+                        "type": "string",
+                        "format": "url"
+                    }
+                }
+            }
+        },
+        "national_node": {
+            "title": "National Node - Proposer",
+            "description": "The URL for the PID for the National Node who proposed this service.",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100
+        },
+        "service_contact": {
+            "title": "Service Contacts",
+            "type": "array",
+            "minLength": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "contact_id"
+                ],
+                "properties": {
+                    "contact_id": {
+                        "title": "Contact ID",
+                        "description": "Please provide a contact PID, this may be an internal reference or an external PID such as an ORCID.",
+                        "type": "string"
+                    },
+                    "contact_email": {
+                        "title": "Contact Email",
+                        "description": "If internal references are used this data can be stored there, if external IDs are used a specific email address may be required.",
+                        "type": "string"
+                    },
+                    "contact_role": {
+                        "title": "Contact Roles",
+                        "type": "array",
+                        "items": {
+                            "title": "Role",
+                            "enum": [
+                                "Equipment Operator",
+                                "Archive Manager",
+                                "Data Manager",
+                                "General Contact"
+                            ],
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "service_description": {
+            "title": "Service Description",
+            "description": "A longer description/documentation of a specific technical or access service offered under E-RIHS",
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"      
+        },
+        "research_disciplines": {
+            "title": "Research Disciplines",
+            "description": "Which domains or disciplines has a given service worked within, has experience within.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "conservation science",
+                    "archaeology",
+                    "anthropology",
+                    "heritage science",
+                    "materials science",
+                    "computer science",
+                    "digital humanities",
+                    "information management",
+                    "data processing",
+                    "data management"
+                ]
+            }
+        },
+        "service_categories": {
+            "title": "Service Categories",
+            "description": "An externally defined service top level categories defining what types of work the included techniques are used to carry out - selected from a publicly defined controlled list.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": [
+                    "Identification of Inorganic Pigments",
+                    "Analysis of Archaeological Pottery",
+                    "Classification of Ancient Organic Material",
+                    "Hyper-spectral imaging of Wall paintings",
+                    "Online Preventive Conservation Tool",
+                    "Collection Management Tool"
+                ]
+            }
+        },
+        "service_functions": {
+            "title": "Service Functions",
+            "description": "An externally defined service practical level activity, what has a service been used for, what is it intended for.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": [
+                    "Materials Analysis",
+                    "Dye Analysis",
+                    "De-convolution XRF Spectra",
+                    "Calculating Light Exposure Allowance"
+                ]
+            }
+        },
+        "service_methods": {
+            "title": "Method statements for the activities in the service",
+            "description": "Service related method statements should be defined in the system and represent the procedures for using individual pieces of equipment or software systems used within the service - detail of setup, methodology, procedures, etc. should all be described within this document and is also directly attached to relevant the Tool (equipment or software) records.",
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"      
+        },
+        "service_resources": {
+            "title": "Collections, Objects, Samples and Archives",
+            "description": "Research resources made accessible by the service should be defined in the system and represent the heritage collections, objects, samples, archives, other research resources directly provided by the service.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "url"
+            }
+        },
+        "service_limitations": {
+            "title": "Service Limitations",
+            "description": "This section may need to be more complex but it might be simplified to a controlled list with optional related values – Does it work on samples or complete objects – will it damaged or destroy samples – what are the size limitations on samples or objects – are the results of other examination required – do the input samples/objects/files need to be prepared or formatted in a specific way – the full extent of this will need to be discussed.",
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"      
+        },
+        "service_team": {
+            "title": "Service Team",
+            "type": "array",
+            "minLength": 1,
+            "items": {
+                "title": "Service Team",
+                "type": "object",
+                "required": [
+                    "team_member_id",
+                    "team_member_roles",
+                    "team_member_start_date"
+                ],
+                "properties": {
+                    "team_member_id": {
+                        "title": "Person ID",
+                        "description": "An actor as defined in the system",
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "team_member_roles": {
+                        "title": "Person Roles",
+                        "description": "This value should be replaced with a controlled list",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "team_member_start_date": {
+                        "title": "Joined service date",
+                        "description": "A date to indicate when a given person joined the team working on a given service.",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "team_member_end_date": {
+                        "title": "Left service date",
+                        "description": "A date to indicate when a given person left the team working on a given service.",
+                        "type": "string",
+                        "format": "date"
+                    }
+                }
+            }
+        },
+        "service_links": {
+            "title": "Service Link",
+            "type": "array",
+            "minLength": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "link_url",
+                    "link_type"
+                ],
+                "properties": {
+                    "link_url": {
+                        "description": "A related resolvable URL not covered by the other fields",
+                        "type": "string"
+                    },
+                    "link_type": {
+                        "description": "A simple definition of the type or purpose of the link.",
+                        "type": "string",
+                        "enum": [
+                            "Blog",
+                            "Code repository",
+                            "Contributor",
+                            "Data Repository",
+                            "Developer",
+                            "Documentation",
+                            "Funder",
+                            "Presentation",
+                            "Publication",
+                            "Project webpage",
+                            "Related external software dependencies",
+                            "Report"
+                        ]
+                    }
+                }
+            }
+        },
+        "service_reference": {
+            "title": "Service Reference",
+            "description": "References related to the service",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "reference"
+                ],
+                "properties": {
+                    "reference_citation": {
+                        "title": "Citation",
+                        "description": "The formatted details for the given reference.",
+                        "type": "string"
+                    },
+                    "reference_url": {
+                        "title": "URL",
+                        "description": "URL",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "reference_type": {
+                        "description": "A simple definition of the type, role or purpose of the reference.",
+                        "type": "string",
+                        "example": [
+                            "Further Detail",
+                            "Example Work",
+                            "Example Data",
+                            "Review"
+                        ]
+                    }
+                }
+            }
+        },
+        "service_example_outputs": {
+            "title": "Example Output Dataset",
+            "description": "Services that generate data can provide PIDs/URLs for example datasets to demonstrate what types of data and information will be created.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "url"
+            }
+        },      
+        "service_example_inputs": {
+            "title": "Example Input Dataset",
+            "description": "Services that process data can provide PIDs/URLs for example datasets to demonstrate what data and formats are required for the Service to run.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "url"
+            }
+        },      
+        "service_version": {
+            "title": "Service Version",
+            "description": "Service develop over time with changes of equipment, software, personnel, etc. Version numbers should be changed to indicate these changes - please note very large scale changes may warrant the creation of a new Service record to clarify differences in the data or results created.",
+            "type": "string"
+        },
+        "service_version_date": {
+            "title": "Service Version Date",
+            "description": "The version date is the date from which this particular version of this Service was offered in a formal capacity by the defined Access provider.",
+            "type": "string",
+            "format": "date"
+        },
+        "service_creation_date": {
+            "title": "Service Creation Date",
+            "description": "The creation date is the date from which this particular Service was offered in a formal capacity by the defined Access provider.",
+            "type": "string",
+            "format": "date"
+        },
+        "service_dmp": {
+            "title": "Service Data Management Plan",
+            "description": "Link to an open description of the data management procedures followed with the defined service, including licence issues, preferred data repositories, publication embargoes, common file formats, software and systems used, etc.",
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"      
+        },
+        "service_dmp_variation": {
+            "title": "Variation from E-RIHS DMP",
+            "description": "Link to an open description of any required data management differences that may be required for the service, in relation to national, funding or institutional limitations; some differences could be easily manageable but other might require updates to the E-RIHS DMP.",
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"      
+        },
+        "dataflow_description": {
+            "title": "Dataflow description",
+            "description": "A diagram or written description - (a standard diagram format might be easier to compare) More complex services, multiple pieces of equipment or data processing steps, might benefit for a summary description of the key stages, including details of any required background information, direct input from users and any processing steps.",
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"      
+        },
+        "service_output": {
+            "title": "Service Output Description",
+            "type": "string",
+            "description": "A link to a formatted extract from the DMP for ease of use: A description of all of the raw and processes outputs created by a given services including details of how they relate to or rely on each other."
+        },
+        "service_input": {
+            "title": "Service Input Description",
+            "type": "string",
+            "description": "A link to a formatted extract from the DMP for ease of use: A description of the required formats or files required for any service which processes existing data."
+        },
+        "service_further_comments": {
+            "title": "Other Comments",
+            "description": "Free text opportunity to advocate for what is novel or special about this particular access",
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"      
+        },
+        "service_keywords": {
+            "title": "Service keywords",
+            "description": "Additional terms and concepts not covered by the other fields, it would be good to reference these to some form of open vocabulary",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "url"
+            }
+        },
+        "service_access_unit": {
+            "title": "Service Access Period Unit",
+            "description": "For previously defined services this has commonly been defined in days or occasionally hours - but with the development of digital services additional smaller time units might be needed.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Day",
+                    "Hour",
+                    "Minute",
+                    "Second"
+                ]
+            }
+        },
+        "service_access_unit_cost": {
+            "title": "Service Access Unit Cost",
+            "description": "Service offered under E-RIHS can include a unit cost in Euros. This cost is expected to represent a proportion of the actual cost of providing a given Service ranging from zero to the full actual cost of providing the service. Access service costs will be based on potentially dicounted actual costs and may not include any for porfir contributions",
+            "type": "number"
+        },
+        "service_access_count": {
+            "title": "Service Annual Access Count",
+            "description": "For new services this would need to be based on past experience of the provider if applicable, or related to the relevant resources that can be provided. For automated digital tools this count could be based on previous use metrics or estimated in relation to the planned dissemination plan. For running services this count could represent and average of the recorded value for the previous year - a record of the count for each year should be stored.",
+            "type": "number"
+        },
+        "service_hours_per_unit": {
+            "title": "Service Access Hours per Unit",
+            "description": "Accesses Units are describe as time periods, but depending on the nature of a service this might relate to a range of different periods of activity time. For example a day could relate to a working day or a calendar day, a digital service could relate to run time or processing time. So this value is used to relate actual activity time to the recorded access unit..",
+            "type": "number"
+        },
+        "checked_date": {
+            "title": "Checked Date",
+            "description": "When was the description of the service last checked",
+            "type": "string",
+            "format": "date"
+        },
+        "service_active": {
+            "title": "Active service",
+            "description": "Is the service currently open for access?",
+            "type": "boolean"
+        },
+        "key_performance_indicators": {
+            "title": "Key Performance Indicators",
+            "description": "These will need to be confirmed with the E-RIHS Hub depending on the type of service.",
+            "type": "array",
+            "items": {
+                "title": "KPI",
+                "type": "string"
+            }
+        }
+    }
+}
