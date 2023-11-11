@@ -106,14 +106,15 @@
         "title": "Parameter",
         "type": "object",
         "properties": {
-          "default_value": {
-            "title": "Default Value",
-            "type": "number"  
+          "parameter_value": {
+            "title": "Value",
+            "type": "string"  
           },
-          "unit": {
+          "parameter_unit": {
             "title": "Unit",
             "type": "string",
             "examples": [
+              "none",
               "cm",
               "nm",
               "count"
