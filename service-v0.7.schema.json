@@ -297,7 +297,8 @@
         "service_methods": {
             "title": "Method statements for the activities in the service",
             "description": "Service related method statements should be defined in the system and represent the procedures for using individual pieces of equipment or software systems used within the service - detail of setup, methodology, procedures, etc. should all be described within this document and is also directly attached to relevant the Tool (equipment or software) records.",
-            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"      
+            "type": "string",
+            "format": "uri"
         },
         "service_resources": {
             "title": "Collections, Objects, Samples and Archives",
