@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://e-rihs.io/schema/document-v0.1.schema.json",
+    "$id": "https://e-rihs.io/schema/document-v0.3.schema.json",
     "title": "E-RIHS General Document",
     "description": "The schema outlines the required metadata for a simple document, either as a direct link to an existing document or a local digital object broken up into various required sections. This structure is currently intended as a sub-section of other schema and as such does not have a stand alone PID etc.",
     "type": "object",
