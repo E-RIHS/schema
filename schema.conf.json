@@ -1,17 +1,38 @@
 [
     {
-        "name": "Project v0.1",
-        "resource": "Project",
-        "json_schema": "https://e-rihs.io/schema/project-v0.1.schema.json",
+        "name": "Document v0.3",
+        "resource": "Document",
+        "json_schema": "https://e-rihs.io/schema/document-v0.3.schema.json",
         "draft": true,
-        "depreciated": true
+        "depreciated": false
     },
     {
-        "name": "Project v0.3",
-        "resource": "Project",
-        "json_schema": "https://e-rihs.io/schema/project-v0.3.schema.json",
+        "name": "Equipment v0.5",
+        "resource": "Tool",
+        "json_schema": "https://e-rihs.io/schema/equipment-v0.5.schema.json",
         "draft": true,
-        "depreciated": true
+        "depreciated": false
+    },
+    {
+        "name": "Method v0.2",
+        "resource": "Method",
+        "json_schema": "https://e-rihs.io/schema/method-v0.2.schema.json",
+        "draft": true,
+        "depreciated": false
+    },    
+    {
+        "name": "Organisation v0.3",
+        "resource": "Actor",
+        "json_schema": "https://e-rihs.io/schema/organisation-v0.3.schema.json",
+        "draft": true,
+        "depreciated": false
+    },
+    {
+        "name": "Person v0.3",
+        "resource": "Actor",
+        "json_schema": "https://e-rihs.io/schema/person-v0.3.schema.json",
+        "draft": true,
+        "depreciated": false
     },
     {
         "name": "Project v0.5",
@@ -21,72 +42,23 @@
         "depreciated": false
     },
     {
-        "name": "Service v0.1",
+        "name": "Service v0.7",
         "resource": "Service",
-        "json_schema": "https://e-rihs.io/schema/service-v0.1.schema.json",
-        "draft": true,
-        "depreciated": true
-    },
-    {
-        "name": "Service v0.2",
-        "resource": "Service",
-        "json_schema": "https://e-rihs.io/schema/service-v0.2.schema.json",
-        "draft": true,
-        "depreciated": true
-    },
-    {
-        "name": "Service v0.3",
-        "resource": "Service",
-        "json_schema": "https://e-rihs.io/schema/service-v0.3.schema.json",
-        "draft": true,
-        "depreciated": true
-    },
-    {
-        "name": "Service v0.4",
-        "resource": "Service",
-        "json_schema": "https://e-rihs.io/schema/service-v0.4.schema.json",
-        "draft": true,
-        "depreciated": true
-    },
-    {
-        "name": "Service v0.5",
-        "resource": "Service",
-        "json_schema": "https://e-rihs.io/schema/service-v0.5.schema.json",
+        "json_schema": "https://e-rihs.io/schema/service-v0.7.schema.json",
         "draft": true,
         "depreciated": false
     },
     {
-        "name": "Person v0.2",
-        "resource": "Actor",
-        "json_schema": "https://e-rihs.io/schema/person-v0.2.schema.json",
+        "name": "Software v0.5",
+        "resource": "Tool",
+        "json_schema": "https://e-rihs.io/schema/software-v0.5.schema.json",
         "draft": true,
         "depreciated": false
     },
     {
-        "name": "Organisation v0.2",
-        "resource": "Actor",
-        "json_schema": "https://e-rihs.io/schema/organisation-v0.2.schema.json",
-        "draft": true,
-        "depreciated": false
-    },
-    {
-        "name": "Technique v0.4",
+        "name": "Technique v0.5",
         "resource": "Technique",
-        "json_schema": "https://e-rihs.io/schema/technique-v0.4.schema.json",
-        "draft": true,
-        "depreciated": false
-    },
-    {
-        "name": "Equipment v0.3",
-        "resource": "Tool",
-        "json_schema": "https://e-rihs.io/schema/equipment-v0.3.schema.json",
-        "draft": true,
-        "depreciated": false
-    },
-    {
-        "name": "Software v0.3",
-        "resource": "Tool",
-        "json_schema": "https://e-rihs.io/schema/software-v0.3.schema.json",
+        "json_schema": "https://e-rihs.io/schema/technique-v0.5.schema.json",
         "draft": true,
         "depreciated": false
     }
