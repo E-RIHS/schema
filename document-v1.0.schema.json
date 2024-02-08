@@ -1,0 +1,258 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/document-v1.0.schema.json",
+    "$code": "e51f",
+    "title": "Document",
+    "anyOf": [
+        {
+            "title": "Simple text",
+            "$ref": "#/definitions/simple_text"
+        },
+        {
+            "title": "Complex document",
+            "$ref": "#/definitions/complex_document"
+        },
+        {
+            "title": "Reference to external documents",
+            "$ref": "#/definitions/external_documents"
+        }
+    ],
+    "definitions": {
+        "simple_text": {
+            "title": "Simple text",
+            "description": "A simple text box",
+            "type": "object",
+            "properties": {
+                "abstract": {
+                    "title": "Description",
+                    "type": "string",
+                    "format": "textarea"
+                }
+            }
+        },
+        "complex_document": {
+            "title": "Simple text",
+            "description": "A simple text box",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "title": "Document Statement or Title",
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 256
+                },
+                "abstract": {
+                    "type": "string",
+                    "format": "textarea",
+                    "maxLength": 2048,
+                    "title": "Description",
+                    "cordra": {
+                        "preview": {
+                            "showInPreview": true,
+                            "excludeTitle": true
+                        }
+                    }
+                },
+                "participants": {
+                    "title": "Participants",
+                    "type": "array",
+                    "minLength": 1,
+                    "items": {
+                        "title": "Participant",
+                        "type": "object",
+                        "properties": {
+                            "orcid": {
+                                "title": "Participant PID",
+                                "type": "string",
+                                "cordra": {
+                                    "type": {
+                                        "handleReference": {
+                                            "types": ["Person"],
+                                            "name": "{{../full_name}}"
+                                        }
+                                    }
+                                }
+                            },
+                            "roles": {
+                                "title": "Roles",
+                                "type": "array",
+                                "items": {
+                                    "title": "Role",
+                                    "type": "string",
+                                    "enum": ["Author", "Editor"]
+                                }
+                            }
+                        },
+                        "required": ["orcid", "roles"]
+                    }
+                },
+                "creation_date": {
+                    "title": "Creation Date",
+                    "type": "string",
+                    "format": "date",
+                    "description": "The creation date of the General Document"
+                },
+                "last_updated": {
+                    "title": "Last Updated",
+                    "type": "string",
+                    "format": "date",
+                    "description": "The date when the General Document was last updated"
+                },
+                "document_type": {
+                    "title": "Document Type",
+                    "type": "array",
+                    "items": {
+                        "title": "Role Type",
+                        "type": "string",
+                        "enum": [
+                            "Published examples",
+                            "Example report",
+                            "General description",
+                            "Documentation",
+                            "Method statement",
+                            "Procedure description",
+                            "Further information",
+                            "Other"
+                        ]
+                    }
+                },
+                "references": {
+                    "title": "Document References",
+                    "description": "References to relevant publications, reports or other documents which help define, describe or support this document.",
+                    "type": "array",
+                    "items": {
+                        "title": "Reference",
+                        "type": "object",
+                        "required": ["citation"],
+                        "properties": {
+                            "reference": {
+                                "title": "Citation",
+                                "description": "A full text citation describing the relevant reference.",
+                                "type": "string"
+                            },
+                            "url": {
+                                "title": "URL",
+                                "description": "URL",
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "reference_roles": {
+                                "title": "Reference Roles",
+                                "type": "array",
+                                "items": {
+                                    "title": "Role",
+                                    "type": "string",
+                                    "enum": [
+                                        "Published examples",
+                                        "Example report",
+                                        "Further description"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "section": {
+                    "title": "Document Sections",
+                    "type": "array",
+                    "items": {
+                        "title": "Document Section",
+                        "description": "Local document are split up into defined sections as required, these can represent simple statements or more details content with optional illustrations, based on IIIF manifests.",
+                        "type": "object",
+                        "properties": {
+                            "section_title": {
+                                "title": "Section Statement or Title",
+                                "type": "string",
+                                "minLength": 3,
+                                "maxLength": 256
+                            },
+                            "section_types": {
+                                "title": "Section Types",
+                                "type": "array",
+                                "items": {
+                                    "title": "Type",
+                                    "type": "string",
+                                    "enum": ["Summery", "Section", "Statement"]
+                                }
+                            },
+                            "section_detail": {
+                                "title": "Section Detail",
+                                "description": "Text content for a given document section.",
+                                "type": "string",
+                                "minLength": 0,
+                                "maxLength": 2500,
+                                "format": "textarea"
+                            },
+                            "section_illustration": {
+                                "title": "IIIF Illustration",
+                                "description": "The URL for an optional IIIF manifest which can illustrate a given document section - the IIIF manifest can include a simple list of images or more complex captions and annotations.",
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "section_references": {
+                                "title": "Section References",
+                                "description": "References to relevant publications, reports or other documents which help define, describe or support this section or statement",
+                                "type": "array",
+                                "items": {
+                                    "title": "Reference",
+                                    "type": "object",
+                                    "required": ["citation"],
+                                    "properties": {
+                                        "reference": {
+                                            "title": "Citation",
+                                            "description": "A full text citation describing the relevant reference.",
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "title": "URL",
+                                            "description": "URL",
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "reference_roles": {
+                                            "title": "Reference Roles",
+                                            "type": "array",
+                                            "items": {
+                                                "title": "Role",
+                                                "type": "string",
+                                                "enum": [
+                                                    "Published examples",
+                                                    "Example report",
+                                                    "Further description"
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "required": ["orcid", "roles"]
+                    }
+                }
+            }
+        },
+        "external_documents": {
+            "title": "References to external documents",
+            "description": "A reference to an online available document, paper, book, etc",
+            "type": "array",
+            "items": {
+                "title": "Reference",
+                "type": "object",
+                "required": ["reference"],
+                "properties": {
+                    "reference": {
+                        "title": "Reference",
+                        "description": "Reference",
+                        "type": "string"
+                    },
+                    "url": {
+                        "title": "URL",
+                        "description": "URL",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
+        }
+    }
+}

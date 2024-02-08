@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/controlled_lists-v1.0.schema.json",
+    "$code": "9bf7",
+    "type": "object",
+    "properties": {
+        "readiness_level": {
+            "$ref": "#/definitions/readiness_level"
+        },
+        "support_type": {
+            "$ref": "#/definitions/support_type"
+        },
+        "e-rihs_platform": {
+            "$ref": "#/definitions/e-rihs_platform"
+        },
+        "offered_to": {
+            "$ref": "#/definitions/offered_to"
+        },
+        "contact_role": {
+            "$ref": "#/definitions/contact_role"
+        }
+    },
+    "definitions": {
+        "readiness_level": {
+            "title": "Service Readiness Level",
+            "description": "This scale is directly based on the standard - Technology readiness levels (TRLs), adapted for heritage science, which are a method for estimating the maturity of the services being offered. For more details see https://en.wikipedia.org/wiki/Technology_readiness_level",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g5"
+            }
+        },
+        "support_type": {
+            "title": "Support type",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g6"
+            }
+        },
+        "e-rihs_platform": {
+            "title": "Platform",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g7"
+            }
+        },
+        "offered_to": {
+            "title": "Offered to",
+            "description": "At what level are accesses available",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g8"
+            }
+        },
+        "contact_role": {
+            "title": "Contact role",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g9"
+            }
+        },
+        "research_discipline": {
+            "title": "Research discipline",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g10"
+            }
+        },
+        "link_type": {
+            "title": "Link type",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g11"
+            }
+        },
+        "period_unit": {
+            "title": "Period unit",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g12"
+            }
+        },
+        "operation_language": {
+            "title": "Operation language",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g13"
+            }
+        },
+        "access_unit": {
+            "title": "Access unit",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g14"
+            }
+        }
+    }
+}
