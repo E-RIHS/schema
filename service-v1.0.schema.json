@@ -60,35 +60,7 @@
             "description": "What languages can the team operate in or what language is a tool presented in",
             "type": "array",
             "items": {
-                "title": "Language",
-                "type": "string",
-                "enum": [
-                    "bg - Bulgarian",
-                    "cz - Czech",
-                    "da - Danish",
-                    "de - German",
-                    "el - Greek",
-                    "en - English",
-                    "es - Spanish",
-                    "et - Estonian",
-                    "fi - Finnish",
-                    "fr - French",
-                    "ga - Irish",
-                    "hr - Croatian",
-                    "hu - Hungarian",
-                    "it - Italian",
-                    "lt - Lithuanian",
-                    "lv - Latvian",
-                    "mt - Maltese",
-                    "nl - Dutch",
-                    "no - Norwegian",
-                    "pl - Polish",
-                    "pt - Portugese",
-                    "ro - Romanian",
-                    "sk - Slovak",
-                    "sl - Slovenian",
-                    "sv - Swedish"
-                ]
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/operating_language"
             }
         },
         "support_activities": {
@@ -244,20 +216,7 @@
             "description": "Which domains or disciplines has a given service worked within, has experience within.",
             "type": "array",
             "items": {
-                "title": "Research Discipline",
-                "type": "string",
-                "enum": [
-                    "Conservation science",
-                    "Archaeology",
-                    "Anthropology",
-                    "Heritage science",
-                    "Materials science",
-                    "Computer science",
-                    "Digital humanities",
-                    "Information management",
-                    "Data processing",
-                    "Data management"
-                ]
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/research_discipline"
             }
         },
         "categories": {
@@ -385,23 +344,7 @@
                         "format": "uri"
                     },
                     "type": {
-                        "title": "Link type",
-                        "description": "A simple definition of the type or purpose of the link.",
-                        "type": "string",
-                        "enum": [
-                            "Blog",
-                            "Code repository",
-                            "Contributor",
-                            "Data Repository",
-                            "Developer",
-                            "Documentation",
-                            "Funder",
-                            "Presentation",
-                            "Publication",
-                            "Project webpage",
-                            "Related external software dependencies",
-                            "Report"
-                        ]
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/link_type"
                     }
                 }
             }
@@ -521,9 +464,7 @@
             "description": "For previously defined services this has commonly been defined in days or occasionally hours - but with the development of digital services additional smaller time units might be needed.",
             "type": "array",
             "items": {
-                "title": "Unit",
-                "type": "string",
-                "enum": ["Day", "Hour", "Minute", "Second"]
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/period_unit"
             }
         },
         "access_unit_cost": {

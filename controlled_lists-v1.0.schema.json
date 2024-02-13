@@ -18,6 +18,18 @@
         },
         "contact_role": {
             "$ref": "#/definitions/contact_role"
+        },
+        "research_discipline": {
+            "$ref": "#/definitions/research_discipline"
+        },
+        "link_type": {
+            "$ref": "#/definitions/link_type"
+        },
+        "period_unit": {
+            "$ref": "#/definitions/period_unit"
+        },
+        "operating_language": {
+            "$ref": "#/definitions/operating_language"
         }
     },
     "definitions": {
@@ -79,18 +91,11 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g12"
             }
         },
-        "operation_language": {
-            "title": "Operation language",
+        "operating_language": {
+            "title": "Operating language",
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g13"
-            }
-        },
-        "access_unit": {
-            "title": "Access unit",
-            "type": "string",
-            "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g14"
             }
         }
     }
