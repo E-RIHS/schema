@@ -119,7 +119,13 @@
             "items": {
                 "title": "Technique",
                 "type": "string",
-                "format": "url"
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": ["Technique"]
+                        }
+                    }
+                }
             }
         },
         "e-rihs_platform": {
