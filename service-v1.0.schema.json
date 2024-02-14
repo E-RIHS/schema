@@ -147,11 +147,12 @@
         "providers": {
             "title": "Service Providers",
             "type": "array",
+            "format": "table",
             "minLength": 1,
             "items": {
                 "title": "Service Provider",
                 "type": "object",
-                "required": ["provider_id"],
+                "required": ["provider_id", "provider_role"],
                 "properties": {
                     "provider_id": {
                         "title": "Provider ID",
@@ -165,8 +166,8 @@
                             }
                         }
                     },
-                    "provider_roles": {
-                        "title": "Provider Roles",
+                    "provider_role": {
+                        "title": "Provider Role",
                         "description": "This value should be replaced with a controlled list",
                         "type": "string",
                         "format": "url"
@@ -184,36 +185,20 @@
         "contacts": {
             "title": "Service Contacts",
             "type": "array",
+            "format": "table",
             "minLength": 1,
             "items": {
                 "title": "Service Contact",
                 "type": "object",
-                "required": ["contact_id"],
                 "properties": {
-                    "contact_id": {
+                    "type": {
+                        "type": "string",
+                        "enum": ["E-mail", "Phone"]
+                    },
+                    "contact": {
                         "title": "Contact",
-                        "description": "Please provide a contact PID, this may be an internal reference or an external PID such as an ORCID.",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": ["Person"]
-                                }
-                            }
-                        }
-                    },
-                    "contact_email": {
-                        "title": "Contact Email",
-                        "description": "If internal references are used this data can be stored there, if external IDs are used a specific email address may be required.",
-                        "type": "string",
-                        "format": "email"
-                    },
-                    "contact_roles": {
-                        "title": "Contact Roles",
-                        "type": "array",
-                        "items": {
-                            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/contact_role"
-                        }
+                        "description": "E-mail or phone number",
+                        "type": "string"
                     }
                 }
             }
@@ -316,8 +301,7 @@
                         "description": "This value should be replaced with a controlled list",
                         "type": "array",
                         "items": {
-                            "title": "Role",
-                            "type": "string"
+                            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/person_role"
                         }
                     },
                     "start_date": {

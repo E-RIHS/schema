@@ -16,8 +16,8 @@
         "offered_to": {
             "$ref": "#/definitions/offered_to"
         },
-        "contact_role": {
-            "$ref": "#/definitions/contact_role"
+        "person_role": {
+            "$ref": "#/definitions/person_role"
         },
         "research_discipline": {
             "$ref": "#/definitions/research_discipline"
@@ -63,8 +63,8 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g8"
             }
         },
-        "contact_role": {
-            "title": "Contact role",
+        "person_role": {
+            "title": "Person role",
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g9"

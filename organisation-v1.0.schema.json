@@ -156,6 +156,12 @@
             "type": "string",
             "format": "email"
         },
+        "phone": {
+            "title": "Phone",
+            "description": "Contact phone number",
+            "type": "string",
+            "format": "tel"
+        },
         "img_url": {
             "title": "Image URL",
             "description": "Image URL",
