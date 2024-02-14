@@ -49,8 +49,9 @@
         },
         "description": {
             "title": "Service Description",
-            "description": "A longer description/documentation of a specific technical or access service offered under E-RIHS",
-            "$ref": "https://e-rihs.io/schema/document.schema.json"
+            "type": "string",
+            "format": "textarea",
+            "description": "A longer description/documentation of a specific technical or access service offered under E-RIHS"
         },
         "readiness_level": {
             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/readiness_level"
@@ -279,8 +280,9 @@
         },
         "limitations": {
             "title": "Service Limitations",
-            "description": "This section may need to be more complex but it might be simplified to a controlled list with optional related values – Does it work on samples or complete objects – will it damaged or destroy samples – what are the size limitations on samples or objects – are the results of other examination required – do the input samples/objects/files need to be prepared or formatted in a specific way – the full extent of this will need to be discussed.",
-            "$ref": "https://e-rihs.io/schema/document.schema.json"
+            "type": "string",
+            "format": "textarea",
+            "description": "Description of any limitations in the access provision by the service.."
         },
         "team_members": {
             "title": "Team",
@@ -421,33 +423,73 @@
         },
         "dmp": {
             "title": "Service Data Management Plan",
-            "description": "Link to an open description of the data management procedures followed with the defined service, including licence issues, preferred data repositories, publication embargoes, common file formats, software and systems used, etc.",
-            "$ref": "https://e-rihs.io/schema/document.schema.json"
+            "description": "An open description of the data management procedures followed with the defined service, including licence issues, preferred data repositories, publication embargoes, common file formats, software and systems used, etc.",
+            "anyOf": [
+                {
+                    "title": "Reference to external documents",
+                    "type": "object",
+                    "properties": {
+                        "citation": {
+                            "title": "Citation",
+                            "description": "The formatted details for the given reference.",
+                            "type": "string"
+                        },
+                        "url": {
+                            "title": "URL",
+                            "description": "URL",
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                },
+                {
+                    "title": "Textual description",
+                    "type": "string",
+                    "format": "textarea"
+                }
+            ]
         },
         "dmp_variation": {
             "title": "Variation from E-RIHS DMP",
-            "description": "Link to an open description of any required data management differences that may be required for the service, in relation to national, funding or institutional limitations; some differences could be easily manageable but other might require updates to the E-RIHS DMP.",
-            "$ref": "https://e-rihs.io/schema/document.schema.json"
+            "type": "string",
+            "format": "textarea",
+            "description": "Description of any required data management differences that may be required for the service, in relation to national, funding or institutional limitations; some differences could be easily manageable but other might require updates to the E-RIHS DMP."
         },
         "dataflow_description": {
             "title": "Dataflow description",
-            "description": "A diagram or written description - (a standard diagram format might be easier to compare) More complex services, multiple pieces of equipment or data processing steps, might benefit for a summary description of the key stages, including details of any required background information, direct input from users and any processing steps.",
-            "$ref": "https://e-rihs.io/schema/document.schema.json"
+            "description": "A reference to a diagram or written description of the dataflow. More complex services, multiple pieces of equipment or data processing steps, might benefit for a summary description of the key stages, including details of any required background information, direct input from users and any processing steps.",
+            "type": "object",
+            "properties": {
+                "citation": {
+                    "title": "Citation",
+                    "description": "The formatted details for the given reference.",
+                    "type": "string"
+                },
+                "url": {
+                    "title": "URL",
+                    "description": "URL",
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
         },
         "output_description": {
             "title": "Service Output Description",
             "type": "string",
-            "description": "A link to a formatted extract from the DMP for ease of use: A description of all of the raw and processes outputs created by a given services including details of how they relate to or rely on each other."
+            "format": "textarea",
+            "description": "A description of all of the raw and processes outputs created by a given services including details of how they relate to or rely on each other."
         },
         "input_description": {
             "title": "Service Input Description",
             "type": "string",
-            "description": "A link to a formatted extract from the DMP for ease of use: A description of the required formats or files required for any service which processes existing data."
+            "format": "textarea",
+            "description": "A description of the required formats or files required for any service which processes existing data."
         },
         "further_comments": {
             "title": "Other Comments",
-            "description": "Free text opportunity to advocate for what is novel or special about this particular access",
-            "$ref": "https://e-rihs.io/schema/document.schema.json"
+            "type": "string",
+            "format": "textarea",
+            "description": "Free text opportunity to advocate for what is novel or special about this particular access"
         },
         "keywords": {
             "title": "Service keywords",

@@ -113,7 +113,32 @@
             }
         },
         "method_documentation": {
-            "$ref": "https://e-rihs.io/schema/document.schema.json"
+            "title": "Method Documentation",
+            "description": "The documentation for the method, this can be a reference to an external document or a textual description",
+            "anyOf": [
+                {
+                    "title": "Reference to external documents",
+                    "type": "object",
+                    "properties": {
+                        "citation": {
+                            "title": "Citation",
+                            "description": "The formatted details for the given reference.",
+                            "type": "string"
+                        },
+                        "url": {
+                            "title": "URL",
+                            "description": "URL",
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                },
+                {
+                    "title": "Textual description",
+                    "type": "string",
+                    "format": "textarea"
+                }
+            ]
         },
         "method_parameter": {
             "title": "Core Method Parameters",
