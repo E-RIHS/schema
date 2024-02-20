@@ -1,7 +1,0 @@
-{
-    "cordra_url": "https://data.e-rihs.io",
-    "cordra_user": "admin",
-    "cordra_pass": "REPLACE WITH CORDRA PASSWORD",
-    "github_repo": "e-rihs/schema",
-    "github_branch": "main"
-}
