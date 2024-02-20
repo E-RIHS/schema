@@ -40,14 +40,11 @@ In automations (e.g. systemd service units), it is possible to run the tools wit
 ./venv/bin/python update_schemas.py
 ```
 
-## `update_schemas.py`
+## `validate_schemas.py`
 
-The `update_schemas.py` script:
+The `validate_schemas.py` script:
 
 - retrieves a list of JSON Schemas on Github
 - retrieves the individual JSON Schema
 - validates the schema against the JSON Schema draft (that is embedded in $schema)
 - extracts the object type and version
-- [TODO] creates or updates the schema in Cordra (latest versions only)
-- [TODO] performs version management in Cordra
-

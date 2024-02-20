@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
 This is a python module that provides a simple interface to the Cordra API.
 It contains a single class, Cordra, which provides methods for accessing
@@ -87,3 +89,7 @@ class Cordra:
             print('Error: Unable to create version in Cordra')
             sys.exit(1)
         return response.json()
+
+
+if __name__ == '__main__':
+    print('This is a module, not a script!')

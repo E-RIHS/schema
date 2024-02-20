@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
 This is a python module that provides a simple interface to the GitHub API.
 It contains a single class, GitHub, which provides methods for accessing
@@ -48,3 +50,7 @@ class GitHub:
             print(f'Error: {filename} -> Invalid JSON:!')
             sys.exit(1)
         return response.json()
+    
+
+if __name__ == '__main__':
+    print('This is a module, not a script!')

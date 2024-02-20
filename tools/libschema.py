@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
 This is a python module that provides some tools to work with JSON Schema.
 It provides the following methods:
@@ -57,3 +59,7 @@ def get_version(schema):
         print('Error: {id} -> Unable to retrieve version from schema')
         sys.exit(1)
     return version
+
+
+if __name__ == '__main__':
+    print('This is a module, not a script!')

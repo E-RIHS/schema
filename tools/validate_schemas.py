@@ -1,17 +1,14 @@
+#!/usr/bin/env python3
+
 import os
 import json
 
+import libutils
 import libgithub
 import libschema
-import libcordra
 
-config = {
-    "cordra_url": "https://data.e-rihs.io",
-    "cordra_user": "admin",
-    "cordra_pass": None,
-    "github_repo": "e-rihs/schema",
-    "github_branch": "master"
-}
+
+config = libutils.default_config
 
 
 ''' read and update configuration from config.json'''
@@ -50,12 +47,6 @@ def main():
         print('Draft:', draft)
         print('Valid:', valid)
         print()
-
-        # update the schema in Cordra
-        #cordra = libcordra.Cordra(config['cordra_url'], config['cordra_user'], config['cordra_pass'])
-        #cordra.create_version(schema, schema_content)
-
-
 
 
 if __name__ == '__main__':
