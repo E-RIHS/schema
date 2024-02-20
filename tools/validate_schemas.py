@@ -1,35 +1,21 @@
 #!/usr/bin/env python3
 
-import os
-import json
-
 import libutils
 import libgithub
 import libschema
 
 
-config = libutils.default_config
-
-
-''' read and update configuration from config.json'''
-def get_config():
-    if os.path.isfile('config.json'):
-        with open('config.json', 'r') as f:
-            # update config with the values from config.json
-            config.update(json.load(f))
-    return config
-
-
 ''' main function '''
 def main():
     # Read configuration
-    config = get_config()
+    config = libutils.get_config()
 
     # get the list of schemas from the GitHub repository
     github = libgithub.GitHub(config['github_repo'])
     schemas = github.get_schemas()
 
     # loop over schemas, get the schema from GitHub and update it in Cordra
+    print()
     for schema_url in schemas:
         # get the schema from GitHub
         schema_content = github.get_schema(schema_url)

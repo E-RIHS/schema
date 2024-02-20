@@ -2,4 +2,4 @@ __pycache__
 *.pyc
 *.pyo
 venv
-./tools/config.json
+tools/config.json
