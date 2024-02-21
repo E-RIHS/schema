@@ -21,4 +21,4 @@ This schema is intended to model the metadata and details required to document a
 
 (to do)
 
-*Note: pre-v1.0 drafts can be found [here](https://e-rihs.io/schema/drafts/)*
+*Note: pre-v1.0 drafts can be found [here](https://e-rihs.io/schema/draft/)*
