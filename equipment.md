@@ -8,8 +8,17 @@ This schema is intended to model the metadata and details required to document a
 
 ### Current version: v1.0
 
-Current version: v1.0 [[JSON]](https://e-rihs.io/schema/equipment-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/equipment-v1.0.schema.json)
+* Id: [https://e-rihs.io/schema/equipment-v1.0.schema.json](https://e-rihs.io/schema/equipment-v1.0.schema.json)
+* Handle: hdl:21.11158...
+* Schema in E-RIHS Cordra UI: [](#) 
+* Schema on Github (https://github.com/E-RIHS/schema/blob/main/equipment-v1.0.schema.json)
 
 ### Related model: v1.0
 
+(to do)
+
 ### Version history
+
+(to do)
+
+*Note: pre-v1.0 drafts can be found [here](https://e-rihs.io/schema/drafts/)*
