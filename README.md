@@ -17,16 +17,11 @@ The schema GitHub repository can be access directly [here](https://github.com/E-
 
 ## Schema overview
 
-### `Equipment` metadata schema [link1](https://e-rihs.io/schema/equipment) [link2](https://e-rihs.io/schema/equipment.md)
+### [`Equipment`](https://e-rihs.io/schema/equipment) metadata schema
 
-This schema is intended to model the metadata and details required to document and describe **equipments (tools)** used within an offered service in E-RIHS and IPERION-HS. 
+This schema is intended to model the metadata and details required to document and describe **equipments (tools)** used within an offered service in E-RIHS and IPERION-HS.
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/equipment-v1.0.schema.json](https://e-rihs.io/schema/equipment-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/equipment-v1.0.schema.json)
-* Related model: Tool model (unavailable)
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/equipment-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/equipment-v1.0.schema.json)
 
 ### `KPI` metadata schema
 
