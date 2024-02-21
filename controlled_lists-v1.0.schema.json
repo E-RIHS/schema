@@ -17,9 +17,6 @@
         "offered_to": {
             "$ref": "#/definitions/offered_to"
         },
-        "person_role": {
-            "$ref": "#/definitions/person_role"
-        },
         "research_discipline": {
             "$ref": "#/definitions/research_discipline"
         },
@@ -31,6 +28,21 @@
         },
         "operating_language": {
             "$ref": "#/definitions/operating_language"
+        },
+        "access_unit": {
+            "$ref": "#/definitions/access_unit"
+        },
+        "person_role": {
+            "$ref": "#/definitions/person_role"
+        },
+        "provider_role": {
+            "$ref": "#/definitions/provider_role"
+        },
+        "e-rihs_national_node": {
+            "$ref": "#/definitions/e-rihs_national_node"
+        },
+        "working_distance": {
+            "$ref": "#/definitions/working_distance"
         }
     },
     "definitions": {
@@ -64,13 +76,6 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g8"
             }
         },
-        "person_role": {
-            "title": "Person role",
-            "type": "string",
-            "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g9"
-            }
-        },
         "research_discipline": {
             "title": "Research discipline",
             "type": "string",
@@ -97,6 +102,41 @@
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g13"
+            }
+        },
+        "access_unit": {
+            "title": "Access unit",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g14"
+            }
+        },
+        "person_role": {
+            "title": "Person role",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g9"
+            }
+        },
+        "provider_role": {
+            "title": "Provider role",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g15"
+            }
+        },
+        "e-rihs_national_node": {
+            "title": "National node",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g16"
+            }
+        },
+        "working_distance": {
+            "title": "Working distance",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g17"
             }
         }
     }
