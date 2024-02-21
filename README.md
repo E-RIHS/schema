@@ -136,3 +136,10 @@ Current version:
 ## Tools
 
 The directory ['tools'](https://github.com/E-RIHS/schema/tree/main/tools) contains a set of useful scripts manipulate (validation, synchronisation...) the schema.
+
+## Acknowledgement
+This work project was supported by:
+
+### The H2020 [IPERION-HS](https://www.iperionhs.eu/) project
+[<img height="64px" src="https://github.com/jpadfield/simple-modelling/raw/master/docs/graphics/IPERION-HS%20Logo.png" alt="IPERION-HS">](https://www.iperionhs.eu/)<br/>
+[<img height="32px" src="https://github.com/jpadfield/simple-modelling/raw/master/docs/graphics/iperionhs-eu-tag2.png" alt="IPERION-HS">](https://www.iperionhs.eu/)

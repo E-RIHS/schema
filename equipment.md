@@ -10,7 +10,7 @@ This schema is intended to model the metadata and details required to document a
 
 * Id: [https://e-rihs.io/schema/equipment-v1.0.schema.json](https://e-rihs.io/schema/equipment-v1.0.schema.json)
 * Handle: hdl:21.11158...
-* Schema in E-RIHS Cordra UI: [](#) 
+* Schema in E-RIHS Cordra UI: [to do](#)
 * Schema on Github (https://github.com/E-RIHS/schema/blob/main/equipment-v1.0.schema.json)
 
 ### Related model: v1.0

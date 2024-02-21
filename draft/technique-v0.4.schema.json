@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://e-rihs.io/schema/technique-v0.4.schema.json",
+    "$id": "https://e-rihs.io/schema/draft/technique-v0.4.schema.json",
     "title": "E-RIHS technique",
     "type": "object",
     "required": [

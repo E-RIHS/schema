@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://e-rihs.io/schema/method-v0.2.schema.json",
+  "$id": "https://e-rihs.io/schema/draft/method-v0.2.schema.json",
   "title": "E-RIHS Standard Method",
   "description": "The schema outlines the required metadata to define a standard method or protocol",
   "type": "object",

@@ -1,14 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://e-rihs.io/schema/person-v0.3.schema.json",
-    "title": "E-RIHS person",
+    "$id": "https://e-rihs.io/schema/draft/organisation-v0.2.schema.json",
+    "title": "E-RIHS organisation",
     "type": "object",
-    "required": [        
+    "required": [
         "actor_type",
-        "first_name",
-        "last_name",
+        "acronym",
+        "name",
         "mbox",
-        "research_discipline"
+        "research_disciplines"
     ],
     "properties": {
         "e-rihs_pid": {
@@ -57,54 +57,35 @@
             "title": "Actor type",
             "description": "Actor type",
             "type": "string",
-            "const": "Person"
+            "const": "Organisation"
         },
-        "title": {
-            "title": "Title",
-            "description": "Title",
-            "type": "string",
-            "examples": [
-                "Mr",
-                "Mrs",
-                "Ms",
-                "Dr",
-                "Prof"
-            ]
-        },
-        "first_name": {
-            "title": "First name",
-            "description": "First name",
+        "acronym": {
+            "title": "Acronym",
+            "description": "Acronym",
             "type": "string"
         },
-        "last_name": {
-            "title": "Last name",
-            "description": "Last name",
+        "name": {
+            "title": "Name",
+            "description": "Name",
             "type": "string"
         },
-        "based_in": {
-            "title": "Country of Operation",
-            "description": "The country in which the person is based for legal and professional reasons, the value will be used in relation to distribution of people and in relation to initial assemesnt of elegability when it is related to location.",
-            "type": "string",
-            "examples": [                
-                "Greece",
-                "France",
-                "Germany",
-                "Italy",
-                "Belgium",
-                "United Kingdom"
-            ]
-        },
-        "research_profile": {
-            "title": "Short Biography",
-            "description": "A short bio or profile describing the defined person",
-            "type": "string",
-            "minLength": 100,
-            "maxLength": 1000,
-            "x-display": "markdown"
+        "organisation_type": {
+            "title": "Organisation type",
+            "description": "Legal status",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": [
+                    "Research organisation",
+                    "University",
+                    "Public body",
+                    "Private body"
+                ]
+            }
         },
         "part_of_organisation": {
-            "title": "Affiliations",
-            "description": "Affiliations",
+            "title": "Parent organisations",
+            "description": "Parent organisations",
             "type": "array",
             "items": {
                 "type": "object",
@@ -158,7 +139,7 @@
         },
         "research_disciplines": {
             "title": "Research Disciplines",
-            "description": "Which domains or disciplines have you worked within, have experience within.",
+            "description": "Which domains or disciplines has a given service worked within, has experience within.",
             "type": "array",
             "items": {
                 "type": "string",
@@ -176,9 +157,9 @@
                 ]
             }
         },
-        "research_reference": {
-            "title": "Research Reference",
-            "description": "Research Reference",
+        "research_bibliography": {
+            "title": "Research Bibliography",
+            "description": "Research Bibliography",
             "type": "array",
             "items": {
                 "type": "object",
@@ -187,8 +168,8 @@
                 ],
                 "properties": {
                     "reference": {
-                        "title": "Citation",
-                        "description": "Preferred Citation text",
+                        "title": "Reference",
+                        "description": "Reference",
                         "type": "string"
                     },
                     "url": {
@@ -196,35 +177,30 @@
                         "description": "URL",
                         "type": "string",
                         "format": "uri"
-                    },
-                    "reference_role": {
-                      "title": "Reference Role",
-                      "description": "What is the prupose of the reference what does it relate to pr provide more information for.",
-                      "type": "string",
-                      "examples": [
-                        "Example research",
-                        "Collaboration",
-                        "E-RIHS Report"
-                      ]
                     }
                 }
             }
         },
+        "cited_as": {
+            "title": "Cited as",
+            "description": "Cited as, funding name, etc.",
+            "type": "string"
+        },
         "joined_the_field_date": {
             "title": "Date of joining this research field",
-            "description": "When did you start working in this field?",
+            "description": "When did this organisation start working in this field?",
             "type": "string",
             "format": "date"
         },
         "first_active_date": {
             "title": "First active date",
-            "description": "First date this person was active in E-RIHS (administrative field which will be automatically filled in)",
+            "description": "First date this organisation was active in E-RIHS (administrative field which will be automatically filled in)",
             "type": "string",
             "format": "date"
         },
         "last_active_date": {
             "title": "Last active date",
-            "description": "Last date this person was active in E-RIHS (administrative field which will be automatically filled in)",
+            "description": "Last date this organisation was active in E-RIHS (administrative field which will be automatically filled in)",
             "type": "string",
             "format": "date"
         }

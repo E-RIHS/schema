@@ -1,6 +1,6 @@
 {
 "$schema": "http://json-schema.org/draft-07/schema#",
-"$id": "https://e-rihs.io/schema/service-v0.6.schema.json",
+"$id": "https://e-rihs.io/schema/draft/service-v0.6.schema.json",
 "title": "E-RIHS access service",
 "type": "object",
 "required": [

@@ -1,25 +1,16 @@
 # Heritage Science Schema Repository
 
-This repository has been created to host completed heritage science metadata gathering json schema. Work and discussion relating to the development of these schema is being carried out within: [https://github.com/E-RIHS/hs-interoperability](https://github.com/E-RIHS/hs-interoperability)
+[(Back to main page)](https://e-rihs.io/schema)
 
-For each type of schema, such as **Project**, create a section in this README file, as shown for **Project** to provide direct links to the current and developmental versions of each scheme along with a table of recent updates and changes. 
+## Archive of early drafts of the schema
 
-Schema documents should be named using lowercase letters, according to the following naming structure: **name-v0.0.schema.json**. Changes to the first version number are reserverd for major changes that might include breaking changes, the second version number should be used for more minor changes including. Versions below 1.0 should be used for the intial development of each schema and therefore all versions changes, below 1.0, can include breaking changes even though the first part of the version number stays at 0.
+This page describes early drafts (with version numbers below v1.0) of the E-RIHS Heritage Science schemas. **These files are for reference only, and should not be used in production environments**.
 
-GitHub pages have been set up based on the root directory of this repository, this provides a much cleaner URL, but there can be a temporary lag between when new files are added and when the links will work. However, once the files have been added in there is no additional delay. 
-* [https://e-rihs.io/schema/project-v0.3.schema.json](https://e-rihs.io/schema/project-v0.3.schema.json)
-
-Issues and ideas related to the schema published here can be added directly into the [Issues System](https://github.com/E-RIHS/schema/issues).
-
-The schema GitHub repository can be access directly [here](https://github.com/E-RIHS/schema/). Additional modeling work and discussions relating to interoprability can be found [here](https://github.com/E-RIHS/hs-interoperability/).
+These early versions predate the choice for Cordra as the [central metadata store](https://data.e-rihs.io) for E-RIHS and are not available within this system. Because of this, these schema have been moved to the ['drafts'](https://github.com/E-RIHS/schema/drafts) subfolder in GitHub.
 
 ## Service metadata schema
 
 This schema is intended to model the metadata and details required to document and describe **service** or **access** providers within E-RIHS and IPERION-HS. These services will be offered by one or more **funding programmes** and exploited in one or more research **projects**. It is anticipated that services will be defined as part of the registoring a service in the categlogue of service.
-
-* Current Version: [https://e-rihs.io/schema/service-v0.6.schema.json](https://e-rihs.io/schema/service-v0.6.schema.json)
-* Draft Version: TBC
-* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
@@ -35,10 +26,6 @@ This schema is intended to model the metadata and details required to document a
 ## Project metadata schema
 
 This schema is intended to model the metadata and details required to document and describe smaller scale research activities and **access** events within E-RIHS and IPERION-HS. The identity of larger scale projects and initiatives are currently modelled as **funding programme**. It is anticipated that the process of documenting a **project** could be initiated as part of the application process rather than an additional extra step to be carried out at a latter date.
-
-* Current Version: [https://e-rihs.io/schema/project-v0.5.schema.json](https://e-rihs.io/schema/project-v0.5.schema.json)
-* Draft Version: TBC
-* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
@@ -56,10 +43,6 @@ For practical reasons the Actor model is implemented in two separate schemas: **
 
 This schema is intended to model the metadata and details required to document and describe **persons (actors)** events within E-RIHS and IPERION-HS. 
 
-* Current Version: [https://e-rihs.io/schema/person-v0.2.schema.json](https://e-rihs.io/schema/person-v0.2.schema.json)
-* Draft Version: TBC
-* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
-
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
 | 11-05-2023 | W Fremout | 0.2 | Based on task discussions this is an initial work up of the Actor model (v0.2) into a schema file. For compatibility reasons, we have chosen to make a separate schema for persons. |
@@ -68,10 +51,6 @@ This schema is intended to model the metadata and details required to document a
 ### Organisation metadata schema
 
 This schema is intended to model the metadata and details required to document and describe **organisations (actors)** events within E-RIHS and IPERION-HS. 
-
-* Current Version: [https://e-rihs.io/schema/organisation-v0.2.schema.json](https://e-rihs.io/schema/organisation-v0.2.schema.json)
-* Draft Version: TBC
-* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
@@ -82,10 +61,6 @@ This schema is intended to model the metadata and details required to document a
 ## Technique metadata schema
 
 This schema is intended to model the metadata and details required to document and describe **techniques** that are used within access offerings in E-RIHS and IPERION-HS. 
-
-* Current Version: [https://e-rihs.io/schema/technique-v0.4.schema.json](https://e-rihs.io/schema/technique-v0.4.schema.json)
-* Draft Version: TBC
-* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
@@ -101,10 +76,6 @@ For practical reasons the Tools model is implemented in two separate schemas: **
 
 This schema is intended to model the metadata and details required to document and describe **equipments (tools)** used within an offered service in E-RIHS and IPERION-HS. 
 
-* Current Version: [https://e-rihs.io/schema/equipment-v0.3.schema.json](https://e-rihs.io/schema/equipment-v0.3.schema.json)
-* Draft Version: TBC
-* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
-
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
 | 04-10-2023 | W Fremout | 0.3 | [UPDATED - added callibration date, etc] Based on task discussions this is an initial work up of the Equipment/Tools model (v0.3) into a schema file. For compatibility reasons, we have chosen to make a separate schema for equipment and software. |
@@ -113,10 +84,6 @@ This schema is intended to model the metadata and details required to document a
 ### Software metadata schema
 
 This schema is intended to model the metadata and details required to document and describe **software (tools)** used within an offered service in E-RIHS and IPERION-HS.
-
-* Current Version: [https://e-rihs.io/schema/software-v0.3.schema.json](https://e-rihs.io/schema/software-v0.3.schema.json)
-* Draft Version: TBC
-* Related simple models can be see [here](https://github.com/E-RIHS/hs-interoperability/tree/main/Shared%20Models).
 
 | Date  | Author | Version | Comment |
 | :-----------: | :-----------: | :-----------: | ----------- |
