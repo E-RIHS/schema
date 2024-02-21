@@ -17,13 +17,13 @@ The schema GitHub repository can be access directly [here](https://github.com/E-
 
 ## Schema overview
 
-### `Equipment` metadata schema
+### `Equipment` metadata schema [link1](https://e-rihs.io/schema/equipment) [link2](https://e-rihs.io/schema/equipment.md)
 
 This schema is intended to model the metadata and details required to document and describe **equipments (tools)** used within an offered service in E-RIHS and IPERION-HS. 
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/equipment-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/equipment-v1.0.schema.json](https://e-rihs.io/schema/equipment-v1.0.schema.json)
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/equipment-v1.0.schema.json)
 * Related model: Tool model (unavailable)
@@ -34,7 +34,7 @@ This schema is intended to model the metadata and details required to document p
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/kpi-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/kpi-v1.0.schema.json(https://e-rihs.io/schema/kpi-v1.0.schema.json)]
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/kpi-v1.0.schema.json)
 * Related model: KPI model (unavailable)
@@ -45,12 +45,21 @@ This schema describes KPI definitions, which are used as a basis to calculate in
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/kpi_definition-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/kpi_definition-v1.0.schema.json](https://e-rihs.io/schema/kpi_definition-v1.0.schema.json)
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/kpi_definition-v1.0.schema.json)
 * Related model: KPI model (unavailable)
 
 ### `Method metadata` schema
+
+This new model has been created as a template for a range of **method** or setup descriptions - it allows for methods based on a series of statements and or a selection of the defined method parameters.
+
+Current version:
+
+* Schema: [https://e-rihs.io/schema/method-v1.0.schema.json](https://e-rihs.io/schema/method-v1.0.schema.json)
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/method-v1.0.schema.json)
+* Related model: Method model (unavailable)
 
 ### `Organisation` metadata schema
 
@@ -58,7 +67,7 @@ This schema is intended to model the metadata and details required to document a
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/organisation-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/organisation-v1.0.schema.json](https://e-rihs.io/schema/organisation-v1.0.schema.json)
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/organisation-v1.0.schema.json)
 * Related model: Actor model (unavailable)
@@ -69,7 +78,7 @@ This schema is intended to model the metadata and details required to document a
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/person-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/person-v1.0.schema.json](https://e-rihs.io/schema/person-v1.0.schema.json)
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/person-v1.0.schema.json)
 * Related model: Actor model (unavailable)
@@ -80,7 +89,7 @@ This schema is intended to model the metadata and details required to document a
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/service-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/service-v1.0.schema.json](https://e-rihs.io/schema/service-v1.0.schema.json)
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/service-v1.0.schema.json)
 * Related model: Service model (unavailable)
@@ -92,7 +101,7 @@ This schema is intended to model the metadata and details required to document a
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/software-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/software-v1.0.schema.json](https://e-rihs.io/schema/software-v1.0.schema.json)
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/software-v1.0.schema.json)
 * Related model: Tool model (unavailable)
@@ -104,7 +113,7 @@ This schema is intended to model the metadata and details required to document a
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/technique-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/technique-v1.0.schema.json](https://e-rihs.io/schema/technique-v1.0.schema.json)
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/technique-v1.0.schema.json)
 * Related model: Technique model (unavailable)
@@ -120,7 +129,7 @@ This schema collects all controlled list definitions with the link to the corres
 
 Current version:
 
-* Schema: https://e-rihs.io/schema/controlled_lists-v1.0.schema.json
+* Schema: [https://e-rihs.io/schema/controlled_lists-v1.0.schema.json](https://e-rihs.io/schema/controlled_lists-v1.0.schema.json)
 * Version: v1.0 (currently as a **living draft**)
 * Links: [Cordra](https://data.e-rihs.io/#objects/e-rihs.io/2a7a2b5031320ba6223b), [Github](https://github.com/E-RIHS/schema/blob/main/controlled_lists-v1.0.schema.json)
 * Related model: none
