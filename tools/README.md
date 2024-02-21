@@ -1,8 +1,13 @@
-# Tools for managing E-RIHS schemas
+# Heritage Science Schema Repository
+
+[(Back to main page)](https://e-rihs.io/schema)
+
+
+## Tools for managing E-RIHS schemas
 
 Python tools to facilitate JSON Schema management.
 
-## General advise on Python virtual environments
+### General advise on Python virtual environments
 
 Different Python projects will require different Python packages. When you have multiple projects side-by-side, it could happen that these require different versions of the same packages, which could lead to issues. Therefore, it is good practice to run each project in a different *virtual environment*, each with its own set of dependencies.
 
@@ -40,7 +45,7 @@ In automations (e.g. systemd service units), it is possible to run the tools wit
 ./venv/bin/python update_schemas.py
 ```
 
-## `validate_schemas.py`
+### `validate_schemas.py`
 
 The `validate_schemas.py` script:
 

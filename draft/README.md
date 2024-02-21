@@ -4,9 +4,9 @@
 
 ## Archive of early drafts of the schema
 
-This page describes early drafts (with version numbers below v1.0) of the E-RIHS Heritage Science schemas. **These files are for reference only, and should not be used in production environments**.
+This page describes early drafts (with version numbers below v1.0) of the E-RIHS Heritage Science schemas. These early versions predate the choice for Cordra as the [central metadata store](https://data.e-rihs.io) for E-RIHS and are not available within this system. 
 
-These early versions predate the choice for Cordra as the [central metadata store](https://data.e-rihs.io) for E-RIHS and are not available within this system. Because of this, these schema have been moved to the ['drafts'](https://github.com/E-RIHS/schema/drafts) subfolder in GitHub.
+**These files are for reference only, and should not be used in production environments**.
 
 ## Service metadata schema
 
