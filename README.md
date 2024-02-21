@@ -17,20 +17,118 @@ The schema GitHub repository can be access directly [here](https://github.com/E-
 
 ## Schema overview
 
-<details>
-    <summary>Service schema: 
-        <a href="https://e-rihs.io/schema/service-v1.0.schema.json">1.0 (living draft)</a>
-    </summary>
-    
+### `Equipment` metadata schema
 
-### Service metadata schema
+This schema is intended to model the metadata and details required to document and describe **equipments (tools)** used within an offered service in E-RIHS and IPERION-HS. 
 
-This schema is intended to model the metadata and details required to document and describe **service** or **access** providers within E-RIHS and IPERION-HS. These services will be offered by one or more **funding programmes** and exploited in one or more research **projects**. It is anticipated that services will be defined as part of the registoring a service in the categlogue of service.
+Current version:
 
-* Current Version: v1.0 (currently as a living draft)
-* On data.e-rihs.io: https://data.e-rihs.io/#objects/e-rihs.io/de3ac323369bec6da86a
-* On Github: https://github.com/E-RIHS/schema/blob/main/service-v1.0.schema.json
-* JSON: https://e-rihs.io/schema/service-v1.0.schema.json
-* Related model: (unavailable)
+* Schema: https://e-rihs.io/schema/equipment-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/equipment-v1.0.schema.json)
+* Related model: Tool model (unavailable)
 
-</details>
+### `KPI` metadata schema
+
+This schema is intended to model the metadata and details required to document particular key performance indicators (KPIs) as defined by E-RIHS, capturing actual data.
+
+Current version:
+
+* Schema: https://e-rihs.io/schema/kpi-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/kpi-v1.0.schema.json)
+* Related model: KPI model (unavailable)
+
+### `KPI definition` metadata schema
+
+This schema describes KPI definitions, which are used as a basis to calculate individual KPI scores.
+
+Current version:
+
+* Schema: https://e-rihs.io/schema/kpi_definition-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/kpi_definition-v1.0.schema.json)
+* Related model: KPI model (unavailable)
+
+### `Method metadata` schema
+
+### `Organisation` metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **organisations (actors)** events within E-RIHS and IPERION-HS. 
+
+Current version:
+
+* Schema: https://e-rihs.io/schema/organisation-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/organisation-v1.0.schema.json)
+* Related model: Actor model (unavailable)
+
+### `Person` metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **persons (actors)** events within E-RIHS and IPERION-HS. 
+
+Current version:
+
+* Schema: https://e-rihs.io/schema/person-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/person-v1.0.schema.json)
+* Related model: Actor model (unavailable)
+
+### `Service` metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **service** or **access** providers within E-RIHS and IPERION-HS. These services will be offered by one or more **funding programmes** and exploited > in one or more research **projects**. It is anticipated that services will be defined as part of the registoring a service in the categlogue of service.
+
+Current version:
+
+* Schema: https://e-rihs.io/schema/service-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/service-v1.0.schema.json)
+* Related model: Service model (unavailable)
+
+
+### `Software` metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **software (tools)** used within an offered service in E-RIHS and IPERION-HS.
+
+Current version:
+
+* Schema: https://e-rihs.io/schema/software-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/software-v1.0.schema.json)
+* Related model: Tool model (unavailable)
+
+
+### `Technique` metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **techniques** that are used within access offerings in E-RIHS and IPERION-HS. 
+
+Current version:
+
+* Schema: https://e-rihs.io/schema/technique-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/technique-v1.0.schema.json)
+* Related model: Technique model (unavailable)
+
+
+## Special schemas
+
+### `Controlled lists` helper schema
+
+This schema collects all controlled list definitions with the link to the corresponding endpoint. These definitions are referenced throughout all other schemas as reusable components, and as such, this schema is not meant to be used as a standalone schema to model instances. There is no related model.
+
+*Note: The schema in Github only contains a link to the controlled list endpoint. The version in Cordra is automatically populated with `enum` and `enum_titles` values*
+
+Current version:
+
+* Schema: https://e-rihs.io/schema/controlled_lists-v1.0.schema.json
+* Version: v1.0 (currently as a **living draft**)
+* Links: [Cordra](https://data.e-rihs.io/#objects/e-rihs.io/2a7a2b5031320ba6223b), [Github](https://github.com/E-RIHS/schema/blob/main/controlled_lists-v1.0.schema.json)
+* Related model: none
+
+### `CordraGroup` administrative schema
+
+### `CordraUser` administrative schema
+
+## Tools
+
+The directory ['tools'](https://github.com/E-RIHS/schema/tree/main/tools) contains a set of useful scripts manipulate (validation, synchronisation...) the schema.
