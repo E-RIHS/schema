@@ -483,12 +483,11 @@
         },
         "keywords": {
             "title": "Service keywords",
-            "description": "Additional terms and concepts not covered by the other fields, it would be good to reference these to some form of open vocabulary",
+            "description": "Additional terms and concepts not covered by the other fields",
             "type": "array",
             "items": {
                 "title": "Keyword",
-                "type": "string",
-                "format": "uri"
+                "type": "string"
             }
         },
         "access_unit": {

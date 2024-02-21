@@ -132,6 +132,13 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g16"
             }
         },
+        "object_impact": {
+            "title": "Impact on object or sample",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g18"
+            }
+        },
         "working_distance": {
             "title": "Working distance",
             "type": "string",

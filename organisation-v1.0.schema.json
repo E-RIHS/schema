@@ -220,7 +220,7 @@
                     },
                     "reference_role": {
                         "title": "Reference Role",
-                        "description": "What is the prupose of the reference what does it relate to pr provide more information for.",
+                        "description": "What is the purpose of the reference what does it relate to pr provide more information for.",
                         "type": "string",
                         "examples": [
                             "Example research",

@@ -146,13 +146,20 @@
                 "type": "string"
             }
         },
+        "object_impact": {
+            "title": "Impact on object or sample",
+            "description": "The impact of the equipment on the object being examined",
+            "type": "array",
+            "items": {
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/object_impact"
+            }
+        },
         "working_distances": {
             "title": "Working distances",
             "description": "This will need to be a drop of distance Classes rather than a specific value - actual values with dimensions will need to be stored in method statements",
             "type": "array",
             "items": {
-                "type": "string",
-                "examples": []
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/working_distance"
             }
         },
         "manufacturer": {
