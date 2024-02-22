@@ -27,92 +27,49 @@ Current version: v1.0 [[JSON]](https://e-rihs.io/schema/equipment-v1.0.schema.js
 
 This schema is intended to model the metadata and details required to document particular key performance indicators (KPIs) as defined by E-RIHS, capturing actual data.
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/kpi-v1.0.schema.json(https://e-rihs.io/schema/kpi-v1.0.schema.json)]
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/kpi-v1.0.schema.json)
-* Related model: KPI model (unavailable)
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/kpi-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/kpi-v1.0.schema.json)
 
 ### `KPI definition` metadata schema
 
 This schema describes KPI definitions, which are used as a basis to calculate individual KPI scores.
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/kpi_definition-v1.0.schema.json](https://e-rihs.io/schema/kpi_definition-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/kpi_definition-v1.0.schema.json)
-* Related model: KPI model (unavailable)
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/kpi_definition-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/kpi_definition-v1.0.schema.json)
 
 ### `Method metadata` schema
 
 This new model has been created as a template for a range of **method** or setup descriptions - it allows for methods based on a series of statements and or a selection of the defined method parameters.
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/method-v1.0.schema.json](https://e-rihs.io/schema/method-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/method-v1.0.schema.json)
-* Related model: Method model (unavailable)
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/method-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/method-v1.0.schema.json)
 
 ### `Organisation` metadata schema
 
-This schema is intended to model the metadata and details required to document and describe **organisations (actors)** events within E-RIHS and IPERION-HS. 
+This schema is intended to model the metadata and details required to document and describe **organisations (actors)** events within E-RIHS and IPERION-HS.
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/organisation-v1.0.schema.json](https://e-rihs.io/schema/organisation-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/organisation-v1.0.schema.json)
-* Related model: Actor model (unavailable)
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/organisation-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/organisation-v1.0.schema.json)
 
 ### `Person` metadata schema
 
-This schema is intended to model the metadata and details required to document and describe **persons (actors)** events within E-RIHS and IPERION-HS. 
+This schema is intended to model the metadata and details required to document and describe **persons (actors)** events within E-RIHS and IPERION-HS.
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/person-v1.0.schema.json](https://e-rihs.io/schema/person-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/person-v1.0.schema.json)
-* Related model: Actor model (unavailable)
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/person-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/person-v1.0.schema.json)
 
 ### `Service` metadata schema
 
 This schema is intended to model the metadata and details required to document and describe **service** or **access** providers within E-RIHS and IPERION-HS. These services will be offered by one or more **funding programmes** and exploited > in one or more research **projects**. It is anticipated that services will be defined as part of the registoring a service in the categlogue of service.
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/service-v1.0.schema.json](https://e-rihs.io/schema/service-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/service-v1.0.schema.json)
-* Related model: Service model (unavailable)
-
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/service-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/service-v1.0.schema.json)
 
 ### `Software` metadata schema
 
 This schema is intended to model the metadata and details required to document and describe **software (tools)** used within an offered service in E-RIHS and IPERION-HS.
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/software-v1.0.schema.json](https://e-rihs.io/schema/software-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/software-v1.0.schema.json)
-* Related model: Tool model (unavailable)
-
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/software-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/software-v1.0.schema.json)
 
 ### `Technique` metadata schema
 
 This schema is intended to model the metadata and details required to document and describe **techniques** that are used within access offerings in E-RIHS and IPERION-HS. 
 
-Current version:
-
-* Schema: [https://e-rihs.io/schema/technique-v1.0.schema.json](https://e-rihs.io/schema/technique-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](#), [Github](https://github.com/E-RIHS/schema/blob/main/technique-v1.0.schema.json)
-* Related model: Technique model (unavailable)
-
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/technique-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/technique-v1.0.schema.json)
 
 ## Special schemas
 
@@ -122,16 +79,19 @@ This schema collects all controlled list definitions with the link to the corres
 
 *Note: The schema in Github only contains a link to the controlled list endpoint. The version in Cordra is automatically populated with `enum` and `enum_titles` values*
 
-Current version:
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/controlled_lists-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/controlled_lists-v1.0.schema.json)
 
-* Schema: [https://e-rihs.io/schema/controlled_lists-v1.0.schema.json](https://e-rihs.io/schema/controlled_lists-v1.0.schema.json)
-* Version: v1.0 (currently as a **living draft**)
-* Links: [Cordra](https://data.e-rihs.io/#objects/e-rihs.io/2a7a2b5031320ba6223b), [Github](https://github.com/E-RIHS/schema/blob/main/controlled_lists-v1.0.schema.json)
-* Related model: none
+### `CordraUser` administrative schema
+
+This schema serves administrative purposes within Cordra. It allows to define users in the system, providing authentication and authorization to the system and to types/objects.
+
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/cordrauser-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/cordrauser-v1.0.schema.json)
 
 ### `CordraGroup` administrative schema
 
-### `CordraUser` administrative schema
+This schema serves administrative purposes within Cordra. It allows to define groups of users (and other groups), facilitating authorization on types/objects.
+
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/cordragroup-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/cordragroup-v1.0.schema.json)
 
 ## Tools
 
