@@ -1,0 +1,6 @@
+{
+    "name": "Equipment",
+    "baseUri": "https://e-rihs.io/schema/equipment.schema.json",
+    "schema": {},
+    "javascript": ""
+}

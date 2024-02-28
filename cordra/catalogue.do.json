@@ -1,0 +1,6 @@
+{
+    "name": "Catalogue",
+    "baseUri": "https://e-rihs.io/schema/catalogue.schema.json",
+    "schema": {},
+    "javascript": ""
+}

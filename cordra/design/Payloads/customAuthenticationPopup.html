@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORCID Login</title>
+    <link rel="stylesheet" href="https://127.0.0.1:8443/objects/design?payload=orcid-widget.css">
+</head>
+<body>
+    <p id="orcidAuthSuccess"></p>
+    <br/>
+    <p>You can now <a href="javascript:window.open('','_self').close();">close</a> this window.</p>
+
+    <script>
+        // CONFIGURE OAUTH2 PARAMETERS
+        const ISSUER = "https://orcid.org";
+
+        // get query parameters from url
+        const urlParams = new URLSearchParams(window.location.search);
+        let idToken = urlParams.get('id_token');
+        if (window.location.hash) { // if hash is present, try to find id_token in there as well
+            let hashParams = new URLSearchParams(window.location.hash.substring(1));
+            idToken = hashParams.get('id_token');
+        }
+
+        // evaluate query parameters
+        if (!idToken) {
+            // TODO: error!
+
+        } else if (idToken) {
+            // send token to parent page
+            handleCredentialResponse(idToken)
+        }
+
+        // post credentials to the parent window
+        function handleCredentialResponse(idToken) {
+            // parse idToken
+            let base64Url = idToken.split('.')[1];
+            let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            let jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            let idTokenParsed = JSON.parse(jsonPayload);
+
+            // diplay user info in the page
+            let orcidAuthSuccess = document.getElementById('orcidAuthSuccess');
+            orcidAuthSuccess.innerHTML = "<b>Thanks, '" + idTokenParsed.given_name  + " "  + idTokenParsed.family_name
+                + "'!</b><br><img src=\"https://orcid.org/sites/default/files/images/orcid_24x24.png\"/>"
+                + "<a target=\"_orcidRecord\" href=\"" + ISSUER + "/my-orcid\">" +  ISSUER + "/" + idTokenParsed.sub + "</a></p>";
+
+            // send idToken to the parent window of the iframe (opener)
+            handle = window.opener.parent
+            let message = {
+                type: "customAuthentication",
+                token: idToken
+            };
+            handle.postMessage(message, '*');
+        }
+    </script>
+
+</body>
+</html>

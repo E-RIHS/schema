@@ -1,0 +1,6 @@
+{
+    "name": "Organisation",
+    "baseUri": "https://e-rihs.io/schema/organisation.schema.json",
+    "schema": {},
+    "javascript": ""
+}

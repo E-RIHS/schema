@@ -1,0 +1,6 @@
+{
+    "name": "Person",
+    "baseUri": "https://e-rihs.io/schema/person.schema.json",
+    "schema": {},
+    "javascript": ""
+}

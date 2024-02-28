@@ -1,0 +1,6 @@
+{
+    "name": "KPI definition",
+    "baseUri": "https://e-rihs.io/schema/kpi_definition.schema.json",
+    "schema": {},
+    "javascript": ""
+}

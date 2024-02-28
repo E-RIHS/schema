@@ -1,0 +1,6 @@
+{
+    "name": "KPI",
+    "baseUri": "https://e-rihs.io/schema/kpi.schema.json",
+    "schema": {},
+    "javascript": ""
+}

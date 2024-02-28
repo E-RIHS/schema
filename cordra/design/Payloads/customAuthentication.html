@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORCID Login</title>
+    <link rel="stylesheet" href="/objects/design?payload=orcid-widget.css">
+</head>
+<body>
+    <button id="orcidAuthButton" onclick="openAuthorizationEndpointInPopup()">
+        <img src="https://orcid.org/sites/default/files/images/orcid_24x24.png" />
+        <br />
+        Connect your ORCID iD
+    </button>
+
+    <script>
+        // CONFIGURE OAUTH2 PARAMETERS
+        const OAUTH2_AUTHORIZATION_URL = "https://orcid.org/oauth/authorize";
+        const OAUTH2_CLIENT_ID = "APP-EM6F9ZHFG0CVCENH";
+        const OAUTH2_REDIRECT_URL = "https://data.e-rihs.io/objects/design?payload=customAuthenticationPopup";
+
+        // redirect to authorization endpoint
+        function openAuthorizationEndpointInPopup() {
+            const url = OAUTH2_AUTHORIZATION_URL
+                + "?client_id=" + OAUTH2_CLIENT_ID
+                + "&redirect_uri=" + OAUTH2_REDIRECT_URL
+                + "&response_type=id_token"         // implicit flow
+                + "&scope=openid"
+                + "&nonce=123456";          // todo: generate and verify random nonces
+            let popup = window.open(url, "popup", "popup=1,width=500,height=500");
+        }
+    </script>
+
+</body>
+</html>

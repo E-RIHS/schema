@@ -1,0 +1,7 @@
+{
+    "name": "Controlled lists",
+    "baseUri": "https://e-rihs.io/schema/controlled_lists.schema.json#",
+    "description": "This schema regroups the controlled lists fetched from external sources, such as the vocabulary server. Using lifecycle hooks in the Cordra system, the controlled lists are automatically updated on each update of the schema.This schema is not intended to be used to create digital objects, but contains definitions that can be referenced in other schemas.",
+    "schema": {},
+    "javascript": ""
+}

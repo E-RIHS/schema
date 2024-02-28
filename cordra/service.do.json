@@ -1,0 +1,6 @@
+{
+    "name": "Service",
+    "baseUri": "https://e-rihs.io/schema/service.schema.json",
+    "schema": {},
+    "javascript": ""
+}

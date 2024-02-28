@@ -86,25 +86,15 @@ class Cordra:
             if item['id'] != pid:
                 versions.append(item['id'])
         return versions
-    
-
-    '''
-    get: returns the contents of a specific Cordra object
-    '''
-    def get(self, id):
-        response = requests.get('{}/objects/{}'.format(self.url, id), auth=self.auth)
-        if response.status_code != 200:
-            print('Error: Unable to retrieve object from Cordra')
-            sys.exit(1)
-        return response.json()
 
 
     '''
     create: creates a new Cordra object
     '''
-    def create(self, obj):
-        response = requests.post('{}/objects'.format(self.url), json=obj, auth=self.auth)
-        if response.status_code != 201:
+    def create(self, obj, type, full=False):
+        full = '&full' if full else ''
+        response = requests.post(f'{self.url}/objects/?type={type}{full}', json=obj, headers=self.headers)
+        if response.status_code != 200:
             print('Error: Unable to create object in Cordra')
             sys.exit(1)
         return response.json()
@@ -113,22 +103,11 @@ class Cordra:
     '''
     update: updates an existing Cordra object
     '''
-    def update(self, id, obj):
-        response = requests.put('{}/objects/{}'.format(self.url, id), json=obj, auth=self.auth)
+    def update(self, pid, obj, full=False):
+        full = '?full' if full else ''
+        response = requests.put(f'{self.url}/objects/{pid}{full}', json=obj, headers=self.headers)
         if response.status_code != 200:
             print('Error: Unable to update object in Cordra')
-            sys.exit(1)
-        return response.json()
-
-
-
-    '''
-    create_version: creates a new version of an existing Cordra object
-    '''
-    def create_version(self, id, obj):
-        response = requests.post('{}/objects/{}/versions'.format(self.url, id), json=obj, auth=self.auth)
-        if response.status_code != 201:
-            print('Error: Unable to create version in Cordra')
             sys.exit(1)
         return response.json()
 

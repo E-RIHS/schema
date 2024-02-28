@@ -1,0 +1,6 @@
+{
+    "name": "CordraUser",
+    "baseUri": "https://e-rihs.io/schema/cordrauser.schema.json",
+    "schema": {},
+    "javascript": ""
+}
