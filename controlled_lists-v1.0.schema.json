@@ -41,8 +41,14 @@
         "e-rihs_national_node": {
             "$ref": "#/definitions/e-rihs_national_node"
         },
+        "object_impact": {
+            "$ref": "#/definitions/object_impact"
+        },
         "working_distance": {
             "$ref": "#/definitions/working_distance"
+        },
+        "reference_role": {
+            "$ref": "#/definitions/reference_role"
         }
     },
     "definitions": {
@@ -132,6 +138,13 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g16"
             }
         },
+        "working_distance": {
+            "title": "Working distance",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g17"
+            }
+        },
         "object_impact": {
             "title": "Impact on object or sample",
             "type": "string",
@@ -139,11 +152,11 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g18"
             }
         },
-        "working_distance": {
-            "title": "Working distance",
+        "reference_role": {
+            "title": "Reference role",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g17"
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g19"
             }
         }
     }

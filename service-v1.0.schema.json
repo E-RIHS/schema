@@ -371,14 +371,7 @@
                         "format": "uri"
                     },
                     "type": {
-                        "description": "A simple definition of the type, role or purpose of the reference.",
-                        "type": "string",
-                        "example": [
-                            "Further Detail",
-                            "Example Work",
-                            "Example Data",
-                            "Review"
-                        ]
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/reference_role"
                     }
                 }
             }
