@@ -35,17 +35,19 @@
         },
         "summary": {
             "title": "Catalogue Summary",
-            "description": "A brief description of a specific technical or access service offered, such as the use of X to investigate Y",
+            "description": "A brief description of the catalogue of services",
             "type": "string",
             "format": "textarea",
             "minLength": 3,
-            "maxLength": 512,
             "cordra": {
                 "preview": {
                     "showInPreview": true,
                     "excludeTitle": true
                 }
             }
+        },
+        "offered_to": {
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/offered_to"
         },
         "services": {
             "title": "Services",
@@ -66,6 +68,23 @@
                                 }
                             }
                         }
+                    },
+                    "nominated_by": {
+                        "title": "Nominated by",
+                        "description": "Organisation that nominates the service in this catalogue. If a service is offered on the EU level, the nominating organisation should be a national node.",
+                        "type": "string",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": ["Organisation"]
+                                }
+                            }
+                        }
+                    },
+                    "access_count": {
+                        "title": "Service Annual Access Count",
+                        "description": "For new services this would need to be based on past experience of the provider if applicable, or related to the relevant resources that can be provided. For automated digital tools this count could be based on previous use metrics or estimated in relation to the planned dissemination plan. For running services this count could represent and average of the recorded value for the previous year - a record of the count for each year should be stored.",
+                        "type": "number"
                     },
                     "service_active": {
                         "title": "Active service",

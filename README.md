@@ -17,6 +17,12 @@ The schema GitHub repository can be access directly [here](https://github.com/E-
 
 ## Schema overview
 
+### `Catalogue` metadata schema
+
+This schema is intended to model the metadata and details required to document and describe **catalogue (tools)** used within an offered service in E-RIHS and IPERION-HS.
+
+Current version: v1.0 [[JSON]](https://e-rihs.io/schema/catalogue-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/catalogue-v1.0.schema.json)
+
 ### [`Equipment`](https://e-rihs.io/schema/equipment) metadata schema
 
 This schema is intended to model the metadata and details required to document and describe **equipments (tools)** used within an offered service in E-RIHS and IPERION-HS.
