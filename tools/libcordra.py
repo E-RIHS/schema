@@ -59,7 +59,7 @@ class Cordra:
             pid = item['id']
             type = item['content']['name']
             base_uri = item['content'].get('baseUri')
-            version = libschema.get_version(item['content']['schema'])
+            name, version = libschema.extract_schema_details(item['content']['schema']['$id'])
             id = item['content']['schema'].get('$id')
             summary[type] = {
                 'pid': pid,

@@ -37,6 +37,11 @@ def main(cl_schema, use_github=False):
     # expand the schema with controlled lists
     schema = expand(schema)
 
+    # write the schema to a file
+    fname = 'cl.json'
+    with open(fname, 'w') as file:
+        file.write(json.dumps(schema, indent=4))
+
     # update the schema in Cordra
     response = cordra.update(pid=schema_pid, obj=schema, full=False)
 

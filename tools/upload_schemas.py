@@ -28,36 +28,26 @@ def main(schemas, use_github=False, update=False):
     # loop over schemas
     for schema_string in schemas:
         # extract schema name and optional version
-        schema_name, schema_version = extract_schema_details(schema_string)
+        schema_name, schema_version = libschema.extract_schema_details(schema_string)
         print(f'Processing schema "{schema_name}" (version "{schema_version}")...')
         # compose the full schema digital object
         schema_do = compose_schema_digital_object(schema_name, schema_version, use_github)
         # check if the schema digital object already exists in Cordra
-        if schema_do['name'] in cordra_schemas:
-            print(f'Schema "{schema_name}" already exists in Cordra, skipping')
-            print()
-            continue
-        else:
+        if schema_do['name'] not in cordra_schemas:
             # create the schema digital object in Cordra
             response = cordra.create(obj=schema_do, type='Schema', full=True)
             print(f'Created schema "{response["content"]["name"]}" with handle {response["id"]}')
+        else:
+            # update the schema digital object in Cordra
+            if update:
+                pid = cordra_schemas[schema_do['name']]['pid']
+                response = cordra.update(pid=pid, obj=schema_do, full=True)
+                print(f'Updated schema "{response["content"]["name"]}" with handle {response["id"]}')
+            else:
+                print(f'Schema "{schema_name}" already exists in Cordra, skipping')
+                continue
         # just a newline for better output formatting
         print()
-
-
-''' extract schema name and optional version '''
-def extract_schema_details(schema_string):
-    schema_string = schema_string.lower()   # convert to lower case
-    schema_string = schema_string.strip()   # remove leading and trailing whitespaces
-    # remove extensions ('.schema.json' or '.do.json')
-    schema_string = schema_string.replace('.schema.json', '')
-    schema_string = schema_string.replace('.do.json', '')
-    # split schema string into name and version (on last '-v')
-    if '-v' not in schema_string:
-        return schema_string, None
-    else: 
-        schema_name, schema_version = schema_string.rsplit('-v', 1)
-        return schema_name, schema_version
 
 
 ''' compose the full schema digital object '''
@@ -101,17 +91,13 @@ def compose_schema_digital_object(schema_name, schema_version, use_github=False)
 if __name__ == '__main__':
     # Parse command line arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument('--github', dest='github', action='store_true', help='use remote GitHub repository for schema definitions')
-    parser.add_argument('--update', dest='update', action='store_true', help='update schema definitions in Cordra it they already exist')
+    parser.add_argument('-g', '--github', dest='github', action='store_true', help='use remote GitHub repository for schema definitions')
+    parser.add_argument('-u', '--update', dest='update', action='store_true', help='update schema definitions in Cordra it they already exist')
     parser.add_argument('-s', '--schema', nargs='*', action='store', help='schema(s) to be processed')
     args = parser.parse_args()
 
     if args.github:
         print('Using GitHub repository for schema definitions is not yet implemented')
-        exit(1)
-    
-    if args.update:
-        print('Updating existing schema definitions in Cordra is not yet implemented')
         exit(1)
 
     if len(args.schema) == 0:

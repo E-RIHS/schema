@@ -5,7 +5,7 @@ This is a python module that provides some tools to work with JSON Schema.
 It provides the following methods:
     - validate: validates a JSON object against a JSON Schema
     - get_type: returns the type of a JSON Schema
-    - get_version: returns the version of a JSON Schema
+    - extract_schema_details: extracts and returns schema name and optional version
     - get_draft: returns the draft version of a JSON Schema
 '''
 
@@ -25,7 +25,10 @@ def get_draft(schema):
 '''
 validate: validates a JSON object against a JSON Schema
 '''
-def validate(schema, draft):
+def validate(schema, draft=None):
+    # if draft is not provided, get it from the schema
+    if draft is None:
+        draft = get_draft(schema)
     # download the draft from the web
     draft_content = requests.get(draft)
     if draft_content.status_code != 200:
@@ -49,16 +52,20 @@ def get_type(schema):
 
 
 '''
-get_version: returns the version of a JSON Schema
+extract schema name and optional version
 '''
-def get_version(schema):
-    id = schema.get('$id')
-    try:
-        version = id.split('/')[-1].split('-')[-1].replace('v', '').replace('.schema.json', '')
-    except:
-        print('Error: {id} -> Unable to retrieve version from schema')
-        sys.exit(1)
-    return version
+def extract_schema_details(schema):
+    schema = schema.lower()   # convert to lower case
+    schema = schema.strip()   # remove leading and trailing whitespaces
+    # remove extensions ('.schema.json' or '.do.json')
+    schema = schema.replace('.schema.json', '')
+    schema = schema.replace('.do.json', '')
+    # split schema string into name and version (on last '-v')
+    if '-v' not in schema:
+        return schema, None
+    else: 
+        name, version = schema.rsplit('-v', 1)
+        return name, version
 
 
 if __name__ == '__main__':

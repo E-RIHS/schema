@@ -23,7 +23,7 @@ def main():
         # print some debug information
         schema = schema_url.split('/')[-1]
         type = libschema.get_type(schema_content)
-        version = libschema.get_version(schema_content)
+        name, version = libschema.extract_schema_details(schema_content)
         draft = libschema.get_draft(schema_content)
         valid = libschema.validate(schema_content, draft)
 
