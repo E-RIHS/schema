@@ -7,7 +7,7 @@
     "required": [
         "title",
         "summary",
-        " description",
+        "description",
         "readiness_level",
         "methods",
         "application_required",
@@ -179,10 +179,7 @@
                         }
                     },
                     "provider_role": {
-                        "title": "Provider Role",
-                        "description": "This value should be replaced with a controlled list",
-                        "type": "string",
-                        "format": "url"
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/provider_role"
                     }
                 }
             }
