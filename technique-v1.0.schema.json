@@ -143,16 +143,10 @@
                         "format": "uri"
                     },
                     "reference role": {
-                        "title": "Reference Role",
+                        "title": "Reference Roles",
                         "type": "array",
                         "items": {
-                            "title": "Role Type",
-                            "type": "string",
-                            "examples": [
-                                "published examples",
-                                "example report",
-                                "further description"
-                            ]
+                            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/reference_role"
                         }
                     }
                 }
