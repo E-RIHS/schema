@@ -49,6 +49,15 @@
         },
         "reference_role": {
             "$ref": "#/definitions/reference_role"
+        },
+        "personal_title": {
+            "$ref": "#/definitions/personal_title"
+        },
+        "persistent_identifier": {
+            "$ref": "#/definitions/persistent_identifier"
+        },
+        "technique": {
+            "$ref": "#/definitions/technique"
         }
     },
     "definitions": {

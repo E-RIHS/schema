@@ -5,8 +5,7 @@
     "title": "Technique",
     "type": "object",
     "required": [
-        "preferred_label",
-        "e-rihs_vocab_url",
+        "e-rihs_vocab_id",
         "short_description",
         "measurable_properties"
     ],
@@ -29,8 +28,9 @@
             "title": "Preferred label",
             "description": "Preferred label",
             "type": "string",
-            "minLength": 3,
-            "maxLength": 100,
+            "options": {
+                "hidden": true
+            },
             "cordra": {
                 "preview": {
                     "showInPreview": true,
@@ -38,13 +38,12 @@
                 }
             }
         },
-        "e-rihs_vocab_url": {
-            "title": "E-RIHS Vocabulary URL",
+        "e-rihs_vocab_id": {
+            "title": "Technique name (E-RIHS vocabulary id)",
             "description": "E-RIHS Vocabulary will provide the core SKOS metadata for the given technique, specifically labels, scope notes and relationships to other techniques.",
             "type": "array",
             "items": {
-                "type": "string",
-                "format": "uri"
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/technique"
             }
         },
         "short_description": {
