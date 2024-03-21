@@ -158,6 +158,27 @@
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g19"
             }
+        },
+        "personal_title": {
+            "title": "Personal title",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g20"
+            }
+        },
+        "persistent_identifier": {
+            "title": "Persistent identifier",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g21"
+            }
+        },
+        "technique":{
+            "title": "Technique",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g22"
+            }
         }
     }
 }
