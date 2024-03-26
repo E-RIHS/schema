@@ -251,14 +251,39 @@
                 }
             }
         },
+        "material_category": {
+            "title": "Materials studied",
+            "type": "array",
+            "items": {
+                "title": "Material category",
+                "type": "string",
+                "examples": [
+                    "wood",
+                    "stone",
+                    "glass",
+                    "ceramics",
+                    "canvas",
+                    "paint"
+                ]
+            }
+        },
         "resources": {
             "title": "Collections, Objects, Samples and Archives",
             "description": "Research resources made accessible by the service should be defined in the system and represent the heritage collections, objects, samples, archives, other research resources directly provided by the service.",
             "type": "array",
             "items": {
-                "title": "Resource",
-                "type": "string",
-                "format": "uri"
+                "anyOf": [
+                    {
+                        "title": "Resource (description)",
+                        "type": "string",
+                        "format": "textarea"
+                    },
+                    {
+                        "title": "Resource (link, PID)",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                ]
             }
         },
         "limitations": {
