@@ -89,15 +89,22 @@
         },
         "related_tools": {
             "title": "Related Tools",
-            "description": "The key related tools (Equipment or Software) described associated with this method",
+            "description": "The key related tools (equipment or software) described associated with this method. FIXLAB, MOLAB and DIGILAB methods should define at least one tool; for ARCHLAB methods this is optional.",
             "type": "array",
             "items": {
                 "title": "Tool",
                 "type": "object",
                 "properties": {
                     "tool_pid": {
-                        "title": "Tool PID",
-                        "type": "string"
+                        "title": "Tool",
+                        "type": "string",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": ["Equipment", "Software"]
+                                }
+                            }
+                        }
                     },
                     "tool_role": {
                         "title": "Tool Role",
