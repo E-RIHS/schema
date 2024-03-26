@@ -13,7 +13,6 @@
         "application_required",
         "team_members",
         "access_unit",
-        "hours_per_unit",
         "service_active",
         "research_disciplines",
         "categories",
@@ -503,19 +502,16 @@
         "access_unit": {
             "title": "Service Access Period Unit",
             "description": "For previously defined services this has commonly been defined in days or occasionally hours - but with the development of digital services additional smaller time units might be needed.",
-            "type": "array",
-            "items": {
-                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/period_unit"
-            }
-        },
-        "access_unit_cost": {
-            "title": "Service Access Unit Cost",
-            "description": "Service offered under E-RIHS can include a unit cost in Euros. This cost is expected to represent a proportion of the actual cost of providing a given Service ranging from zero to the full actual cost of providing the service. Access service costs will be based on potentially discounted actual costs and may not include any for-porfit contributions",
-            "type": "number"
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/period_unit"
         },
         "hours_per_unit": {
             "title": "Service Access Hours per Unit",
-            "description": "Accesses Units are describe as time periods, but depending on the nature of a service this might relate to a range of different periods of activity time. For example a day could relate to a working day or a calendar day, a digital service could relate to run time or processing time. So this value is used to relate actual activity time to the recorded access unit..",
+            "description": "Access units are described as time periods, but depending on the nature of a service this might relate to a range of different periods of activity time. For example a day could relate to a working day or a calendar day, a digital service could relate to run time or processing time. So this value is used to relate actual activity time to the recorded access unit. This value is only required in case of ambiguous access unit types.",
+            "type": "number"
+        },
+        "access_unit_cost": {
+            "title": "Service Access Unit Cost",
+            "description": "Service offered under E-RIHS can include a unit cost in Euro. This cost is expected to represent a proportion of the actual cost of providing a given Service ranging from zero to the full actual cost of providing the service. Access service costs will be based on potentially discounted actual costs and may not include any for-porfit contributions",
             "type": "number"
         },
         "service_active": {
