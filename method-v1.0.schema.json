@@ -41,8 +41,8 @@
             }
         },
         "alternative_labels": {
-            "title": "Alternative Labels or Names",
-            "description": "Any alternative names or labels for the method, this could be an acronym or a full text name if an acronym is used as the ",
+            "title": "Alternative codes, labels or names",
+            "description": "Any alternative codes, labels or names for the method (not forthe technique or tools!). This could be an acronym or a full text name if an acronym is used as the preferred label. This is useful for search and discovery purposes.",
             "type": "array",
             "items": {
                 "type": "string"
