@@ -216,36 +216,22 @@
         },
         "categories": {
             "title": "Service Categories",
-            "description": "An externally defined service top level categories defining what types of work the included techniques are used to carry out - selected from a publicly defined controlled list.",
+            "description": "Short and descriptive categories of service provision, e.g. 'Identification of Inorganic Pigments', 'Analysis of Archaeological Pottery', 'Classification of Ancient Organic Material', 'Online Preventive Conservation Tool' or 'Collection Management Tool'. At the moment, these are free text but will likely be replaced with a controlled list",
             "type": "array",
             "minItems": 1,
             "items": {
                 "title": "Category",
-                "type": "string",
-                "examples": [
-                    "Identification of Inorganic Pigments",
-                    "Analysis of Archaeological Pottery",
-                    "Classification of Ancient Organic Material",
-                    "Hyper-spectral imaging of Wall paintings",
-                    "Online Preventive Conservation Tool",
-                    "Collection Management Tool"
-                ]
+                "type": "string"
             }
         },
         "functions": {
             "title": "Service Functions",
-            "description": "An externally defined service practical level activity, what has a service been used for, what is it intended for.",
+            "description": "Short and descriptive service practical level activities, what has a service been used for, what is it intended for. E.g. 'Materials Analysis', 'Dye Analysis', 'De-convolution XRF Spectra', 'Calculating Light Exposure Allowance'. At the moment, these are free text but will likely be replaced with a controlled list.",
             "type": "array",
             "minItems": 1,
             "items": {
                 "title": "Function",
-                "type": "string",
-                "examples": [
-                    "Materials Analysis",
-                    "Dye Analysis",
-                    "De-convolution XRF Spectra",
-                    "Calculating Light Exposure Allowance"
-                ]
+                "type": "string"
             }
         },
         "methods": {
