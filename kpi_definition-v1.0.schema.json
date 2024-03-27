@@ -114,20 +114,11 @@
             "type": "string",
             "description": "The level of access on which the KPI score or value is relevant - Global, EU - E-RIHS, National - French, National - Greek, Institutional - National Gallery, Personal etc."
         },
-        "time_period": {
+        "period_class": {
             "title": "Time period or event",
             "type": "string",
             "description": "The time period or the event the KPI is relevant to.",
-            "enum": [
-                "Project",
-                "Access",
-                "Examination",
-                "Year",
-                "Month",
-                "Week",
-                "Day",
-                "Hour"
-            ]
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/period_class"
         },
         "function": {
             "title": "Function",

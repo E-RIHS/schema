@@ -50,13 +50,8 @@
         },
         "method_type": {
             "title": "Method Type",
-            "description": "The type of method this represents",
-            "type": "string",
-            "examples": [
-                "Analysis Method",
-                "Technical Examination",
-                "Research Approach"
-            ]
+            "description": "The type of method this represents. Examples are 'Analysis Method', 'Research support'... This is a free text field but will be converted into a controlled vocabulary field.",
+            "type": "string"
         },
         "technique": {
             "title": "Relevant Technique",

@@ -62,7 +62,7 @@
         },
         "measurable_properties": {
             "title": "Measurable properties",
-            "description": "Measurable properties",
+            "description": "Measurable properties of the technique",
             "type": "array",
             "minItems": 1,
             "uniqueItems": true,
@@ -71,8 +71,8 @@
                 "type": "object",
                 "required": ["property"],
                 "properties": {
-                    "property": {
-                        "title": "Property",
+                    "class": {
+                        "title": "Class",
                         "type": "string",
                         "examples": [
                             "composition",

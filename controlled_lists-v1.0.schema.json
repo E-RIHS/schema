@@ -29,8 +29,8 @@
         "operating_language": {
             "$ref": "#/definitions/operating_language"
         },
-        "access_unit": {
-            "$ref": "#/definitions/access_unit"
+        "period_class": {
+            "$ref": "#/definitions/period_class"
         },
         "person_role": {
             "$ref": "#/definitions/person_role"
@@ -119,8 +119,8 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g13"
             }
         },
-        "access_unit": {
-            "title": "Access unit",
+        "period_class": {
+            "title": "Period class",
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g14"
@@ -189,5 +189,6 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g22"
             }
         }
+
     }
 }
