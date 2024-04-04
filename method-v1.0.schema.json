@@ -104,12 +104,16 @@
                     "tool_role": {
                         "title": "Tool Role",
                         "type": "string",
-                        "examples": [
-                            "Main Equipment",
-                            "Detector",
-                            "Data Processor",
-                            "Peak Detector"
-                        ]
+                        "cordra": {
+                            "type": {
+                                "controlledVocabulary": "tool_role"
+                            }
+                        }
+                    },
+                    "tool_role_other": {
+                        "title": "Other Tool Role",
+                        "description": "If the tool role is not in the controlled vocabulary, please specify it here.",
+                        "type": "string"
                     }
                 }
             }

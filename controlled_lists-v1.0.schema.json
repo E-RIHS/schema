@@ -17,9 +17,6 @@
         "offered_to": {
             "$ref": "#/definitions/offered_to"
         },
-        "research_discipline": {
-            "$ref": "#/definitions/research_discipline"
-        },
         "link_type": {
             "$ref": "#/definitions/link_type"
         },
@@ -55,9 +52,6 @@
         },
         "persistent_identifier": {
             "$ref": "#/definitions/persistent_identifier"
-        },
-        "technique": {
-            "$ref": "#/definitions/technique"
         }
     },
     "definitions": {
@@ -89,13 +83,6 @@
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g8"
-            }
-        },
-        "research_discipline": {
-            "title": "Research discipline",
-            "type": "string",
-            "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g10"
             }
         },
         "link_type": {
@@ -181,14 +168,6 @@
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g21"
             }
-        },
-        "technique":{
-            "title": "Technique",
-            "type": "string",
-            "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g22"
-            }
         }
-
     }
 }

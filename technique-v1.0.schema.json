@@ -5,9 +5,7 @@
     "title": "Technique",
     "type": "object",
     "required": [
-        "e-rihs_vocab_id",
-        "short_description",
-        "measurable_properties"
+        "preferred_label"
     ],
     "properties": {
         "$schema": {
@@ -28,9 +26,7 @@
             "title": "Preferred label",
             "description": "Preferred label",
             "type": "string",
-            "options": {
-                "hidden": true
-            },
+            "minLength": 1,
             "cordra": {
                 "preview": {
                     "showInPreview": true,
@@ -38,27 +34,91 @@
                 }
             }
         },
-        "e-rihs_vocab_id": {
-            "title": "Technique name (E-RIHS vocabulary id)",
-            "description": "E-RIHS Vocabulary will provide the core SKOS metadata for the given technique, specifically labels, scope notes and relationships to other techniques.",
-            "type": "array",
-            "items": {
-                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/technique"
-            }
-        },
-        "short_description": {
-            "title": "Short Description",
-            "description": "Short Description of how this technique is specifically relevant or used within Heritage Science, this can just be a summary of the full more generic scope note if appropriate.",
+        "definition": {
+            "title": "Definition",
+            "description": "Definition",
             "type": "string",
             "format": "textarea",
-            "minLength": 3,
-            "maxLength": 512,
             "cordra": {
                 "preview": {
-                    "showInPreview": true,
-                    "excludeTitle": true
+                    "showInPreview": true
                 }
             }
+        },
+        "alternative_labels": {
+            "title": "Alternative labels",
+            "description": "Alternative labels",
+            "type": "array",
+            "items": {
+                "title": "Alternative label",
+                "type": "string",
+                "minLength": 1
+            }
+        },
+        "narrower": {
+            "title": "Narrower terms",
+            "description": "Narrower",
+            "type": "array",
+            "items": {
+                "title": "Narrower term",
+                "type": "object",
+                "required": [
+                    "preferred_label"
+                ],
+                "properties": {
+                    "e-rihs_vocab_id": {
+                        "title": "e-rihs vocab id",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "preferred_label": {
+                        "title": "Preferred label",
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            }
+        },
+        "broader": {
+            "title": "Broader terms",
+            "description": "Broader",
+            "type": "array",
+            "items": {
+                "title": "Broader term",
+                "type": "object",
+                "required": [
+                    "preferred_label"
+                ],
+                "properties": {
+                    "e-rihs_vocab_id": {
+                        "title": "e-rihs vocab id",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "preferred_label": {
+                        "title": "Preferred label",
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            }
+        },
+        "e-rihs_vocab_id": {
+            "title": "e-rihs vocab id",
+            "description": "e-rihs vocab id",
+            "type": "string",
+            "format": "uri",
+            "cordra": {
+                "preview": {
+                    "showInPreview": true
+                }
+            }
+        },
+        "e-rihs_vocab_json_url": {
+            "title": "JSON URL",
+            "description": "JSON URL",
+            "type": "string",
+            "format": "uri"
         },
         "measurable_properties": {
             "title": "Measurable properties",
@@ -83,20 +143,20 @@
                             "lifespan"
                         ]
                     },
-                    "material_category": {
-                        "title": "Material categories",
+                    "materials": {
+                        "title": "Materials studied by the service",
+                        "description": "Materials studied by the service. This field is connected to an extensive controlled list; type a word to see possible values. You can use wildcards, e.g. 'pig*' will return 'pigments', 'pigskin', etc",
                         "type": "array",
                         "items": {
-                            "title": "Material category",
+                            "title": "Material",
                             "type": "string",
-                            "examples": [
-                                "wood",
-                                "stone",
-                                "glass",
-                                "ceramics",
-                                "canvas",
-                                "paint"
-                            ]
+                            "cordra": {
+                                "type": {
+                                    "handleReference": {
+                                        "types": ["Material"]
+                                    }
+                                }
+                            }
                         }
                     }
                 }
