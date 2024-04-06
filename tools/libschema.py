@@ -55,8 +55,9 @@ def get_type(schema):
 extract schema name and optional version
 '''
 def extract_schema_details(schema):
-    schema = schema.lower()   # convert to lower case
-    schema = schema.strip()   # remove leading and trailing whitespaces
+    # clean up the schema name
+    schema = schema.lower()
+    schema = schema.strip()
     # remove extensions ('.schema.json' or '.do.json')
     schema = schema.replace('.schema.json', '')
     schema = schema.replace('.do.json', '')
