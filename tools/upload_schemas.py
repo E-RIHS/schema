@@ -6,8 +6,12 @@ import json
 
 import libutils
 import libcordra
-import libgithub
+#import libgithub
 import libschema
+
+
+# schemas to skip from uploading
+skip_schemas = ['controlled_lists']
 
 
 ''' main function '''
@@ -30,6 +34,10 @@ def main(schemas, use_github=False, update=False):
         # extract schema name and optional version
         schema_name, schema_version = libschema.extract_schema_details(schema_string)
         print(f'Processing schema "{schema_name}" (version "{schema_version}")...')
+        # skip the schema if it is in the skip list
+        if schema_name in skip_schemas:
+            print(f'!! "{schema_name}" is in the skip list, skipping !!')
+            continue
         # compose the full schema digital object
         schema_do = compose_schema_digital_object(schema_name, schema_version, use_github)
         # check if the schema digital object already exists in Cordra
@@ -93,15 +101,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-g', '--github', dest='github', action='store_true', help='use remote GitHub repository for schema definitions')
     parser.add_argument('-u', '--update', dest='update', action='store_true', help='update schema definitions in Cordra it they already exist')
-    parser.add_argument('-s', '--schema', nargs='*', action='store', help='schema(s) to be processed')
+    parser.add_argument('-s', '--schema', nargs='*', action='store', help='schema(s) to be processed (space separated)')
     args = parser.parse_args()
 
     if args.github:
         print('Using GitHub repository for schema definitions is not yet implemented')
         exit(1)
 
-    if len(args.schema) == 0:
-        print('No schema(s) specified')
+    if args.schema is None or len(args.schema) == 0:
+        print('No schema(s) specified; use the --help option for usage information')
         exit(1)
 
     main(schemas=args.schema, use_github=args.github, update=args.update)
