@@ -1,5 +1,5 @@
 const cordra = require('cordra');
-const schema = require('/cordra/schemas/Technique.schema.json');
+const schema = require('/cordra/schemas/Research discipline.schema.json');
 
 exports.beforeSchemaValidation = beforeSchemaValidation;
 
