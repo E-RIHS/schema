@@ -40,7 +40,9 @@ class Cordra:
     def get_token(self):
         response = requests.post('{}/auth/token'.format(self.url), json={'username': self.username, 'password': self.password})
         if response.status_code != 200:
-            print('Error: Unable to get token from Cordra')
+            print(response.text)
+            print('!! Error: Unable to get token from Cordra !!')
+            print(f' - response from Cordra: {response.text}')
             sys.exit(1)
         return response.json()['access_token']
 
@@ -51,7 +53,9 @@ class Cordra:
     def get_schemas(self):
         response = requests.get(f'{self.url}/objects/?query=type:"Schema"', headers=self.headers)
         if response.status_code != 200:
-            print('Error: Unable to retrieve objects from Cordra')
+            print(response.text)
+            print('!! Error: Unable to retrieve objects from Cordra !!')
+            print(f' - response from Cordra: {response.text}')
             sys.exit(1)
         schema_list = response.json()['results']
         summary = {}
@@ -77,7 +81,8 @@ class Cordra:
         # get the versions of the object
         response = requests.get(f'{self.url}/versions/?objectId={pid}', headers=self.headers)
         if response.status_code != 200:
-            print('Error: Unable to retrieve versions from Cordra')
+            print('!! Error: Unable to retrieve versions from Cordra !!')
+            print(f' - response from Cordra: {response.text}')
             sys.exit(1)
         version_list = response.json()
         # create simple list of versions, excluding the current version
@@ -95,7 +100,8 @@ class Cordra:
         full = '&full' if full else ''
         response = requests.post(f'{self.url}/objects/?type={type}{full}', json=obj, headers=self.headers)
         if response.status_code != 200:
-            print('Error: Unable to create object in Cordra')
+            print('!! Error: Unable to create object in Cordra !!')
+            print(f' - response from Cordra: {response.text}')
             sys.exit(1)
         return response.json()
 
@@ -107,7 +113,8 @@ class Cordra:
         full = '?full' if full else ''
         response = requests.put(f'{self.url}/objects/{pid}{full}', json=obj, headers=self.headers)
         if response.status_code != 200:
-            print('Error: Unable to update object in Cordra')
+            print('!! Error: Unable to update object in Cordra !!')
+            print(f' - response from Cordra: {response.text}')
             sys.exit(1)
         return response.json()
 

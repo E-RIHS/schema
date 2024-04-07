@@ -15,7 +15,7 @@ skip_schemas = ['controlled_lists']
 
 
 ''' main function '''
-def main(schemas, use_github=False, update=False):
+def main(schemas, use_github=False, update=False, force=False):
     # Read configuration
     config = libutils.get_config()
 
@@ -35,7 +35,7 @@ def main(schemas, use_github=False, update=False):
         schema_name, schema_version = libschema.extract_schema_details(schema_string)
         print(f'Processing schema "{schema_name}" (version "{schema_version}")...')
         # skip the schema if it is in the skip list
-        if schema_name in skip_schemas:
+        if schema_name in skip_schemas and not force:
             print(f'!! "{schema_name}" is in the skip list, skipping !!')
             continue
         # compose the full schema digital object
@@ -102,6 +102,7 @@ if __name__ == '__main__':
     parser.add_argument('-g', '--github', dest='github', action='store_true', help='use remote GitHub repository for schema definitions')
     parser.add_argument('-u', '--update', dest='update', action='store_true', help='update schema definitions in Cordra it they already exist')
     parser.add_argument('-s', '--schema', nargs='*', action='store', help='schema(s) to be processed (space separated)')
+    parser.add_argument('-f', '--force', dest='force', action='store_true', help='force update of schema definitions in Cordra (overrule skip list)')
     args = parser.parse_args()
 
     if args.github:
@@ -112,4 +113,4 @@ if __name__ == '__main__':
         print('No schema(s) specified; use the --help option for usage information')
         exit(1)
 
-    main(schemas=args.schema, use_github=args.github, update=args.update)
+    main(schemas=args.schema, use_github=args.github, update=args.update, force=args.force)
