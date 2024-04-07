@@ -8,7 +8,7 @@ import requests
 
 import libutils
 import libcordra
-import libgithub
+#import libgithub
 import libschema
 
 
