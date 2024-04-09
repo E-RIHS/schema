@@ -45,7 +45,7 @@ def main(schema_name, use_github=False, use_cached=False):
     do = build_digital_object(schema_name, schema)
 
     # update the schema in Cordra
-    print(f'Updating schema "{schema["name"]}" in Cordra')
+    print(f'Updating schema "{schema_pid}" in Cordra')
     response = cordra.update(pid=schema_pid, obj=do, full=False)
     print(' - Schema updated successfully')
 
