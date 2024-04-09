@@ -173,17 +173,10 @@
         },
         "research_disciplines": {
             "title": "Research Disciplines",
-            "description": "Which domains or disciplines has this organisation worked within, has experience within. This field is connected to an extensive controlled list; type a word to see possible values. You can use wildcards to search for terms, e.g. 'arch*' will return 'Archaeology', 'Architecture', etc",
+            "description": "Which domains or disciplines has this organisation worked within, has experience within. This field is connected to an extensive controlled list.",
             "type": "array",
             "items": {
-                "type": "string",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": ["Research discipline"]
-                        }
-                    }
-                }
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/research_discipline"
             }
         },
         "research_references": {

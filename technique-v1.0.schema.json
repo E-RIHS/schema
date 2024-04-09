@@ -106,8 +106,7 @@
         "e-rihs_vocab_id": {
             "title": "e-rihs vocab id",
             "description": "e-rihs vocab id",
-            "type": "string",
-            "format": "uri",
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/technique",
             "cordra": {
                 "preview": {
                     "showInPreview": true
@@ -133,30 +132,14 @@
                 "properties": {
                     "class": {
                         "title": "Class",
-                        "type": "string",
-                        "examples": [
-                            "composition",
-                            "width",
-                            "thickness",
-                            "colour",
-                            "roughness",
-                            "lifespan"
-                        ]
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/measurable_property"
                     },
                     "materials": {
                         "title": "Materials studied by the service",
-                        "description": "Materials studied by the service. This field is connected to an extensive controlled list; type a word to see possible values. You can use wildcards, e.g. 'pig*' will return 'pigments', 'pigskin', etc",
+                        "description": "Materials studied by the service. This field is connected to an extensive controlled list.",
                         "type": "array",
                         "items": {
-                            "title": "Material",
-                            "type": "string",
-                            "cordra": {
-                                "type": {
-                                    "handleReference": {
-                                        "types": ["Material"]
-                                    }
-                                }
-                            }
+                            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/material"
                         }
                     }
                 }

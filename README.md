@@ -41,12 +41,6 @@ This schema describes KPI definitions, which are used as a basis to calculate in
 
 Current version: v1.0 [[JSON]](https://e-rihs.io/schema/kpi_definition-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/kpi_definition-v1.0.schema.json)
 
-### `Material metadata` schema
-
-This model has been created to describe a **material**. The primary source to describe materials is in the vocabulary server (and will initially based on the AAT). Since a large number of materials is expected, the usual workflow with controlled lists and dropdowns is practically not usable. Therefore, the materials in the vocabulary server will be synchronised (one-way) with those in Cordra, making it possible to reference to them from within other schemas.
-
-Current version: v1.0 [[JSON]](https://e-rihs.io/schema/material-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/material-v1.0.schema.json)
-
 ### `Method metadata` schema
 
 This new model has been created as a template for a range of **method** or setup descriptions - it allows for methods based on a series of statements and or a selection of the defined method parameters.
@@ -64,12 +58,6 @@ Current version: v1.0 [[JSON]](https://e-rihs.io/schema/organisation-v1.0.schema
 This schema is intended to model the metadata and details required to document and describe **persons (actors)** events within E-RIHS and IPERION-HS.
 
 Current version: v1.0 [[JSON]](https://e-rihs.io/schema/person-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/person-v1.0.schema.json)
-
-### `Research discipline` schema
-
-This model has been created to describe a **research discipline**. The primary source to describe disciplines is in the vocabulary server. Since a large number of disciplines is expected, the usual workflow with controlled lists and dropdowns is practically not usable. Therefore, the research disciplines in the vocabulary server will be synchronised (one-way) with those in Cordra, making it possible to reference to them from within other schemas.
-
-Current version: v1.0 [[JSON]](https://e-rihs.io/schema/research_discipline-v1.0.schema.json) [[Cordra]](#) [[Github]](https://github.com/E-RIHS/schema/blob/main/research_discipline-v1.0.schema.json)
 
 ### `Service` metadata schema
 
