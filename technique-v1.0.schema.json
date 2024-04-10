@@ -121,25 +121,34 @@
         },
         "measurable_properties": {
             "title": "Measurable properties",
-            "description": "Measurable properties of the technique",
+            "description": "Measurable properties and materials that can be studied by this technique",
             "type": "array",
             "minItems": 1,
             "uniqueItems": true,
             "items": {
                 "title": "Measurable property",
                 "type": "object",
-                "required": ["property"],
+                "required": ["class"],
                 "properties": {
                     "class": {
-                        "title": "Class",
+                        "title": "Measurable property class",
                         "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/measurable_property"
                     },
                     "materials": {
-                        "title": "Materials studied by the service",
-                        "description": "Materials studied by the service. This field is connected to an extensive controlled list.",
+                        "title": "Materials",
+                        "description": "Materials of which the selected measurable property can be studied. This field is connected to an extensive controlled list.",
                         "type": "array",
                         "items": {
                             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/material"
+                        }
+                    },
+                    "materials_other": {
+                        "title": "Other materials",
+                        "description": "Other materials of which the selected measurable property can be studied (free text)",
+                        "type": "array",
+                        "items": {
+                            "title": "Material",
+                            "type": "string"
                         }
                     }
                 }

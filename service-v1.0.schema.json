@@ -260,21 +260,39 @@
                 }
             }
         },
-        "materials": {
-            "title": "Materials studied by the service",
-            "description": "Materials studied by the service. This field is connected to an extensive controlled list; type a word to see possible values.",
+        "measurable_properties": {
+            "title": "Measurable properties",
+            "description": "Measurable properties and materials that can be studied by this service",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
-                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/material"
-            }
-        },
-        "materials_other": {
-            "title": "Other materials studied by the service",
-            "description": "Other materials studied by the service (free text)",
-            "type": "array",
-            "items": {
-                "title": "Material",
-                "type": "string"
+                "title": "Measurable property",
+                "type": "object",
+                "required": ["class"],
+                "properties": {
+                    "class": {
+                        "title": "Measurable property class",
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/measurable_property"
+                    },
+                    "materials": {
+                        "title": "Materials",
+                        "description": "Materials of which the selected measurable property can be studied. This field is connected to an extensive controlled list.",
+                        "type": "array",
+                        "items": {
+                            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/material"
+                        }
+                    },
+                    "materials_other": {
+                        "title": "Other materials",
+                        "description": "Other materials of which the selected measurable property can be studied (free text)",
+                        "type": "array",
+                        "items": {
+                            "title": "Material",
+                            "type": "string"
+                        }
+                    }
+                }
             }
         },
         "resources": {
