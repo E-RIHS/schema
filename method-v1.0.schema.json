@@ -95,13 +95,7 @@
                         }
                     },
                     "tool_role": {
-                        "title": "Tool Role",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "controlledVocabulary": "tool_role"
-                            }
-                        }
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/tool_role"
                     },
                     "tool_role_other": {
                         "title": "Other Tool Role",
@@ -149,25 +143,37 @@
                 "properties": {
                     "parameter_value": {
                         "title": "Value",
-                        "type": "string"
+                        "type": "string",
+                        "description": "The value of the core method value."
                     },
                     "parameter_unit": {
                         "title": "Unit",
                         "type": "string",
-                        "examples": ["none", "cm", "nm", "count"]
+                        "description": "The unit it which the value is expressed.  This dropdown list gives a few examples, but if required, you can define your own component type here.",
+                        "cordra": {
+                            "type": {
+                                "suggestedVocabulary": ["none", "cm", "nm", "counts", "Pa", "bar"]
+                            }
+                        }
                     },
                     "parameter_type": {
                         "title": "Parameter Type",
                         "type": "string",
-                        "examples": [
-                            "working distance",
-                            "wavelength",
-                            "signal count"
-                        ]
+                        "cordra": {
+                            "type": {
+                                "suggestedVocabulary": [
+                                    "working distance",
+                                    "wavelength",
+                                    "signal count",
+                                    "pressure",
+                                    "vacuum"
+                                ]
+                            }
+                        }
                     },
                     "parameter_related_tool": {
                         "title": "Parameter Specific Related Tool",
-                        "description": "When multiple Tools are used within a single Method defined parameters can be associated to the relevant tool. This can be left blank for single tool Methods and the assumption will be that the parameters are associated with single tool related to the Method in general.",
+                        "description": "When multiple Tools are used within a single method, defined parameters can be associated to the relevant tool. This can be left blank for single tool Methods and the assumption will be that the parameters are associated with single tool related to the Method in general.",
                         "type": "string"
                     }
                 }
