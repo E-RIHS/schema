@@ -65,6 +65,9 @@
         "technique": {
             "$ref": "#/definitions/technique"
         },
+        "tool_role": {
+            "$ref": "#/definitions/tool_role"
+        },
         "working_distance": {
             "$ref": "#/definitions/working_distance"
         }
@@ -210,6 +213,13 @@
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g22"
+            }
+        },
+        "tool_role": {
+            "title": "Tool role",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=gxxxxxxxxxxxxxxxxxx"
             }
         },
         "working_distance": {
