@@ -24,31 +24,36 @@
         },
         "preferred_label": {
             "title": "Preferred label",
-            "description": "Preferred label",
+            "description": "Preferred label (retrieved from vocab.e-rihs.io)",
             "type": "string",
             "minLength": 1,
             "cordra": {
                 "preview": {
                     "showInPreview": true,
                     "isPrimary": true
-                }
+                },
+                "disableInUi": true
             }
         },
         "definition": {
-            "title": "Definition",
+            "title": "Definition (retrieved from vocab.e-rihs.io)",
             "description": "Definition",
             "type": "string",
             "format": "textarea",
             "cordra": {
                 "preview": {
                     "showInPreview": true
-                }
+                },
+                "disableInUi": true
             }
         },
         "alternative_labels": {
-            "title": "Alternative labels",
+            "title": "Alternative labels (retrieved from vocab.e-rihs.io)",
             "description": "Alternative labels",
             "type": "array",
+            "cordra": {
+                "disableInUi": true
+            },
             "items": {
                 "title": "Alternative label",
                 "type": "string",
@@ -56,9 +61,12 @@
             }
         },
         "narrower": {
-            "title": "Narrower terms",
+            "title": "Narrower terms (retrieved from vocab.e-rihs.io)",
             "description": "Narrower",
             "type": "array",
+            "cordra": {
+                "disableInUi": true
+            },
             "items": {
                 "title": "Narrower term",
                 "type": "object",
@@ -80,9 +88,12 @@
             }
         },
         "broader": {
-            "title": "Broader terms",
+            "title": "Broader terms (retrieved from vocab.e-rihs.io)",
             "description": "Broader",
             "type": "array",
+            "cordra": {
+                "disableInUi": true
+            },
             "items": {
                 "title": "Broader term",
                 "type": "object",
@@ -104,20 +115,24 @@
             }
         },
         "e-rihs_vocab_id": {
-            "title": "e-rihs vocab id",
+            "title": "e-rihs vocab id (retrieved from vocab.e-rihs.io)",
             "description": "e-rihs vocab id",
             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/technique",
             "cordra": {
                 "preview": {
                     "showInPreview": true
-                }
+                },
+                "disableInUi": true
             }
         },
         "e-rihs_vocab_json_url": {
-            "title": "JSON URL",
+            "title": "JSON URL (retrieved from vocab.e-rihs.io)",
             "description": "JSON URL",
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "cordra": {
+                "disableInUi": true
+            }
         },
         "measurable_properties": {
             "title": "Measurable properties",
