@@ -26,6 +26,17 @@
                 "auth": "username"
             }
         },
+        "linked_person": {
+            "type": "string",
+            "title": "Linked person",
+            "cordra": {
+                "type": {
+                    "handleReference": {
+                        "types": ["Person"]
+                    }
+                }
+            }
+        },
         "password": {
             "type": "string",
             "format": "password",
