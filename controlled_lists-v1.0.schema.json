@@ -5,6 +5,9 @@
     "title": "Controlled lists",
     "type": "object",
     "properties": {
+        "country": {
+            "$ref": "#/definitions/country"
+        },
         "e-rihs_national_node": {
             "$ref": "#/definitions/e-rihs_national_node"
         },
@@ -67,6 +70,13 @@
         }
     },
     "definitions": {
+        "country": {
+            "title": "Country",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=gxxxxxxxxxxxxxxxxxxxxxx"
+            }
+        },
         "e-rihs_national_node": {
             "title": "National node",
             "type": "string",
@@ -139,7 +149,7 @@
             }
         },
         "persistent_identifier": {
-            "title": "Persistent identifier",
+            "title": "PID type",
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g21"

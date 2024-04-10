@@ -27,9 +27,8 @@
         },
         "title": {
             "title": "Title",
-            "description": "Title",
-            "type": "string",
-            "enum": ["Mr", "Mrs", "Ms", "Dr", "Prof"]
+            "description": "Personal title",
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/personal_title"
         },
         "first_name": {
             "title": "First name",
@@ -68,20 +67,7 @@
                 "required": ["pid_type", "pid"],
                 "properties": {
                     "pid_type": {
-                        "title": "PID type",
-                        "description": "PID type",
-                        "type": "string",
-                        "enum": [
-                            "ORCID",
-                            "ISNI",
-                            "Wikidata",
-                            "DOI",
-                            "ARK",
-                            "Handle",
-                            "URN",
-                            "PURL",
-                            "URL"
-                        ]
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/persistent_identifier"
                     },
                     "pid": {
                         "title": "PID",
@@ -95,15 +81,7 @@
         "based_in": {
             "title": "Country of Operation",
             "description": "The country in which the person is based for legal and professional reasons, the value will be used in relation to distribution of people and in relation to initial assemesnt of elegability when it is related to location.",
-            "type": "string",
-            "examples": [
-                "Greece",
-                "France",
-                "Germany",
-                "Italy",
-                "Belgium",
-                "United Kingdom"
-            ]
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/country"
         },
         "research_profile": {
             "title": "Short Biography",
@@ -124,7 +102,7 @@
                 "properties": {
                     "organisation_pid": {
                         "title": "Organisation",
-                        "description": "Organisation PID",
+                        "description": "Reference to the Organisation",
                         "type": "string",
                         "cordra": {
                             "type": {
@@ -205,15 +183,19 @@
                         "type": "string",
                         "format": "uri"
                     },
-                    "reference_role": {
-                        "title": "Reference Role",
-                        "description": "What is the prupose of the reference what does it relate to pr provide more information for.",
+                    "reference_type": {
+                        "title": "Reference type",
+                        "description": "The purpose of the reference; what does it relate to or provide more information for.  This dropdown list gives a few examples, but if required, you can enter a different value here.",
                         "type": "string",
-                        "examples": [
-                            "Example research",
-                            "Collaboration",
-                            "E-RIHS Report"
-                        ]
+                        "cordra": {
+                            "type": {
+                                "suggestedVocabulary": [
+                                    "Example research",
+                                    "Collaboration",
+                                    "E-RIHS Report"
+                                ]
+                            }
+                        }
                     }
                 }
             }
