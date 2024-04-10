@@ -105,7 +105,13 @@
             "title": "Material",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g35"
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g35",
+                "enum_prepend": [
+                    {
+                        "label": "(other)",
+                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
+                    }
+                ]
             }
         },
         "measurable_property": {
@@ -219,7 +225,13 @@
             "title": "Tool role",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=gxxxxxxxxxxxxxxxxxx"
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=gxxxxxxxxxxxxxxxxxx",
+                "enum_prepend": [
+                    {
+                        "label": "(other)",
+                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
+                    }
+                ]
             }
         },
         "working_distance": {

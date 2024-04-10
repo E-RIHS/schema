@@ -80,6 +80,25 @@ def expand(schema, use_cached=False):
                 # fetch the controlled list from the url
                 print(f'   Fetching controlled list from {enum_source}')
                 terms, labels = fetch_controlled_list(enum_source)
+                # check for prepend and append
+                if 'enum_prepend' in schema['definitions'][d]['e-rihs']:
+                    enum_prepend = schema['definitions'][d]['e-rihs']['enum_prepend']
+                    # enum_prepend is a list of dicts with keys 'term' and 'label'
+                    prepend_terms = [x['term'] for x in enum_prepend]
+                    prepend_labels = [x['label'] for x in enum_prepend]
+                    # only prepend if the number of terms and labels match
+                    if len(prepend_terms) == len(prepend_labels):
+                        terms = prepend_terms + terms
+                        labels = prepend_labels + labels
+                if 'enum_append' in schema['definitions'][d]['e-rihs']:
+                    enum_append = schema['definitions'][d]['e-rihs']['enum_append']
+                    # enum_append is a list of dicts with keys 'term' and 'label'
+                    append_terms = [x['term'] for x in enum_append]
+                    append_labels = [x['label'] for x in enum_append]
+                    # only append if the number of terms and labels match
+                    if len(append_terms) == len(append_labels):
+                        terms = terms + append_terms
+                        labels = labels + append_labels
                 # add the terms and labels to the schema
                 print(f'   Adding {len(terms)} terms to the schema')
                 schema['definitions'][d]['enum'] = terms
