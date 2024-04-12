@@ -372,7 +372,7 @@
             "items": {
                 "title": "Link",
                 "type": "object",
-                "required": ["url", "link_type"],
+                "required": ["url", "type"],
                 "properties": {
                     "url": {
                         "title": "Link URL",
