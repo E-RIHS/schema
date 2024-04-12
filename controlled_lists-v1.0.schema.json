@@ -77,7 +77,7 @@
             "title": "Country",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=gxxxxxxxxxxxxxxxxxxxxxx"
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g42"
             }
         },
         "e-rihs_national_node": {
@@ -225,7 +225,7 @@
             "title": "Tool role",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=gxxxxxxxxxxxxxxxxxx",
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g41",
                 "enum_prepend": [
                     {
                         "label": "(other)",
