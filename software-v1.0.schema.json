@@ -7,7 +7,7 @@
     "required": [
         "name",
         "description",
-        "output_data_type",
+        "output_data_types",
         "last_checked_date"
     ],
     "properties": {
