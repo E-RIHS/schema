@@ -3,17 +3,20 @@
 import os
 import argparse
 import json
+import time
 
 import requests
 
 import libutils
 import libcordra
-#import libgithub
 import libschema
 
 
+sleep_time = 1  # time to sleep between requests
+
+
 ''' main function '''
-def main(schema_name, use_github=False, use_cached=False):
+def main(schema_name, use_github=False, use_cached=False, force=False):
     # Read configuration
     config = libutils.get_config()
 
@@ -39,7 +42,7 @@ def main(schema_name, use_github=False, use_cached=False):
     schema_pid = cordra_schemas[schema['title']]['pid']
     
     # expand the schema with controlled lists
-    schema = expand(schema, use_cached)
+    schema = expand(schema, use_cached, force)
 
     # build the digital object
     do = build_digital_object(schema_name, schema)
@@ -66,7 +69,7 @@ def read_schema_from_local(schema):
 
 
 ''' expand the schema with controlled lists '''
-def expand(schema, use_cached=False):
+def expand(schema, use_cached=False, force=False):
     print('Expanding schema with controlled lists')
     # loop over the schema definitions section
     for d in schema['definitions']:
@@ -80,6 +83,9 @@ def expand(schema, use_cached=False):
                 # fetch the controlled list from the url
                 print(f'   Fetching controlled list from {enum_source}')
                 terms, labels = fetch_controlled_list(enum_source)
+                if len(terms) == 0 and not force:
+                    print('   !! Controlled list is empty, ABORTING... !!')
+                    exit(1)
                 # check for prepend and append
                 if 'enum_prepend' in schema['definitions'][d]['e-rihs']:
                     enum_prepend = schema['definitions'][d]['e-rihs']['enum_prepend']
@@ -109,6 +115,8 @@ def expand(schema, use_cached=False):
                 print('   No "enum_source" found in definition, skipping')
         else:
             print('   No "enum_source" found in definition, skipping')
+        if sleep_time > 0:
+            time.sleep(sleep_time)
     return schema
 
 
@@ -161,10 +169,11 @@ if __name__ == '__main__':
     parser.add_argument('-g', '--github', dest='github', action='store_true', help='Use remote GitHub repository for schema definitions')
     parser.add_argument('-s', '--schema', dest='schema', action='store', default="controlled_lists-v1.0", help='Schema with controlled lists that should be updated')
     parser.add_argument('-c', '--cached', dest='use_cached', action='store_true', help="Use the cached controlled list (no refresh)")
+    parser.add_argument('--allow_empty', dest='force', action='store_true', help='Allow empty controlled lists')
     args = parser.parse_args()
 
     if args.github:
         print('Using GitHub repository for schema definitions is not yet implemented')
         exit(1)
 
-    main(schema_name=args.schema, use_github=args.github, use_cached=args.use_cached)
+    main(schema_name=args.schema, use_github=args.github, use_cached=args.use_cached, force=args.force)
