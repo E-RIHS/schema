@@ -27,7 +27,7 @@ function generateId(object, context) {
 
 
 function shoulder(type) {
-    const nonTest = ['c9ce', '485b'];
+    const nonTest = ['c9ce', '485b', '3cc2'];
     const schema = require('/cordra/schemas/' + type + '.schema.json');
     if ('$code' in schema) {
         if (nonTest.includes(schema.$code)) return schema.$code;

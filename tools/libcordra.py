@@ -94,6 +94,23 @@ class Cordra:
 
 
     '''
+    query: returns a list of Cordra objects that match a specific query
+    '''
+    def query(self, query, page_num=0, page_size=-1):
+        post_data = {
+            'query': query,
+            'pageNum': page_num,
+            'pageSize': page_size
+        }
+        response = requests.post(f'{self.url}/search', json=post_data, headers=self.headers)
+        if response.status_code != 200:
+            print('!! Error: Unable to retrieve objects from Cordra !!')
+            print(f' - response from Cordra: {response.text}')
+            sys.exit(1)
+        return response.json()['results']
+
+
+    '''
     create: creates a new Cordra object
     '''
     def create(self, obj, type, full=False):
@@ -114,6 +131,18 @@ class Cordra:
         response = requests.put(f'{self.url}/objects/{pid}{full}', json=obj, headers=self.headers)
         if response.status_code != 200:
             print('!! Error: Unable to update object in Cordra !!')
+            print(f' - response from Cordra: {response.text}')
+            sys.exit(1)
+        return response.json()
+
+
+    '''
+    delete: deletes an existing Cordra object
+    '''
+    def delete(self, pid):
+        response = requests.delete(f'{self.url}/objects/{pid}', headers=self.headers)
+        if response.status_code != 200:
+            print('!! Error: Unable to delete object in Cordra !!')
             print(f' - response from Cordra: {response.text}')
             sys.exit(1)
         return response.json()

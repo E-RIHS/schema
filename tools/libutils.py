@@ -11,7 +11,8 @@ default_config = {
     "cordra_user": "admin",
     "cordra_pass": None,
     "github_repo": "e-rihs/schema",
-    "github_branch": "main"
+    "github_branch": "main",
+    "cl_techniques_url": "https://research.ng-london.org.uk/ecls/?group=g22&full&refresh"
 }
 
 
