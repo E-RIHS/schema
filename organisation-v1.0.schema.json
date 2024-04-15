@@ -160,8 +160,18 @@
             "title": "Research Disciplines",
             "description": "Which domains or disciplines has this organisation worked within, has experience within. This field is connected to an extensive controlled list.",
             "type": "array",
+            "minItems": 1,
             "items": {
                 "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/research_discipline"
+            }
+        },
+        "research_disciplines_narrower": {
+            "title": "Research Disciplines (narrower/other)",
+            "description": "More precise description of the domains or disciplines this organisation has worked within or has experience within (free text).",
+            "type": "array",
+            "items": {
+                "title": "Research Discipline",
+                "type": "string"
             }
         },
         "research_references": {
