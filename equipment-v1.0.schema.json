@@ -175,10 +175,21 @@
         },
         "acquisition_areas": {
             "title": "Acquisition/target areas",
-            "description": "Needs to be refined further at this level it will probably be best to define a list of Classes here - specific relative locations would need to be defined in actual examination models",
+            "description": "The areas of the object or sample that can be examined by the equipment. This dropdown list gives a few examples, but if required, you can enter a different value here depending on the equipment.",
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "string",
+                "cordra": {
+                    "type": {
+                        "suggestedVocabulary": [
+                            "small spot",
+                            "large spot",
+                            "micro",
+                            "macro",
+                            "large area"
+                        ]
+                    }
+                }
             }
         },
         "object_impact": {
@@ -191,7 +202,7 @@
         },
         "working_distances": {
             "title": "Working distances",
-            "description": "This will need to be a drop of distance Classes rather than a specific value - actual values with dimensions will need to be stored in method statements",
+            "description": "A classification of the distance between the equipment and the object being examined.",
             "type": "array",
             "items": {
                 "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/working_distance"
@@ -212,11 +223,11 @@
             "description": "Serial number of the equipment",
             "type": "string"
         },
-        "callibration_pid": {
-            "title": "Callibration Event PID",
-            "description": "Please link to the Callibration Event or Research Activty, PID which relates to the documentation of the last time the equipment was callibrated.",
+        "callibration": {
+            "title": "Last callibrated",
+            "description": "Date when the equipment was last callibrated.",
             "type": "string",
-            "format": "uri"
+            "format": "date"
         }
     }
 }

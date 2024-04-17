@@ -10,7 +10,7 @@
         "method_version",
         "creation_date",
         "technique",
-        "author"
+        "authors"
     ],
     "properties": {
         "$schema": {
@@ -28,8 +28,8 @@
             }
         },
         "preferred_label": {
-            "title": "Preferred label",
-            "description": "Preferred label",
+            "title": "Title",
+            "description": "This should be a short, descriptive name that is unique to this method (not for the technique or tools!). It is good practice include the acronym of the institution, technique or equipment label and a date or version label. Example: 'NG Lux Allowance Method 2024'.",
             "type": "string",
             "minLength": 3,
             "maxLength": 100,
@@ -42,7 +42,7 @@
         },
         "alternative_labels": {
             "title": "Alternative codes, labels or names",
-            "description": "Any alternative codes, labels or names for the method (not forthe technique or tools!). This could be an acronym or a full text name if an acronym is used as the preferred label. This is useful for search and discovery purposes.",
+            "description": "Any alternative codes, labels or names for the method (not for the technique or tools!). This could be an acronym or a full text name if an acronym is used as the preferred label. This is useful for search and discovery purposes.",
             "type": "array",
             "items": {
                 "type": "string"
@@ -50,17 +50,22 @@
         },
         "method_type": {
             "title": "Method Type",
-            "description": "The type of method this represents. Examples are 'Analysis Method', 'Research support'... This is a free text field but will be converted into a controlled vocabulary field.",
+            "description": "The type of method this represents. Examples are 'Analysis Method', 'Research support', 'Workflow'... This is a free text field but will be converted into a controlled vocabulary field.",
             "type": "string"
         },
         "technique": {
             "title": "Relevant Technique",
-            "description": "The general technique that this Method is an application of.",
+            "description": "The general technique that this Method is an application of. This should be a reference to a controlled list of techniques; if none is applicable, choose 'other' and specify the technique in 'Technique (other)' field below.",
             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/technique"
+        },
+        "technique_other": {
+            "title": "Technique (other)",
+            "description": "If the technique is not in the controlled vocabulary, please specify it here.",
+            "type": "string"
         },
         "method_version": {
             "title": "Version",
-            "description": "The version identifier for this method",
+            "description": "The version for this method",
             "type": "string"
         },
         "creation_date": {
@@ -69,11 +74,24 @@
             "type": "string",
             "format": "date"
         },
-        "author": {
-            "title": "Author",
-            "description": "A relevant person ID, either a local database ID or an ORCID, for the creator or author of this method",
-            "type": "string",
-            "format": "url"
+        "authors": {
+            "title": "Authors",
+            "description": "The creators or authors of this method. These can be persons or an organisations.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "title": "Author",
+                "type": "string",
+                "cordra": {
+                    "title": "Author",
+                    "type": {
+                        "handleReference": {
+                            "types": ["Person", "Organization"]
+                        }
+                    }
+                }
+            }
+            
         },
         "related_tools": {
             "title": "Related Tools",
@@ -107,7 +125,7 @@
         },
         "method_documentation": {
             "title": "Method Documentation",
-            "description": "The documentation for the method, this can be a reference to an external document or a textual description",
+            "description": "The documentation for the method, this can be a reference to an external document or a textual description. External documents can be described with a citation and/or a URL.",
             "anyOf": [
                 {
                     "title": "Reference to external documents",

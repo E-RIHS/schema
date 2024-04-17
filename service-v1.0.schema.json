@@ -35,7 +35,7 @@
         },
         "title": {
             "title": "Title",
-            "description": "Service title",
+            "description": "Service title. For an ARCHLAB service, this could be e.g. 'Access to KIK-IRPA Archives', for the other platforms, this could be the name of the technique.",
             "type": "string",
             "minLength": 3,
             "maxLength": 100,
@@ -127,7 +127,7 @@
         },
         "techniques": {
             "title": "Service Techniques",
-            "description": "A list of the individual relevant heritage science examination and analytical techniques carried out within this Service (from a publicly defined controlled list).",
+            "description": "A list of the individual relevant heritage science examination and analytical techniques carried out within this Service. If none of the techniques is applicable, use the 'Other service techniques' below.",
             "type": "array",
             "items": {
                 "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/technique"
@@ -393,7 +393,7 @@
             "items": {
                 "title": "Reference",
                 "type": "object",
-                "required": ["reference"],
+                "required": ["citation"],
                 "properties": {
                     "citation": {
                         "title": "Citation",
@@ -406,7 +406,7 @@
                         "type": "string",
                         "format": "uri"
                     },
-                    "type": {
+                    "role": {
                         "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/reference_role"
                     }
                 }
@@ -535,7 +535,7 @@
         },
         "hours_per_unit": {
             "title": "Service Access Hours per Unit",
-            "description": "Access units are described as time periods, but depending on the nature of a service this might relate to a range of different periods of activity time. For example a day could relate to a working day or a calendar day, a digital service could relate to run time or processing time. So this value is used to relate actual activity time to the recorded access unit. This value is only required in case of ambiguous access unit types.",
+            "description": "Access units are described as time periods, but depending on the nature of a service this might relate to a range of different periods of activity time. For example a day could relate to a working day or a calendar day, a digital service could relate to run time or processing time. So this value is used to relate actual activity time to the recorded access unit. This value is only required in case of ambiguous access unit types. Use '0' if not applicable.",
             "type": "number"
         },
         "access_unit_cost": {

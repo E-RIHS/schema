@@ -14,6 +14,9 @@
         "e-rihs_platform": {
             "$ref": "#/definitions/e-rihs_platform"
         },
+        "licence_type": {
+            "$ref": "#/definitions/licence_type"
+        },
         "link_type": {
             "$ref": "#/definitions/link_type"
         },
@@ -94,6 +97,13 @@
                 "enum_source": "https://research.ng-london.org.uk/ecls/?group=g7"
             }
         },
+        "licence_type": {
+            "title": "Licence type",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g44"
+            }
+        },
         "link_type": {
             "title": "Link type",
             "type": "string",
@@ -154,7 +164,13 @@
             "title": "Period unit",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g12"
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g12",
+                "enum_prepend": [
+                    {
+                        "label": "(not applicable)",
+                        "term": "https://hdl.handle.net/21.11158/0001-hn33qf07t72trq397w8k8n8fk"
+                    }
+                ]
             }
         },
         "persistent_identifier": {
@@ -218,7 +234,13 @@
             "title": "Technique",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g22"
+                "enum_source": "https://research.ng-london.org.uk/ecls/?group=g22",
+                "enum_prepend": [
+                    {
+                        "label": "(other)",
+                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
+                    }
+                ]
             }
         },
         "tool_role": {

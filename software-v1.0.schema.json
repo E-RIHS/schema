@@ -114,6 +114,10 @@
                 "cordra": {
                     "type": {
                         "suggestedVocabulary": [
+                            "Text",
+                            "Text/numbers",
+                            "Text/dates",
+                            "Text/variables",
                             "Image",
                             "Image/RGB",
                             "Image/Gray scale",
@@ -172,11 +176,9 @@
             "description": "Developer (or current maintainer) of the software",
             "type": "string"
         },
-        "licence": {
-            "title": "Licence",
-            "description": "Licence of the software",
-            "type": "string",
-            "format": "uri"
+        "licence_type": {
+            "description": "The type of licence under which the software is distributed.",
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/licence_type" 
         },
         "version": {
             "title": "Version",
@@ -191,7 +193,7 @@
         },
         "has_url": {
             "title": "Has link",
-            "description": "Links to the software website or documentation",
+            "description": "Links to the software website, documentation or licence",
             "type": "array",
             "items": {
                 "type": "object",
@@ -208,6 +210,7 @@
                                     "source code",
                                     "demo",
                                     "online resource",
+                                    "licence",
                                     "other"
                                 ]
                             }
