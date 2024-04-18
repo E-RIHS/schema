@@ -49,6 +49,18 @@
         "offered_to": {
             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/offered_to"
         },
+        "coordinator": {
+            "title": "Coordinator",
+            "description": "The person that coordinates the catalogue",
+            "type": "string",
+            "cordra": {
+                "type": {
+                    "handleReference": {
+                        "types": ["Person"]
+                    }
+                }
+            }
+        },
         "services": {
             "title": "Services",
             "description": "A list of services offered by the catalogue",
