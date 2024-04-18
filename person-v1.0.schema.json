@@ -219,13 +219,19 @@
             "title": "First active date",
             "description": "First date this person was active in E-RIHS (administrative field which will be automatically filled in)",
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "options": {
+                "hidden": true
+            }
         },
         "last_active_date": {
             "title": "Last active date",
             "description": "Last date this person was active in E-RIHS (administrative field which will be automatically filled in)",
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "options": {
+                "hidden": true
+            }
         }
     }
 }
