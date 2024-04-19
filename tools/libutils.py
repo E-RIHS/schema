@@ -12,7 +12,7 @@ default_config = {
     "cordra_pass": None,
     "github_repo": "e-rihs/schema",
     "github_branch": "main",
-    "cl_techniques_url": "https://research.ng-london.org.uk/ecls/?group=g22&full&refresh"
+    "cl_techniques_url": "http://hdl.handle.net/21.11158/0002-d6f1-f86f-d248?urlappend=%26full%26refresh"
 }
 
 

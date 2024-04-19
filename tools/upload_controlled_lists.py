@@ -12,11 +12,12 @@ import libcordra
 import libschema
 
 
-sleep_time = 1  # time to sleep between requests
+sleep_time = 1                              # time to sleep between requests
+refresh_parameter = "urlappend=%26refresh"  # parameter to force refresh of controlled list
 
 
 ''' main function '''
-def main(schema_name, use_github=False, use_cached=False, force=False):
+def main(schema_name, use_github=False, use_cached=False, auth=False, force=False):
     # Read configuration
     config = libutils.get_config()
 
@@ -42,7 +43,7 @@ def main(schema_name, use_github=False, use_cached=False, force=False):
     schema_pid = cordra_schemas[schema['title']]['pid']
     
     # expand the schema with controlled lists
-    schema = expand(schema, use_cached, force)
+    schema = expand(schema, use_cached, auth, force)
 
     # build the digital object
     do = build_digital_object(schema_name, schema)
@@ -69,7 +70,7 @@ def read_schema_from_local(schema):
 
 
 ''' expand the schema with controlled lists '''
-def expand(schema, use_cached=False, force=False):
+def expand(schema, use_cached=False, auth=False, force=False):
     print('Expanding schema with controlled lists')
     # loop over the schema definitions section
     for d in schema['definitions']:
@@ -78,8 +79,14 @@ def expand(schema, use_cached=False, force=False):
         if 'e-rihs' in schema['definitions'][d]:
             if 'enum_source' in schema['definitions'][d]['e-rihs']:
                 enum_source = schema['definitions'][d]['e-rihs']['enum_source']
+                params = []
+                # if auth and enum_source is a handle
+                if auth and 'hdl.handle.net' in enum_source:
+                    params.append('auth')
                 if not use_cached:
-                    enum_source += "&refresh"
+                    params.append(refresh_parameter)
+                if len(params) > 0:
+                    enum_source += "?" + "&".join(params)
                 # fetch the controlled list from the url
                 print(f'   Fetching controlled list from {enum_source}')
                 terms, labels = fetch_controlled_list(enum_source)
@@ -169,6 +176,7 @@ if __name__ == '__main__':
     parser.add_argument('-g', '--github', dest='github', action='store_true', help='Use remote GitHub repository for schema definitions')
     parser.add_argument('-s', '--schema', dest='schema', action='store', default="controlled_lists-v1.0", help='Schema with controlled lists that should be updated')
     parser.add_argument('-c', '--cached', dest='use_cached', action='store_true', help="Use the cached controlled list (no refresh)")
+    parser.add_argument('--auth', dest='auth', action='store_true', help='Bypass Handle proxy cache')
     parser.add_argument('--allow_empty', dest='force', action='store_true', help='Allow empty controlled lists')
     args = parser.parse_args()
 
@@ -176,4 +184,10 @@ if __name__ == '__main__':
         print('Using GitHub repository for schema definitions is not yet implemented')
         exit(1)
 
-    main(schema_name=args.schema, use_github=args.github, use_cached=args.use_cached, force=args.force)
+    main(
+        schema_name=args.schema, 
+        use_github=args.github, 
+        use_cached=args.use_cached, 
+        auth=args.auth, 
+        force=args.force
+    )

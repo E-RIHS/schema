@@ -12,7 +12,7 @@ schema_type = 'Technique'
 
 
 ''' main function '''
-def main(delete=False, new_only=False):
+def main(delete=False, new_only=False, fake=False):
     # Read configuration
     config = libutils.get_config()
 
@@ -22,7 +22,6 @@ def main(delete=False, new_only=False):
         config['cordra_user'], 
         config['cordra_pass']
     )
-
 
     # get list of existing schemas from Cordra and from the vocabulary
     print('Fetching the techniques in Cordra and in Opentheso/CL...')
@@ -46,6 +45,11 @@ def main(delete=False, new_only=False):
     print(f' - Techniques to create: {len(to_create)}')
     print(f' - Techniques to update: {len(to_update)} {"" if new_only else "(skipping)"}')
     print(f' - Techniques to delete: {len(to_delete)} {"" if delete else "(skipping)"}')
+
+    # if fake, do not actually create/update/delete techniques
+    if fake:
+        print('Running in fake mode, no changes will be made...')
+        exit(0)
 
     # create new techniques
     if len(to_create) > 0:
@@ -142,6 +146,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-n', '--new', dest='new', action='store_true', help='Only add new techniques (no updates)')
     parser.add_argument('-d', '--delete', dest='delete', action='store_true', help='Delete techniques that are not in the vocabulary')
+    parser.add_argument('--fake', dest='fake', action='store_true', help='Do not actually create/update/delete techniques')
     args = parser.parse_args()
 
-    main(delete=args.delete, new_only=args.new)
+    main(delete=args.delete, new_only=args.new, fake=args.fake)
