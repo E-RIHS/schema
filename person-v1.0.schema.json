@@ -45,7 +45,7 @@
         },
         "full_name": {
             "title": "Full name",
-            "description": "Last name",
+            "description": "Full name, used internally for improved findability of the person",
             "type": "string",
             "options": {
                 "hidden": true

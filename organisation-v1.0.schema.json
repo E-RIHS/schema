@@ -28,22 +28,24 @@
         "acronym": {
             "title": "Acronym",
             "description": "Acronym",
-            "type": "string",
-            "cordra": {
-                "preview": {
-                    "showInPreview": true,
-                    "isPrimary": true
-                }
-            }
+            "type": "string"
         },
         "name": {
             "title": "Name",
             "description": "Name",
+            "type": "string"
+        },
+        "display_name": {
+            "title": "Display Name",
+            "description": "Display Name, used internally for improved findability of the organisation",
             "type": "string",
+            "options": {
+                "hidden": true
+            },
             "cordra": {
                 "preview": {
                     "showInPreview": true,
-                    "excludeTitle": true
+                    "isPrimary": true
                 }
             }
         },
