@@ -60,8 +60,7 @@
             "description": "A brief description of the purpose of the KPI and the sources of information it is based on. Details of specific calculations will be recorded within the 'formula' field.",
             "cordra": {
                 "preview": {
-                    "showInPreview": true,
-                    "excludeTitle": true
+                    "showInPreview": true
                 }
             }
         },

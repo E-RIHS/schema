@@ -31,8 +31,7 @@
             "title": "Description",
             "cordra": {
                 "preview": {
-                    "showInPreview": true,
-                    "excludeTitle": true
+                    "showInPreview": true
                 }
             }
         },

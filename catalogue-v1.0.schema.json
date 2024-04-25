@@ -41,8 +41,7 @@
             "minLength": 3,
             "cordra": {
                 "preview": {
-                    "showInPreview": true,
-                    "excludeTitle": true
+                    "showInPreview": true
                 }
             }
         },

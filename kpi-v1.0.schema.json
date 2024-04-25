@@ -38,8 +38,7 @@
             "description": "E-RIHS PID of the KPI definition that is used for this KPI.",
             "cordra": {
                 "preview": {
-                    "showInPreview": true,
-                    "excludeTitle": true
+                    "showInPreview": true
                 },
                 "type": {
                     "handleReference": {
