@@ -153,6 +153,7 @@
             "title": "Application required",
             "description": "Is an application for access required",
             "type": "boolean",
+            "format": "checkbox",
             "default": true
         },
         "providers": {
@@ -546,6 +547,7 @@
             "title": "Active service",
             "description": "Is the service currently open for access?",
             "type": "boolean",
+            "format": "checkbox",
             "default": true
         }
     }

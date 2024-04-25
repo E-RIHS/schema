@@ -101,6 +101,7 @@
                         "title": "Active service",
                         "description": "Is the service currently open for access?",
                         "type": "boolean",
+                        "format": "checkbox",
                         "default": true
                     },
                     "checked_date": {

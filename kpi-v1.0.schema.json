@@ -96,6 +96,7 @@
                     "met_target": {
                         "title": "Met target",
                         "type": "boolean",
+                        "format": "checkbox",
                         "description": "Whether the target for the metric was met"
                     }
                 }
