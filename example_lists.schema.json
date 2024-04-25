@@ -1,0 +1,157 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://e-rihs.io/schema/example_lists-v1.0.schema.json",
+    "$code": "abd2",
+    "title": "Example lists",
+    "type": "object",
+    "properties": {},
+    "definitions": {
+        "data_type": {
+            "title": "Output data type",
+            "type": "string",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": [
+                        "Text",
+                        "Text/numbers",
+                        "Text/dates",
+                        "Text/variables",
+                        "Image",
+                        "Image/RGB",
+                        "Image/Gray scale",
+                        "Image/Multi band image",
+                        "Image/False color",
+                        "Image/Drawing",
+                        "Image/Figure",
+                        "Dataset",
+                        "Dataset/2D",
+                        "Dataset/3D",
+                        "Dataset/Time series",
+                        "Dataset/Data package (images, spectra, other)",
+                        "Model",
+                        "Model/3D",
+                        "Report",
+                        "Audio/video"
+                    ]
+                }
+            }
+        },
+        "link_type": {
+
+            "__NOTE__": "There is already a 'Link type' in another context. This list comes from 'equipment' > 'has_url'",
+            
+            "title": "Type",
+            "description": "The type of link. This dropdown list gives a few examples, but if required, you can enter a different value here.",
+            "type": "string",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": [
+                        "website",
+                        "documentation",
+                        "source code",
+                        "demo",
+                        "online resource",
+                        "other"
+                    ]
+                }
+            }
+        },
+        "acquisition_area": {
+            "title": "Acquisition area",
+            "type": "string",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": [
+                        "small spot",
+                        "large spot",
+                        "micro",
+                        "macro",
+                        "large area"
+                    ]
+                }
+            }
+        },
+        "parameter_unit": {
+            "title": "Unit",
+            "type": "string",
+            "description": "The unit it which the value is expressed.  This dropdown list gives a few examples, but if required, you can define your own component type here.",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": ["none", "cm", "nm", "counts", "Pa", "bar"]
+                }
+            }
+        },
+        "parameter_type": {
+            "title": "Parameter Type",
+            "type": "string",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": [
+                        "working distance",
+                        "wavelength",
+                        "signal count",
+                        "pressure",
+                        "vacuum"
+                    ]
+                }
+            }
+        },
+        "organisation_type": {
+            "title": "Organisation type",
+            "description": "Type or legal status of the organisation. This dropdown list gives a few examples, but if required, you can enter a different value here.",
+            "type": "string",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": [
+                        "Research organisation",
+                        "University",
+                        "Public body",
+                        "Private body"
+                    ]
+                }
+            }
+        },
+        "reference_type": {
+            "title": "Reference type",
+            "description": "The purpose of the reference; what does it relate to or provide more information for.  This dropdown list gives a few examples, but if required, you can enter a different value here.",
+            "type": "string",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": [
+                        "Example research",
+                        "Collaboration",
+                        "E-RIHS Report"
+                    ]
+                }
+            }
+        },
+        "software_type": {
+            "title": "Component type",
+            "type": "string",
+            "description": "The function of the software component in the equipment or software suite. This dropdown list gives a few examples, but if required, you can define your own component type here.",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": [
+                        "Data acquisition",
+                        "Data processing",
+                        "Data visualisation"
+                    ]
+                }
+            }
+        },
+        "equipment_type": {
+            "title": "Component type",
+            "type": "string",
+            "description": "The function of the component in the equipment. This dropdown list gives a few examples, but if required, you can define your own component type here.",
+            "cordra": {
+                "type": {
+                    "suggestedVocabulary": [
+                        "Detector",
+                        "Column",
+                        "Camera"
+                    ]
+                }
+            }
+        }
+    }
+}
