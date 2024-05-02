@@ -115,13 +115,7 @@
             "title": "Material",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-8925-0082-c469",
-                "enum_prepend": [
-                    {
-                        "label": "(other)",
-                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
-                    }
-                ]
+                "enum_source": "http://hdl.handle.net/21.11158/0002-8925-0082-c469"
             }
         },
         "measurable_property": {
@@ -164,13 +158,7 @@
             "title": "Period unit",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-adf6-e851-5b95",
-                "enum_prepend": [
-                    {
-                        "label": "(not applicable)",
-                        "term": "https://hdl.handle.net/21.11158/0001-hn33qf07t72trq397w8k8n8fk"
-                    }
-                ]
+                "enum_source": "http://hdl.handle.net/21.11158/0002-adf6-e851-5b95"
             }
         },
         "persistent_identifier": {
@@ -234,26 +222,14 @@
             "title": "Technique",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-d6f1-f86f-d248",
-                "enum_prepend": [
-                    {
-                        "label": "(other)",
-                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
-                    }
-                ]
+                "enum_source": "http://hdl.handle.net/21.11158/0002-d6f1-f86f-d248"
             }
         },
         "tool_role": {
             "title": "Tool role",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-f4d8-dcf2-4a06",
-                "enum_prepend": [
-                    {
-                        "label": "(other)",
-                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
-                    }
-                ]
+                "enum_source": "http://hdl.handle.net/21.11158/0002-f4d8-dcf2-4a06"
             }
         },
         "working_distance": {
