@@ -26,7 +26,7 @@
             "title": "Data type",
             "type": "string",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-26d8-bbc2-fbb1"
+                "examples_source": "http://hdl.handle.net/21.11158/0002-26d8-bbc2-fbb1?urlappend=%26simple"
             }
         },
         "equipment_component_type": {
@@ -34,7 +34,7 @@
             "type": "string",
             "description": "The function of the component in the equipment. This dropdown list gives a few examples, but if required, you can define your own component type here.",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-9e36-d532-ac26"
+                "examples_source": "http://hdl.handle.net/21.11158/0002-9e36-d532-ac26?urlappend=%26simple"
             }
         },
         "organisation_type": {
@@ -42,14 +42,14 @@
             "description": "Type or legal status of the organisation. This dropdown list gives a few examples, but if required, you can enter a different value here.",
             "type": "string",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-e5a2-1fbd-dc53"
+                "examples_source": "http://hdl.handle.net/21.11158/0002-e5a2-1fbd-dc53?urlappend=%26simple"
             }
         },
         "parameter_type": {
             "title": "Parameter Type",
             "type": "string",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-c5b7-844b-90a8"
+                "examples_source": "http://hdl.handle.net/21.11158/0002-c5b7-844b-90a8?urlappend=%26simple"
             }
         },
         "software_component_type": {
@@ -57,7 +57,7 @@
             "type": "string",
             "description": "The function of the software component in the equipment or software suite. This dropdown list gives a few examples, but if required, you can define your own component type here.",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-e206-8155-4ff4"
+                "examples_source": "http://hdl.handle.net/21.11158/0002-e206-8155-4ff4?urlappend=%26simple"
             }
         },
 
