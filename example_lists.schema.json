@@ -90,20 +90,6 @@
                     "suggestedVocabulary": ["none", "cm", "nm", "counts", "Pa", "bar"]
                 }
             }
-        },
-        "reference_type": {
-            "title": "Reference type",
-            "description": "The purpose of the reference; what does it relate to or provide more information for.  This dropdown list gives a few examples, but if required, you can enter a different value here.",
-            "type": "string",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": [
-                        "Example research",
-                        "Collaboration",
-                        "E-RIHS Report"
-                    ]
-                }
-            }
         }
     }
 }
