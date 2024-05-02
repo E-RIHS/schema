@@ -79,19 +79,7 @@
             "description": "Type or legal status of the organisation. This dropdown list gives a few examples, but if required, you can enter a different value here.",
             "type": "array",
             "items": {
-                "title": "Type",
-                "description": "Type",
-                "type": "string",
-                "cordra": {
-                    "type": {
-                        "suggestedVocabulary": [
-                            "Research organisation",
-                            "University",
-                            "Public body",
-                            "Private body"
-                        ]
-                    }
-                }
+                "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/organisation_type"
             }
         },
         "part_of_organisation": {

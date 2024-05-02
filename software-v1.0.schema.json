@@ -75,21 +75,10 @@
                 "type": "object",
                 "properties": {
                     "component_type": {
-                        "title": "Component type",
-                        "type": "string",
-                        "description": "The function of the software component in the equipment or software suite. This dropdown list gives a few examples, but if required, you can define your own component type here.",
-                        "cordra": {
-                            "type": {
-                                "suggestedVocabulary": [
-                                    "Data acquisition",
-                                    "Data processing",
-                                    "Data visualisation"
-                                ]
-                            }
-                        }
+                        "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/software_component_type"
                     },
                     "tool": {
-                        "title": "Component (equipment or software",
+                        "title": "Component (equipment or software)",
                         "type": "string",
                         "description": "The discrete component of the software suite. This is a reference to another equipment or software object that was previously defined.",
                         "cordra": {
@@ -110,33 +99,7 @@
             "minItems": 1,
             "items": {
                 "title": "Input data type",
-                "type": "string",
-                "cordra": {
-                    "type": {
-                        "suggestedVocabulary": [
-                            "Text",
-                            "Text/numbers",
-                            "Text/dates",
-                            "Text/variables",
-                            "Image",
-                            "Image/RGB",
-                            "Image/Gray scale",
-                            "Image/Multi band image",
-                            "Image/False color",
-                            "Image/Drawing",
-                            "Image/Figure",
-                            "Dataset",
-                            "Dataset/2D",
-                            "Dataset/3D",
-                            "Dataset/Time series",
-                            "Dataset/Data package (images, spectra, other)",
-                            "Model",
-                            "Model/3D",
-                            "Report",
-                            "Audio/video"
-                        ]
-                    }
-                }
+                "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/data_type"
             }
         },
         "output_data_types": {
@@ -146,29 +109,7 @@
             "minItems": 1,
             "items": {
                 "title": "Output data type",
-                "type": "string",
-                "cordra": {
-                    "type": {
-                        "suggestedVocabulary": [
-                            "Image",
-                            "Image/RGB",
-                            "Image/Gray scale",
-                            "Image/Multi band image",
-                            "Image/False color",
-                            "Image/Drawing",
-                            "Image/Figure",
-                            "Dataset",
-                            "Dataset/2D",
-                            "Dataset/3D",
-                            "Dataset/Time series",
-                            "Dataset/Data package (images, spectra, other)",
-                            "Model",
-                            "Model/3D",
-                            "Report",
-                            "Audio/video"
-                        ]
-                    }
-                }
+                "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/data_type"
             }
         },
         "developer": {
@@ -199,22 +140,7 @@
                 "type": "object",
                 "properties": {
                     "link_type": {
-                        "title": "Type",
-                        "description": "The type of link",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "suggestedVocabulary": [
-                                    "website",
-                                    "documentation",
-                                    "source code",
-                                    "demo",
-                                    "online resource",
-                                    "licence",
-                                    "other"
-                                ]
-                            }
-                        }
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/link_type"
                     },
                     "url": {
                         "title": "Link",

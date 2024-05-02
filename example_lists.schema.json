@@ -4,58 +4,68 @@
     "$code": "abd2",
     "title": "Example lists",
     "type": "object",
-    "properties": {},
+    "properties": {
+        "data_type": {
+            "$ref": "#/definitions/data_type"
+        },
+        "equipment_component_type": {
+            "$ref": "#/definitions/equipment_component_type"
+        },
+        "organisation_type": {
+            "$ref": "#/definitions/organisation_type"
+        },
+        "parameter_type": {
+            "$ref": "#/definitions/parameter_type"
+        },
+        "software_component_type": {
+            "$ref": "#/definitions/software_component_type"
+        }
+    },
     "definitions": {
         "data_type": {
-            "title": "Output data type",
+            "title": "Data type",
             "type": "string",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": [
-                        "Text",
-                        "Text/numbers",
-                        "Text/dates",
-                        "Text/variables",
-                        "Image",
-                        "Image/RGB",
-                        "Image/Gray scale",
-                        "Image/Multi band image",
-                        "Image/False color",
-                        "Image/Drawing",
-                        "Image/Figure",
-                        "Dataset",
-                        "Dataset/2D",
-                        "Dataset/3D",
-                        "Dataset/Time series",
-                        "Dataset/Data package (images, spectra, other)",
-                        "Model",
-                        "Model/3D",
-                        "Report",
-                        "Audio/video"
-                    ]
-                }
+            "e-rihs": {
+                "examples_source": "http://hdl.handle.net/21.11158/0002-26d8-bbc2-fbb1"
             }
         },
-        "link_type": {
+        "equipment_component_type": {
+            "title": "Component type",
+            "type": "string",
+            "description": "The function of the component in the equipment. This dropdown list gives a few examples, but if required, you can define your own component type here.",
+            "e-rihs": {
+                "examples_source": "http://hdl.handle.net/21.11158/0002-9e36-d532-ac26"
+            }
+        },
+        "organisation_type": {
+            "title": "Organisation type",
+            "description": "Type or legal status of the organisation. This dropdown list gives a few examples, but if required, you can enter a different value here.",
+            "type": "string",
+            "e-rihs": {
+                "examples_source": "http://hdl.handle.net/21.11158/0002-e5a2-1fbd-dc53"
+            }
+        },
+        "parameter_type": {
+            "title": "Parameter Type",
+            "type": "string",
+            "e-rihs": {
+                "examples_source": "http://hdl.handle.net/21.11158/0002-c5b7-844b-90a8"
+            }
+        },
+        "software_component_type": {
+            "title": "Component type",
+            "type": "string",
+            "description": "The function of the software component in the equipment or software suite. This dropdown list gives a few examples, but if required, you can define your own component type here.",
+            "e-rihs": {
+                "examples_source": "http://hdl.handle.net/21.11158/0002-e206-8155-4ff4"
+            }
+        },
 
-            "__NOTE__": "There is already a 'Link type' in another context. This list comes from 'equipment' > 'has_url'",
-            
-            "title": "Type",
-            "description": "The type of link. This dropdown list gives a few examples, but if required, you can enter a different value here.",
-            "type": "string",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": [
-                        "website",
-                        "documentation",
-                        "source code",
-                        "demo",
-                        "online resource",
-                        "other"
-                    ]
-                }
-            }
-        },
+
+
+
+
+
         "acquisition_area": {
             "title": "Acquisition area",
             "type": "string",
@@ -81,36 +91,6 @@
                 }
             }
         },
-        "parameter_type": {
-            "title": "Parameter Type",
-            "type": "string",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": [
-                        "working distance",
-                        "wavelength",
-                        "signal count",
-                        "pressure",
-                        "vacuum"
-                    ]
-                }
-            }
-        },
-        "organisation_type": {
-            "title": "Organisation type",
-            "description": "Type or legal status of the organisation. This dropdown list gives a few examples, but if required, you can enter a different value here.",
-            "type": "string",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": [
-                        "Research organisation",
-                        "University",
-                        "Public body",
-                        "Private body"
-                    ]
-                }
-            }
-        },
         "reference_type": {
             "title": "Reference type",
             "description": "The purpose of the reference; what does it relate to or provide more information for.  This dropdown list gives a few examples, but if required, you can enter a different value here.",
@@ -121,34 +101,6 @@
                         "Example research",
                         "Collaboration",
                         "E-RIHS Report"
-                    ]
-                }
-            }
-        },
-        "software_type": {
-            "title": "Component type",
-            "type": "string",
-            "description": "The function of the software component in the equipment or software suite. This dropdown list gives a few examples, but if required, you can define your own component type here.",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": [
-                        "Data acquisition",
-                        "Data processing",
-                        "Data visualisation"
-                    ]
-                }
-            }
-        },
-        "equipment_type": {
-            "title": "Component type",
-            "type": "string",
-            "description": "The function of the component in the equipment. This dropdown list gives a few examples, but if required, you can define your own component type here.",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": [
-                        "Detector",
-                        "Column",
-                        "Camera"
                     ]
                 }
             }

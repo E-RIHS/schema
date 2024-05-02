@@ -175,19 +175,7 @@
                         }
                     },
                     "parameter_type": {
-                        "title": "Parameter Type",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "suggestedVocabulary": [
-                                    "working distance",
-                                    "wavelength",
-                                    "signal count",
-                                    "pressure",
-                                    "vacuum"
-                                ]
-                            }
-                        }
+                        "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/parameter_type"
                     },
                     "parameter_related_tool": {
                         "title": "Parameter Specific Related Tool",
