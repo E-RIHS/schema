@@ -32,7 +32,7 @@ def main(schema_names, use_github=False, use_cached=False, auth=False, force=Fal
     for schema_name in schema_names:
         # read the schema
         if not use_github:
-            schema = read_schema_from_local(schema_names)
+            schema = read_schema_from_local(schema_name)
         else:
             print('Using GitHub repository for schema definitions is not yet implemented')
             exit(1)
@@ -84,9 +84,9 @@ def expand(schema, use_cached=False, auth=False, force=False):
                 exit(1)
             elif 'enum_source' in schema['definitions'][d]['e-rihs']:
                 # fetch the controlled list from the url
-                print(f'   Fetching controlled list from {url}')
                 url = schema['definitions'][d]['e-rihs']['enum_source']
                 url = build_fetch_url(url, use_cached, auth)
+                print(f'   Fetching controlled list from {url}')
                 terms, labels = fetch_vocab_list(url, response_format='default')
                 if len(terms) == 0 and not force:
                     print('   !! Controlled list is empty, ABORTING... !!')
@@ -99,9 +99,9 @@ def expand(schema, use_cached=False, auth=False, force=False):
                 schema['definitions'][d]['options']['enum_titles'] = labels
             elif "examples_source" in schema['definitions'][d]['e-rihs']:
                 # fetch the examples list from the url
-                print(f'   Fetching examples list from {url}')
                 url = schema['definitions'][d]['e-rihs']['examples_source']
                 url = build_fetch_url(url, use_cached, auth)
+                print(f'   Fetching examples list from {url}')
                 terms = fetch_vocab_list(url, response_format='simple')
                 if len(terms) == 0 and not force:
                     print('   !! Examples list is empty, ABORTING... !!')
@@ -109,6 +109,8 @@ def expand(schema, use_cached=False, auth=False, force=False):
                 # add the terms to the schema
                 print(f'   Adding {len(terms)} examples to the schema')
                 schema['definitions'][d]['examples'] = terms    # the JSON Schema compliant way
+                if 'cordra' not in schema['definitions'][d]:
+                    schema['definitions'][d]['cordra'] = {}
                 if 'type' not in schema['definitions'][d]['cordra']:
                     schema['definitions'][d]['cordra']['type'] = {}
                 schema['definitions'][d]['cordra']['type']['suggestedVocabulary'] = terms   # the Cordra way
@@ -128,10 +130,14 @@ def build_fetch_url(url, use_cached, auth):
     if is_handle:
         params = []
         # decompose the url
-        base_url, urlappend = url.split('?urlappend=')
-        urlappend = urlappend.split('%26')
-        # remove empty strings from urlappend
-        urlappend = [x for x in urlappend if x]
+        if url.find('?urlappend=') != -1:
+            base_url, urlappend = url.split('?urlappend=')
+            urlappend = urlappend.split('%26')
+            # remove empty strings from urlappend
+            urlappend = [x for x in urlappend if x]
+        else:
+            base_url = url
+            urlappend = []
         # add the refresh parameter if not use_cached
         if not use_cached and 'refresh' not in urlappend:
             urlappend.append('refresh')
