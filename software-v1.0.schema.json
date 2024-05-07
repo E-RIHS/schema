@@ -75,7 +75,7 @@
                 "type": "object",
                 "properties": {
                     "component_type": {
-                        "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/software_component_type"
+                        "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/component_type"
                     },
                     "tool": {
                         "title": "Component (equipment or software)",

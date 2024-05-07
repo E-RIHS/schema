@@ -75,7 +75,7 @@
                 "type": "object",
                 "properties": {
                     "component_type": {
-                        "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/equipment_component_type"
+                        "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/component_type"
                     },
                     "tool": {
                         "title": "Component (equipment or software)",
@@ -132,17 +132,7 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "cordra": {
-                    "type": {
-                        "suggestedVocabulary": [
-                            "small spot",
-                            "large spot",
-                            "micro",
-                            "macro",
-                            "large area"
-                        ]
-                    }
-                }
+                "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/acquisition_area"
             }
         },
         "object_impact": {

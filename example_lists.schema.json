@@ -5,11 +5,14 @@
     "title": "Example lists",
     "type": "object",
     "properties": {
+        "acquisition_area": {
+            "$ref": "#/definitions/acquisition_area"
+        },
+        "component_type": {
+            "$ref": "#/definitions/component_type"
+        },
         "data_type": {
             "$ref": "#/definitions/data_type"
-        },
-        "equipment_component_type": {
-            "$ref": "#/definitions/equipment_component_type"
         },
         "organisation_type": {
             "$ref": "#/definitions/organisation_type"
@@ -17,24 +20,31 @@
         "parameter_type": {
             "$ref": "#/definitions/parameter_type"
         },
-        "software_component_type": {
-            "$ref": "#/definitions/software_component_type"
+        "parameter_unit": {
+            "$ref": "#/definitions/parameter_unit"
         }
     },
     "definitions": {
-        "data_type": {
-            "title": "Data type",
+        "acquisition_area": {
+            "title": "Acquisition area",
             "type": "string",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-26d8-bbc2-fbb1?urlappend=%26simple"
+                "examples_source": "https://hdl.handle.net/21.11158/0002-e206-8155-4ff4?urlappend=%26simple"
             }
         },
-        "equipment_component_type": {
+        "component_type": {
             "title": "Component type",
             "type": "string",
             "description": "The function of the component in the equipment. This dropdown list gives a few examples, but if required, you can define your own component type here.",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-9e36-d532-ac26?urlappend=%26simple"
+                "examples_source": "https://hdl.handle.net/21.11158/0002-9e36-d532-ac26?urlappend=%26simple"
+            }
+        },
+        "data_type": {
+            "title": "Data type",
+            "type": "string",
+            "e-rihs": {
+                "examples_source": "https://hdl.handle.net/21.11158/0002-26d8-bbc2-fbb1?urlappend=%26simple"
             }
         },
         "organisation_type": {
@@ -42,53 +52,21 @@
             "description": "Type or legal status of the organisation. This dropdown list gives a few examples, but if required, you can enter a different value here.",
             "type": "string",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-e5a2-1fbd-dc53?urlappend=%26simple"
+                "examples_source": "https://hdl.handle.net/21.11158/0002-e5a2-1fbd-dc53?urlappend=%26simple"
             }
         },
         "parameter_type": {
             "title": "Parameter Type",
             "type": "string",
             "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-c5b7-844b-90a8?urlappend=%26simple"
-            }
-        },
-        "software_component_type": {
-            "title": "Component type",
-            "type": "string",
-            "description": "The function of the software component in the equipment or software suite. This dropdown list gives a few examples, but if required, you can define your own component type here.",
-            "e-rihs": {
-                "examples_source": "http://hdl.handle.net/21.11158/0002-e206-8155-4ff4?urlappend=%26simple"
-            }
-        },
-
-
-
-
-
-
-        "acquisition_area": {
-            "title": "Acquisition area",
-            "type": "string",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": [
-                        "small spot",
-                        "large spot",
-                        "micro",
-                        "macro",
-                        "large area"
-                    ]
-                }
+                "examples_source": "https://hdl.handle.net/21.11158/0002-c5b7-844b-90a8?urlappend=%26simple"
             }
         },
         "parameter_unit": {
             "title": "Unit",
             "type": "string",
-            "description": "The unit it which the value is expressed.  This dropdown list gives a few examples, but if required, you can define your own component type here.",
-            "cordra": {
-                "type": {
-                    "suggestedVocabulary": ["none", "cm", "nm", "counts", "Pa", "bar"]
-                }
+            "e-rihs": {
+                "examples_source": "https://hdl.handle.net/21.11158/0002-8d5b-ecd3-0785?urlappend=%26simple"
             }
         }
     }
