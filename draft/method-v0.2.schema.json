@@ -1,142 +1,129 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://e-rihs.io/schema/draft/method-v0.2.schema.json",
-  "title": "E-RIHS Standard Method",
-  "description": "The schema outlines the required metadata to define a standard method or protocol",
-  "type": "object",
-  "required": [
-    "e-rihs_pid", 
-    "method_preferred_label",
-    "method_version",
-    "method_creation_date",
-    "method_technique",
-    "method_author"
-  ],
-  "properties": {
-    "e-rihs_pid": {
-      "title": "E-RIHS Service PID",
-      "description": "Please link to the E-RIHS Service ID",
-      "type": "string",
-      "format": "uri"
-    },
-    "method_preferred_label": {
-      "title": "Preferred Name or Title",
-      "description": "The preferred name or label for the method",
-      "type": "string"
-    },
-    "method_alt_label": {
-      "title": "Alternative Labels or Names", 
-      "description": "Any alternative names or labels for the method, this could be an acronym or a full text name if an acronym is used as the ",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "method_type": {
-      "title": "Method Type",
-      "description": "The type of method this represents",
-      "type": "string",
-      "examples": [
-        "Analysis Method",
-        "Technical Examination",
-        "Research Approach"
-        ]
-    },
-    "method_technique": {
-      "title": "Relevant Technique",
-      "description": "The general technique that this Method is an application of.",
-      "type": "string",
-      "examples": [
-        "Raman Spectroscopy",
-        "Optical Microscopy",
-        "Scanning XRF"
-        ]
-    },
-    "method_version": {
-      "title": "Version",
-      "description": "The version identifier for this method",
-      "type": "string"
-    },
-    "method_creation_date": {
-      "title": "Creation Date",
-      "description": "The date this method was created",
-      "type": "string", 
-      "format": "date"
-    },
-    "method_author": {
-      "title": "Author",
-      "description": "A relevant person ID, either a local database ID or an ORCID, for the creator or author of this method",
-      "type": "string",
-      "format": "url"      
-    },
-    "method_related_tool": {
-      "title": "Related Tools",
-      "description": "The key related tools (Equipment or Software) described associated with this method",
-      "type": "array",
-      "items": {
-        "title": "Tool",
-        "type": "object",
-        "properties": {
-          "tool_pid": {
-            "title": "Tool PID",
-            "type": "string",
-            "format": "uri" 
-          },
-          "tool_role": {
-            "title": "Tool Role",
-            "type": "string",
-            "examples": [
-              "Main Equipment",
-              "Detector",
-              "Data Processor",
-              "Peak Detector"
-              ]
-          }
-        }
-      }
-    },    
-    "method_documentation": {
-      "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"
-    },
-    "method_parameter": {
-      "title": "Core Method Parameters",
-      "description": "A list of the core or key equipment or software parameters used within this method. This does not need to be an exhaustive list and can be limited to the parameters which are used to control the activity, might influence subsequent interpretations or will be important for data comparison and discovery.",
-      "type": "array",
-      "items": {
-        "title": "Parameter",
-        "type": "object",
-        "properties": {
-          "parameter_value": {
-            "title": "Value",
-            "type": "string"  
-          },
-          "parameter_unit": {
-            "title": "Unit",
-            "type": "string",
-            "examples": [
-              "none",
-              "cm",
-              "nm",
-              "count"
-              ]
-          },
-          "parameter_type": {
-            "title": "Parameter Type",
-            "type": "string",
-            "examples": [
-              "working distance",
-              "wavelength",
-              "signal count"
-              ]
-          },
-          "parameter_related_tool": {
-            "title": "Parameter Specific Related Tool",
-            "description": "When multiple Tools are used within a single Method defined parameters can be associated to the relevant tool. This can be left blank for single tool Methods and the assumption will be that the parameters are associated with single tool related to the Method in general.",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://e-rihs.io/schema/draft/method-v0.2.schema.json",
+    "title": "E-RIHS Standard Method",
+    "description": "The schema outlines the required metadata to define a standard method or protocol",
+    "type": "object",
+    "required": [
+        "e-rihs_pid",
+        "method_preferred_label",
+        "method_version",
+        "method_creation_date",
+        "method_technique",
+        "method_author"
+    ],
+    "properties": {
+        "e-rihs_pid": {
+            "title": "E-RIHS Service PID",
+            "description": "Please link to the E-RIHS Service ID",
             "type": "string",
             "format": "uri"
-          }
+        },
+        "method_preferred_label": {
+            "title": "Preferred Name or Title",
+            "description": "The preferred name or label for the method",
+            "type": "string"
+        },
+        "method_alt_label": {
+            "title": "Alternative Labels or Names",
+            "description": "Any alternative names or labels for the method, this could be an acronym or a full text name if an acronym is used as the ",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "method_type": {
+            "title": "Method Type",
+            "description": "The type of method this represents",
+            "type": "string",
+            "examples": [
+                "Analysis Method",
+                "Technical Examination",
+                "Research Approach"
+            ]
+        },
+        "method_technique": {
+            "title": "Relevant Technique",
+            "description": "The general technique that this Method is an application of.",
+            "type": "string",
+            "examples": [
+                "Raman Spectroscopy",
+                "Optical Microscopy",
+                "Scanning XRF"
+            ]
+        },
+        "method_version": {
+            "title": "Version",
+            "description": "The version identifier for this method",
+            "type": "string"
+        },
+        "method_creation_date": {
+            "title": "Creation Date",
+            "description": "The date this method was created",
+            "type": "string",
+            "format": "date"
+        },
+        "method_author": {
+            "title": "Author",
+            "description": "A relevant person ID, either a local database ID or an ORCID, for the creator or author of this method",
+            "type": "string",
+            "format": "url"
+        },
+        "method_related_tool": {
+            "title": "Related Tools",
+            "description": "The key related tools (Equipment or Software) described associated with this method",
+            "type": "array",
+            "items": {
+                "title": "Tool",
+                "type": "object",
+                "properties": {
+                    "tool_pid": {
+                        "title": "Tool PID",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "tool_role": {
+                        "title": "Tool Role",
+                        "type": "string",
+                        "examples": [
+                            "Main Equipment",
+                            "Detector",
+                            "Data Processor",
+                            "Peak Detector"
+                        ]
+                    }
+                }
+            }
+        },
+        "method_documentation": {
+            "$ref": "https://e-rihs.io/schema/document-v0.3.schema.json"
+        },
+        "method_parameter": {
+            "title": "Core Method Parameters",
+            "description": "A list of the core or key equipment or software parameters used within this method. This does not need to be an exhaustive list and can be limited to the parameters which are used to control the activity, might influence subsequent interpretations or will be important for data comparison and discovery.",
+            "type": "array",
+            "items": {
+                "title": "Parameter",
+                "type": "object",
+                "properties": {
+                    "parameter_value": {
+                        "title": "Value",
+                        "type": "string"
+                    },
+                    "parameter_unit": {
+                        "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/parameter_unit"
+                    },
+                    "parameter_type": {
+                        "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/parameter_type"
+                    },
+                    "parameter_related_tool": {
+                        "title": "Parameter Specific Related Tool",
+                        "description": "When multiple Tools are used within a single Method defined parameters can be associated to the relevant tool. This can be left blank for single tool Methods and the assumption will be that the parameters are associated with single tool related to the Method in general.",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

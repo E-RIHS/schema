@@ -79,19 +79,7 @@
             "description": "Type or legal status of the organisation. This dropdown list gives a few examples, but if required, you can enter a different value here.",
             "type": "array",
             "items": {
-                "title": "Type",
-                "description": "Type",
-                "type": "string",
-                "cordra": {
-                    "type": {
-                        "suggestedVocabulary": [
-                            "Research organisation",
-                            "University",
-                            "Public body",
-                            "Private body"
-                        ]
-                    }
-                }
+                "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/organisation_type"
             }
         },
         "part_of_organisation": {
@@ -195,19 +183,10 @@
                         "type": "string",
                         "format": "uri"
                     },
-                    "reference_type": {
+                    "reference_role": {
                         "title": "Reference type",
                         "description": "The purpose of the reference; what does it relate to or provide more information for.  This dropdown list gives a few examples, but if required, you can enter a different value here.",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "suggestedVocabulary": [
-                                    "Example research",
-                                    "Collaboration",
-                                    "E-RIHS Report"
-                                ]
-                            }
-                        }
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/reference_role"
                     }
                 }
             }

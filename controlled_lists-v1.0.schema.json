@@ -80,62 +80,56 @@
             "title": "Country",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-a36b-9f90-6c16"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-a36b-9f90-6c16"
             }
         },
         "e-rihs_national_node": {
             "title": "National node",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-3a0e-74f5-d9a3"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-3a0e-74f5-d9a3"
             }
         },
         "e-rihs_platform": {
             "title": "Platform",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-ed43-cd61-6077"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-ed43-cd61-6077"
             }
         },
         "licence_type": {
             "title": "Licence type",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-54a0-269d-b071"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-54a0-269d-b071"
             }
         },
         "link_type": {
             "title": "Link type",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-4d1e-b06a-2d2f"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-4d1e-b06a-2d2f"
             }
         },
         "material": {
             "title": "Material",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-8925-0082-c469",
-                "enum_prepend": [
-                    {
-                        "label": "(other)",
-                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
-                    }
-                ]
+                "enum_source": "https://hdl.handle.net/21.11158/0002-8925-0082-c469"
             }
         },
         "measurable_property": {
             "title": "Measurable property",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-89df-b691-9b7a"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-89df-b691-9b7a"
             }
         },
         "object_impact": {
             "title": "Impact on object or sample",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-01b9-7576-87de"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-01b9-7576-87de"
             }
         },
         "offered_to": {
@@ -143,62 +137,56 @@
             "description": "At what level are accesses available",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-8d19-3829-ba66"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-8d19-3829-ba66"
             }
         },
         "operating_language": {
             "title": "Operating language",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-9d99-a2b3-f273"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-9d99-a2b3-f273"
             }
         },
         "period_class": {
             "title": "Period class",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-6012-dca7-fa87"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-6012-dca7-fa87"
             }
         },
         "period_unit": {
             "title": "Period unit",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-adf6-e851-5b95",
-                "enum_prepend": [
-                    {
-                        "label": "(not applicable)",
-                        "term": "https://hdl.handle.net/21.11158/0001-hn33qf07t72trq397w8k8n8fk"
-                    }
-                ]
+                "enum_source": "https://hdl.handle.net/21.11158/0002-adf6-e851-5b95"
             }
         },
         "persistent_identifier": {
             "title": "PID type",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-9004-659c-14c6"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-9004-659c-14c6"
             }
         },
         "person_role": {
             "title": "Person role",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-5445-97e8-1fec"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-5445-97e8-1fec"
             }
         },
         "personal_title": {
             "title": "Personal title",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-713f-ec5d-7351"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-713f-ec5d-7351"
             }
         },
         "provider_role": {
             "title": "Provider role",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-1807-911b-45dc"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-1807-911b-45dc"
             }
         },
         "readiness_level": {
@@ -206,61 +194,49 @@
             "description": "This scale is directly based on the standard - Technology readiness levels (TRLs), adapted for heritage science, which are a method for estimating the maturity of the services being offered. For more details see https://en.wikipedia.org/wiki/Technology_readiness_level",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-d3b8-10c6-92ba"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-d3b8-10c6-92ba"
             }
         },
         "reference_role": {
             "title": "Reference role",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-6d5e-fd08-6b9b"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-6d5e-fd08-6b9b"
             }
         },
         "research_discipline":{
             "title": "Research discipline",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-9dc3-7d05-b211"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-9dc3-7d05-b211"
             }
         },
         "support_type": {
             "title": "Support type",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-50a6-7b38-0ae0"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-50a6-7b38-0ae0"
             }
         },
         "technique": {
             "title": "Technique",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-d6f1-f86f-d248",
-                "enum_prepend": [
-                    {
-                        "label": "(other)",
-                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
-                    }
-                ]
+                "enum_source": "https://hdl.handle.net/21.11158/0002-d6f1-f86f-d248"
             }
         },
         "tool_role": {
             "title": "Tool role",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-f4d8-dcf2-4a06",
-                "enum_prepend": [
-                    {
-                        "label": "(other)",
-                        "term": "https://hdl.handle.net/21.11158/0001-m4lp36rj04l0f9268bc0c2v6g"
-                    }
-                ]
+                "enum_source": "https://hdl.handle.net/21.11158/0002-f4d8-dcf2-4a06"
             }
         },
         "working_distance": {
             "title": "Working distance",
             "type": "string",
             "e-rihs": {
-                "enum_source": "http://hdl.handle.net/21.11158/0002-b867-f3d1-b5bd"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-b867-f3d1-b5bd"
             }
         }
     }

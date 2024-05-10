@@ -195,16 +195,7 @@
                     "reference_type": {
                         "title": "Reference type",
                         "description": "The purpose of the reference; what does it relate to or provide more information for.  This dropdown list gives a few examples, but if required, you can enter a different value here.",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "suggestedVocabulary": [
-                                    "Example research",
-                                    "Collaboration",
-                                    "E-RIHS Report"
-                                ]
-                            }
-                        }
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/reference_role"
                     }
                 }
             }

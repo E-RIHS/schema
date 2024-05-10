@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://e-rihs.io/schema/example_lists-v1.0.schema.json",
+    "$code": "abd2",
+    "title": "Example lists",
+    "type": "object",
+    "properties": {
+        "acquisition_area": {
+            "$ref": "#/definitions/acquisition_area"
+        },
+        "component_type": {
+            "$ref": "#/definitions/component_type"
+        },
+        "data_type": {
+            "$ref": "#/definitions/data_type"
+        },
+        "organisation_type": {
+            "$ref": "#/definitions/organisation_type"
+        },
+        "parameter_type": {
+            "$ref": "#/definitions/parameter_type"
+        },
+        "parameter_unit": {
+            "$ref": "#/definitions/parameter_unit"
+        }
+    },
+    "definitions": {
+        "acquisition_area": {
+            "title": "Acquisition area",
+            "type": "string",
+            "e-rihs": {
+                "examples_source": "https://hdl.handle.net/21.11158/0002-389e-a0cd-0640?urlappend=%26simple"
+            }
+        },
+        "component_type": {
+            "title": "Component type",
+            "type": "string",
+            "description": "The function of the component in the equipment. This dropdown list gives a few examples, but if required, you can define your own component type here.",
+            "e-rihs": {
+                "examples_source": "https://hdl.handle.net/21.11158/0002-7253-5fd9-8cb8?urlappend=%26simple"
+            }
+        },
+        "data_type": {
+            "title": "Data type",
+            "type": "string",
+            "e-rihs": {
+                "examples_source": "https://hdl.handle.net/21.11158/0002-26d8-bbc2-fbb1?urlappend=%26simple"
+            }
+        },
+        "organisation_type": {
+            "title": "Organisation type",
+            "description": "Type or legal status of the organisation. This dropdown list gives a few examples, but if required, you can enter a different value here.",
+            "type": "string",
+            "e-rihs": {
+                "examples_source": "https://hdl.handle.net/21.11158/0002-e5a2-1fbd-dc53?urlappend=%26simple"
+            }
+        },
+        "parameter_type": {
+            "title": "Parameter Type",
+            "type": "string",
+            "e-rihs": {
+                "examples_source": "https://hdl.handle.net/21.11158/0002-c5b7-844b-90a8?urlappend=%26simple"
+            }
+        },
+        "parameter_unit": {
+            "title": "Unit",
+            "type": "string",
+            "e-rihs": {
+                "examples_source": "https://hdl.handle.net/21.11158/0002-8d5b-ecd3-0785?urlappend=%26simple"
+            }
+        }
+    }
+}
