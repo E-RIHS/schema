@@ -186,6 +186,7 @@
         },
         "contacts": {
             "title": "Service Contacts",
+            "description": "Contact details for the service; this can be personal or group contact details.",
             "type": "array",
             "format": "table",
             "minLength": 1,
@@ -343,7 +344,7 @@
                     },
                     "roles": {
                         "title": "Person Roles",
-                        "description": "This value should be replaced with a controlled list",
+                        "description": "What are the roles this person has in the team working on this service. This field is connected to a controlled list.",
                         "type": "array",
                         "items": {
                             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/person_role"

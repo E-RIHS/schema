@@ -175,6 +175,7 @@
                         }
                     },
                     "parameter_type": {
+                        "description": "The type of parameter. This dropdown list gives a few examples, but if required, you can define your own parameeter type here.",
                         "$ref": "https://e-rihs.io/schema/example_lists.schema.json#/definitions/parameter_type"
                     },
                     "parameter_related_tool": {

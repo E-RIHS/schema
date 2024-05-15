@@ -128,25 +128,25 @@
         },
         "mbox": {
             "title": "Email",
-            "description": "Contact email address",
+            "description": "Contact email address (professional)",
             "type": "string",
             "format": "email"
         },
         "phone": {
             "title": "Phone",
-            "description": "Contact phone number",
+            "description": "Contact phone number (professional)",
             "type": "string",
             "format": "tel"
         },
         "img_url": {
             "title": "Image URL",
-            "description": "Image URL",
+            "description": "URL to an image representing the person (e.g. portrait or profile photo)",
             "type": "string",
             "format": "uri"
         },
         "webpage": {
             "title": "Webpage",
-            "description": "Webpage",
+            "description": "Webpage(s) related to the person (e.g. personal webpage, profile page on the institutional website, etc.)",
             "type": "array",
             "items": {
                 "title": "URL",
