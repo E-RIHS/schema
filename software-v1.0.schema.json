@@ -7,7 +7,6 @@
     "required": [
         "name",
         "description",
-        "output_data_types",
         "last_checked_date"
     ],
     "properties": {
@@ -27,7 +26,7 @@
         },
         "name": {
             "title": "Name or Title",
-            "description": "The simple name or title for the piece of software.",
+            "description": "The simple name or title for this particular piece of software in a particular organisation and that is often equiped with a unique set of add-on features. The main goal of this name is to enable you to easily identify the software when referring to it from within another description. It is generally not a good idea to use a technique name or the commercial name of the software, since these might not be unique within E-RIHS. One general recommendation is to prepend the name with your organisation acronym.",
             "type": "string",
             "minLength": 3,
             "maxLength": 100,

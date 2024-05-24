@@ -7,7 +7,6 @@
     "required": [
         "name",
         "description",
-        "output_data_types",
         "last_checked_date"
     ],
     "properties": {
@@ -27,7 +26,7 @@
         },
         "name": {
             "title": "Name or Title",
-            "description": "The simple name or title for the piece of equipment.",
+            "description": "The simple name or title for this particular piece of equipment in a particular organisation and that is often equiped with a unique set of optional parts. The main goal of this name is to enable you to easily identify the equipment when referring to it from within another description. It is generally not a good idea to use the technique name or the commercial name of the equipment, since these might not be unique within E-RIHS. One general recommendation is to prepend the name with your organisation acronym.",
             "type": "string",
             "minLength": 3,
             "maxLength": 100,
@@ -110,7 +109,7 @@
         },
         "has_url": {
             "title": "Has link",
-            "description": "Links to the software website or documentation",
+            "description": "Links to the equipment website or documentation",
             "type": "array",
             "items": {
                 "type": "object",
@@ -128,7 +127,7 @@
         },
         "acquisition_areas": {
             "title": "Acquisition/target areas",
-            "description": "The areas of the object or sample that can be examined by the equipment. This dropdown list gives a few examples, but if required, you can enter a different value here depending on the equipment.",
+            "description": "The areas of the object or sample that can be examined by the equipment. This dropdown list gives a few examples, but if required, you can enter a different term here depending on the equipment. One general recommendation is to extend the existing term with a precise value or a range (e.g. 'small spot (27mm2)'). ",
             "type": "array",
             "items": {
                 "type": "string",
