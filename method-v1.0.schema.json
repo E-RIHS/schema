@@ -181,7 +181,14 @@
                     "parameter_related_tool": {
                         "title": "Parameter Specific Related Tool",
                         "description": "When multiple Tools are used within a single method, defined parameters can be associated to the relevant tool. This can be left blank for single tool Methods and the assumption will be that the parameters are associated with single tool related to the Method in general.",
-                        "type": "string"
+                        "type": "string",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": ["Equipment", "Software"]
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -7,7 +7,6 @@
     "required": [
         "acronym",
         "name",
-        "mbox",
         "research_disciplines"
     ],
     "properties": {
