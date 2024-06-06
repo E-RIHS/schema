@@ -126,7 +126,7 @@
         },
         "techniques": {
             "title": "Service Techniques",
-            "description": "A list of the individual relevant heritage science examination and analytical techniques carried out within this Service. If none of the techniques is applicable, use the 'Other service techniques' below.",
+            "description": "A list of the individual relevant heritage science examination and analytical techniques carried out within this Service. If none of the techniques is applicable, use the 'Other service techniques' below. Even though ARCHLAB services are usually not linked to specific techniques, equipment or software, their archives contain data that were obtained in the past using various techniques. Sometimes, existing samples in the archives can be re-analysed using contemporary techniques. In such cases, both these techniques could be listed here.",
             "type": "array",
             "items": {
                 "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/technique"
