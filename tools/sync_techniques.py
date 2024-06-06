@@ -26,7 +26,7 @@ def main(delete=False, new_only=False, fake=False):
     # get list of existing schemas from Cordra and from the vocabulary
     print('Fetching the techniques in Cordra and in Opentheso/CL...')
     techniques_in_cordra = get_techniques_from_cordra(cordra)
-    url = libutils.default_config['cl_techniques_url']
+    url = libutils.default_config['cl_techniques_full_url']
     techniques_in_vocabulary = get_techniques_from_vocabulary(url)
 
     # fail if no techniques are found in the vocabulary 
@@ -91,9 +91,9 @@ def get_techniques_from_cordra(cordra):
 
 
 ''' Get all techniques from the vocabulary '''
-def get_techniques_from_vocabulary(cl_techniques_url):
+def get_techniques_from_vocabulary(cl_techniques_full_url):
     print(' - Getting all techniques from Opentheso/CL...')
-    response = requests.get(cl_techniques_url)
+    response = requests.get(cl_techniques_full_url)
     if response.status_code != 200:
         print('   !! Error: Unable to retrieve techniques from the vocabulary !!')
         print(f'   response from the CL script: {response.text}')
