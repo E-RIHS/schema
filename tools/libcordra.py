@@ -91,6 +91,18 @@ class Cordra:
             if item['id'] != pid:
                 versions.append(item['id'])
         return versions
+    
+
+    '''
+    get_by_id: returns the contents of a specific Cordra object
+    '''
+    def get_by_id(self, pid):
+        response = requests.get(f'{self.url}/objects/{pid}', headers=self.headers)
+        if response.status_code != 200:
+            print('!! Error: Unable to retrieve object from Cordra !!')
+            print(f' - response from Cordra: {response.text}')
+            sys.exit(1)
+        return response.json()
 
 
     '''
@@ -143,6 +155,30 @@ class Cordra:
         response = requests.delete(f'{self.url}/objects/{pid}', headers=self.headers)
         if response.status_code != 200:
             print('!! Error: Unable to delete object in Cordra !!')
+            print(f' - response from Cordra: {response.text}')
+            sys.exit(1)
+        return response.json()
+
+
+    '''
+    get_acl: returns the ACL of a specific Cordra object
+    '''
+    def get_acl(self, pid):
+        response = requests.get(f'{self.url}/acls/{pid}', headers=self.headers)
+        if response.status_code != 200:
+            print('!! Error: Unable to retrieve ACL from Cordra !!')
+            print(f' - response from Cordra: {response.text}')
+            sys.exit(1)
+        return response.json()
+
+
+    '''
+    update_acl: updates the ACL of a specific Cordra object
+    '''
+    def update_acl(self, pid, acl):
+        response = requests.put(f'{self.url}/acls/{pid}', json=acl, headers=self.headers)
+        if response.status_code != 200:
+            print('!! Error: Unable to update ACL in Cordra !!')
             print(f' - response from Cordra: {response.text}')
             sys.exit(1)
         return response.json()
