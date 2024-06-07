@@ -15,17 +15,18 @@ ACL_WRITERS_INIT = ["21.11158/c9ce-5592-beb0-6240"] # = administrators group
 
 # generate strong password (32 characters, upper, lower, digits, special)
 def generate_password():
-    password = ''.join(random.choice(string.ascii_letters + string.digits + string.punctuation) for i in range(32))
+    password = ''.join(random.choice(string.ascii_letters + string.digits + string.punctuation) for i in range(24))
     return password
 
 
 # read the request file and return the chosen line
-def read_request(fn, line):
+def read_request(fn, line_number: int):
     print('Reading request file:', fn)
     # read and parse the line in the request file
     with open(fn, 'r') as file:
         for i, line in enumerate(file):
-            if i == line:
+            if i + 1 == line_number:
+                print(f'  - Line: {line}')
                 parts = line.strip().split('\t')
                 request = {
                     'ts': parts[0],
@@ -48,10 +49,14 @@ def read_request(fn, line):
             request['orcid'] = request['orcid'][18:]
         # replace country name with vocab handle
         countries = libutils.get_countries()
+        country_pid = None
         for key, value in countries.items():
             if value == request['country']:
-                request['country'] = key
+                country_pid = key
                 break
+        if country_pid: 
+            request['country'] = country_pid
+        else:
             # if not found, exit with error
             print('!! Error: country not found in vocab:', request['country'])
             sys.exit(1)
@@ -68,28 +73,25 @@ def create_cordra_user(cordra, request):
     response = cordra.query(query)
     if len(response) == 1:
         print('!! Warning: a user with this orcid already exists')
-        return
+        return response[0]['content']
     elif len(response) > 1:
         print('!! Error: multiple users with this orcid already exist')
         sys.exit(1)
     # create the CordraUser object
     cordra_user = {
-        "type": "CordraUser",
-        "content": {
-            "username": request['email'],
-            "linked_person": None,
-            "password": generate_password(),
-            "accountActive": True,
-            "requirePasswordChange": False,
-            "orcid": request['orcid']
-        }
+        "username": request['email'],
+        "password": generate_password(),
+        "accountActive": True,
+        "requirePasswordChange": False,
+        "orcid": request['orcid']
     }
+    print(cordra_user)
     # post the CordraUser object to Cordra
     user = cordra.create(
         obj=cordra_user,
         type='CordraUser'
     )
-    print(' - User created:', user['id'])
+    print('  - User created:', user['id'])
     return user
 
 
@@ -104,13 +106,13 @@ def create_cordra_organisation(cordra, request):
         # ask if we should use this organisation or create a new one (repeat until valid answer)
         while True:
             answer = input('  - Use this organisation or create new? (this/new/exit): ')
-            if answer.lower.startswith('t'):
-                print(' - using existing organisation:', response[0]['id'])
+            if answer.lower().startswith('t'):
+                print('  - using existing organisation:', response[0]['id'])
                 return response[0]
-            elif answer.lower.startswith('n'):
-                print(' - creating new organisation')
+            elif answer.lower().startswith('n'):
+                print('  - creating new organisation')
                 break
-            elif answer.lower.startswith('e'):
+            elif answer.lower().startswith('e'):
                 print('Exiting...')
                 sys.exit(1)
     elif len(response) > 1:
@@ -118,19 +120,18 @@ def create_cordra_organisation(cordra, request):
         sys.exit(1)
     # create the Organisation object
     organisation = {
-        "type": "Organisation",
-        "content": {
-            "acronym": request['organisation_acronym'],
-            "name": request['organisation_name'],
-            "research_disciplines": RESEARCH_DISCIPLINES
-        }
+        "id": "",
+        "acronym": request['organisation_acronym'],
+        "name": request['organisation_name'],
+        "research_disciplines": RESEARCH_DISCIPLINES
     }
     # post the Organisation object to Cordra
     org = cordra.create(
         obj=organisation,
         type='Organisation'
     )
-    print(' - Organisation created:', org['id'])
+    print(org)
+    print('  - Organisation created:', org['id'])
     return org
 
 
@@ -145,13 +146,13 @@ def create_cordra_person(cordra, request, organistion_id):
         # ask if we should use this organisation or create a new one (repeat until valid answer)
         while True:
             answer = input('  - Use this organisation or create new? (this/new/exit): ')
-            if answer.lower.startswith('t'):
-                print(' - using existing organisation:', response[0]['id'])
+            if answer.lower().startswith('t'):
+                print('  - using existing organisation:', response[0]['id'])
                 return response[0]
-            elif answer.lower.startswith('n'):
-                print(' - creating new organisation')
+            elif answer.lower().startswith('n'):
+                print('  - creating new organisation')
                 break
-            elif answer.lower.startswith('e'):
+            elif answer.lower().startswith('e'):
                 print('Exiting...')
                 sys.exit(1)
     elif len(response) > 1:
@@ -160,38 +161,42 @@ def create_cordra_person(cordra, request, organistion_id):
         for r in response:
             print(f'    ({i}) {r["content"]["full_name"]} - {r["content"]["mbox"]} ({r['id']})')
         while True:
-            answer = input(f'  - Select person to use (1-{len(r)}): ')
+            answer = input(f'  - Select person to use (1-{len(r)}/new/exit): ')
             if answer.isdigit() and 1 <= int(answer) <= len(r):
-                print(' - using existing person:', response[int(answer)-1]['id'])
+                print('  - using existing person:', response[int(answer)-1]['id'])
                 return response[int(answer)-1]
+            elif answer.lower().startswith('n'):
+                print('  - creating new person')
+                break
+            elif answer.lower().startswith('e'):
+                print('Exiting...')
+                sys.exit(1)
     # create the Person object
     person = {
-        "type": "Person",
-        "content": {
-            "first_name": request['first_name'],
-            "last_name": request['last_name'],
-            "external_pids": [
-                {
-                    "pid_type": ORCID_PID_TYPE,
-                    "pid": f"https://orcid.org/{request['orcid']}"
-                }
-            ],
-            "based_in": request['country'],
-            "part_of_organisation": [
-                {
-                    "organisation_pid": organistion_id
-                }
-            ],
-            "mbox": request['email'],
-            "research_disciplines": RESEARCH_DISCIPLINES
-        }
+        "id": "",
+        "first_name": request['first_name'],
+        "last_name": request['last_name'],
+        "external_pids": [
+            {
+                "pid_type": ORCID_PID_TYPE,
+                "pid": f"https://orcid.org/{request['orcid']}"
+            }
+        ],
+        "based_in": request['country'],
+        "part_of_organisation": [
+            {
+                "organisation_pid": organistion_id
+            }
+        ],
+        "mbox": request['email'],
+        "research_disciplines": RESEARCH_DISCIPLINES
     }
     # post the Person object to Cordra
     person = cordra.create(
         obj=person,
         type='Person'
     )
-    print(' - Person created:', person['id'])
+    print('  - Person created:', person['id'])
     return person
 
 
@@ -262,7 +267,8 @@ def create_all(request, existing_person=None, existing_organisation=None):
             init=True)
 
     # update the CordraUser with the linked person
-    user['content']['linked_person'] = person_id
+    print('Updating user with linked person')
+    user['linked_person'] = person_id
     cordra.update(user['id'], user)
 
 
@@ -281,6 +287,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # read the request file and return the chosen line
+    # print line and type of line
     request = read_request(args.fn, args.line)
 
     # call the main function

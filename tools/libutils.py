@@ -36,7 +36,6 @@ def get_config():
 
 ''' get country list from the CL Techniques URL '''
 def get_countries():
-    #https://hdl.handle.net/21.11158/0002-a36b-9f90-6c16
     url = "https://hdl.handle.net/21.11158/0002-a36b-9f90-6c16"
     response = requests.get(url)
     if response.status_code != 200:
