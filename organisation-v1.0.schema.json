@@ -57,7 +57,8 @@
                 "required": ["pid_type", "pid"],
                 "properties": {
                     "pid_type": {
-                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/persistent_identifier"
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/persistent_identifier",
+                        "default": "https://hdl.handle.net/21.11158/0001-2nnm17g9p83mc671w1xvhjw3w"
                     },
                     "pid": {
                         "title": "PID",

@@ -225,12 +225,12 @@
             }
         },
         "categories": {
-            "title": "Service Categories",
-            "description": "Short and descriptive categories of service provision, e.g. 'Identification of Inorganic Pigments', 'Analysis of Archaeological Pottery', 'Classification of Ancient Organic Material', 'Online Preventive Conservation Tool' or 'Collection Management Tool'. At the moment, these are free text but will likely be replaced with a controlled list",
+            "title": "Research questions",
+            "description": "Typical research questions that a service designed to answer. This field is free text, but will likely be replaced with a controlled list.",
             "type": "array",
             "minItems": 1,
             "items": {
-                "title": "Category",
+                "title": "Questions",
                 "type": "string"
             }
         },
