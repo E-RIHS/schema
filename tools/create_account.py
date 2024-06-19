@@ -159,7 +159,7 @@ def create_cordra_person(cordra, request, organistion_id):
         print('!! Warning: multiple persons with this orcid already exist')
         i = 1
         for r in response:
-            print(f'    ({i}) {r["content"]["full_name"]} - {r["content"]["mbox"]} ({r['id']})')
+            print(f'    ({i}) {r["content"]["full_name"]} - {r["content"]["mbox"]} ({r["id"]})')
         while True:
             answer = input(f'  - Select person to use (1-{len(r)}/new/exit): ')
             if answer.isdigit() and 1 <= int(answer) <= len(r):
