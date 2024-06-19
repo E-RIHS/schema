@@ -197,7 +197,7 @@
             "type": "string"
         },
         "joined_the_field_date": {
-            "title": "Date of joining this research field",
+            "title": "Date of joining the heritage science field",
             "description": "When did this organisation start working in this field?",
             "type": "string",
             "format": "date"
