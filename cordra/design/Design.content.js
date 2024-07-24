@@ -27,10 +27,10 @@ function generateId(object, context) {
 
 
 function shoulder(type) {
-    const nonTest = ['c9ce', '485b', '3cc2'];
+    const experimentalTypes = ['2299', '6530'];
     const schema = require('/cordra/schemas/' + type + '.schema.json');
     if ('$code' in schema) {
-        if (nonTest.includes(schema.$code)) return schema.$code;
+        if (!experimentalTypes.includes(schema.$code)) return schema.$code;
         else return 'TEST/' + schema.$code;
     } else {
         return '0000';

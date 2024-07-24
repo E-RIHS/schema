@@ -2,156 +2,190 @@
     "id": "design",
     "type": "CordraDesign",
     "content": {
-        "uiConfig": {
-            "title": "data.e-rihs.io",
-            "relationshipsButtonText": "Show Relationships",
-            "allowUserToSpecifySuffixOnCreate": true,
-            "searchResults": {
-                "includeType": true,
-                "includeModifiedDate": true,
-                "includeCreatedDate": true
-            },
-            "initialQuery": "*:*",
-            "initialFragment": "#",
-            "initialSortFields": "/name",
-            "navBarLinks": [
-                {
-                    "type": "url",
-                    "title": "Get Started",
-                    "url": "intro.html"
-                },
-                {
-                    "type": "about",
-                    "title": "About"
-                },
-                {
-                    "type": "url",
-                    "title": "API Docs",
-                    "url": "openapi/index.html"
-                },
-                {
-                    "type": "query",
-                    "title": "All Objects",
-                    "query": "*:*",
-                    "sortFields": "metadata/modifiedOn DESC"
-                },
-                {
-                    "type": "typeDropdown",
-                    "title": "Show Only",
-                    "maxItems": 15
-                },
-                {
-                    "type": "typeObjectsDropdown",
-                    "title": "Types",
-                    "maxItems": 15
-                }
+      "uiConfig": {
+        "relationshipsButtonText": "Show Relationships",
+        "searchResults": {
+          "includeType": true,
+          "includeModifiedDate": true,
+          "includeCreatedDate": true
+        },
+        "initialQuery": "*:*",
+        "initialFragment": "urls/objects/design?payload=about.html",
+        "initialSortFields": "/name",
+        "navBarLinks": [
+          {
+            "type": "query",
+            "title": "All Objects",
+            "query": "*:*",
+            "sortFields": "metadata/modifiedOn DESC"
+          },
+          {
+            "type": "typeDropdown",
+            "title": "Show Only",
+            "maxItems": 15
+          },
+          {
+            "type": "typeObjectsDropdown",
+            "title": "Types",
+            "maxItems": 15
+          },
+          {
+            "type": "url",
+            "title": "API Docs",
+            "url": "https://www.cordra.org/documentation/api/index.html"
+          }
+        ],
+        "numTypesForCreateDropdown": 15,
+        "aclUiSearchTypes": [
+          "CordraUser",
+          "CordraGroup"
+        ],
+        "customAuthentication": {
+          "url": "/objects/design?payload=customAuthentication",
+          "tabName": "Login with ORCID iD",
+          "height": 100
+        }
+      },
+      "authConfig": {
+        "schemaAcls": {
+          "CordraUser": {
+            "defaultAclRead": [
+              "21.11158/c9ce-5592-beb0-6240"
             ],
-            "numTypesForCreateDropdown": 15,
-            "aclUiSearchTypes": ["User", "Group"],
-            "customAuthentication": {
-                "url": "/objects/design?payload=customAuthentication",
-                "tabName": "Login with ORCID iD",
-                "height": 100
-            }
-        },
-        "authConfig": {
-            "schemaAcls": {
-                "CordraUser": {
-                    "defaultAclRead": [
-                      "21.11158/c9ce-5592-beb0-6240"
-                    ],
-                    "defaultAclWrite": [
-                      "21.11158/c9ce-5592-beb0-6240"
-                    ],
-                    "aclCreate": [
-                      "21.11158/c9ce-5592-beb0-6240"
-                    ]
-                  },
-                  "CordraGroup": {
-                    "defaultAclRead": [
-                      "21.11158/c9ce-5592-beb0-6240"
-                    ],
-                    "defaultAclWrite": [
-                      "21.11158/c9ce-5592-beb0-6240"
-                    ],
-                    "aclCreate": [
-                      "21.11158/c9ce-5592-beb0-6240"
-                    ]
-                  },
-                "CordraDesign": {
-                    "defaultAclRead": ["public"],
-                    "defaultAclWrite": [],
-                    "aclCreate": []
-                },
-                "Schema": {
-                    "defaultAclRead": ["public"],
-                    "defaultAclWrite": ["21.11158/c9ce-5592-beb0-6240"],
-                    "aclCreate": ["21.11158/c9ce-5592-beb0-6240"]
-                }
-            },
-            "defaultAcls": {
-                "defaultAclRead": ["authenticated"],
-                "defaultAclWrite": ["creator"],
-                "aclCreate": ["authenticated"]
-            }
-        },
-        "handleServerConfig": {
-            "enabled": false,
-            "listenAddress": "193.190.221.94",
-            "tcpPort": 2641,
-            "logAccesses": false
-        },
-        "handleMintingConfig": {
-            "prefix": "21.11158",
-            "baseUri": "https://data.e-rihs.io/",
-            "handleAdminIdentity": "21.11158/ADMIN.CORDRA",
-            "defaultLinks": [
-                {
-                    "type": "json",
-                    "primary": false
-                },
-                {
-                    "type": "ui",
-                    "primary": true
-                }
+            "defaultAclWrite": [
+              "21.11158/c9ce-5592-beb0-6240"
             ],
-            "ignoreHandleErrors": false,
-            "omitDoipServiceHandleValue": false
+            "aclCreate": [
+              "21.11158/c9ce-5592-beb0-6240"
+            ]
+          },
+          "CordraGroup": {
+            "defaultAclRead": [
+              "21.11158/c9ce-5592-beb0-6240"
+            ],
+            "defaultAclWrite": [
+              "21.11158/c9ce-5592-beb0-6240"
+            ],
+            "aclCreate": [
+              "21.11158/c9ce-5592-beb0-6240"
+            ]
+          },
+          "CordraDesign": {
+            "defaultAclRead": [
+              "public"
+            ],
+            "defaultAclWrite": [],
+            "aclCreate": []
+          },
+          "Schema": {
+            "defaultAclRead": [
+              "public"
+            ],
+            "defaultAclWrite": [
+              "21.11158/c9ce-5592-beb0-6240"
+            ],
+            "aclCreate": [
+              "21.11158/c9ce-5592-beb0-6240"
+            ]
+          }
         },
-        "doip": {
-            "enabled": true,
-            "port": 9000,
-            "listenAddresses": [],
-            "backlog": 50,
-            "maxIdleTimeMillis": 300000,
-            "numThreads": 20
-        },
-        "builtInTypes": {
-            "Schema": {
-                "javascript": ""
-            }
-        },
-        "javascriptIsModule": false,
-        "javascript": ""
+        "defaultAcls": {
+          "defaultAclRead": [
+            "authenticated",
+            "21.11158/c9ce-5592-beb0-6240"
+          ],
+          "defaultAclWrite": [
+            "creator",
+            "21.11158/c9ce-5592-beb0-6240"
+          ],
+          "aclCreate": [
+            "authenticated",
+            "21.11158/c9ce-5592-beb0-6240"
+          ]
+        }
+      },
+      "handleServerConfig": {
+        "enabled": false,
+        "listenAddress": "193.190.221.94",
+        "tcpPort": 2641,
+        "logAccesses": false
+      },
+      "handleMintingConfig": {
+        "prefix": "21.11158",
+        "baseUri": "https://data.e-rihs.io/",
+        "handleAdminIdentity": "21.11158/ADMIN.CORDRA",
+        "defaultLinks": [
+          {
+            "type": "json",
+            "primary": false
+          },
+          {
+            "type": "ui",
+            "primary": true
+          }
+        ],
+        "ignoreHandleErrors": false,
+        "omitDoipServiceHandleValue": false
+      },
+      "doip": {
+        "enabled": true,
+        "port": 9000,
+        "listenAddresses": [],
+        "backlog": 50,
+        "maxIdleTimeMillis": 300000,
+        "numThreads": 20
+      },
+      "javascriptIsModule": false,
+      "javascript": ""
+    },
+    "metadata": {
+      "createdOn": 0,
+      "modifiedOn": 1718805975795,
+      "modifiedBy": "admin",
+      "txnId": 1718805975792177
     },
     "payloads": [
-        {
-            "name": "orcid-widget.css",
-            "filename": "orcid-widget.css",
-            "mediaType": "text/css",
-            "size": 1268
-        },
-        {
-            "name": "customAuthentication",
-            "filename": "customAuthentication.html",
-            "mediaType": "text/html",
-            "size": 1356
-        },
-        {
-            "name": "customAuthenticationPopup",
-            "filename": "customAuthenticationPopup.html",
-            "mediaType": "text/html",
-            "size": 2467
-        }
+      {
+        "name": "orcid-widget.css",
+        "filename": "orcid-widget.css",
+        "mediaType": "text/css",
+        "size": 1268
+      },
+      {
+        "name": "customAuthentication",
+        "filename": "customAuthentication.html",
+        "mediaType": "text/html",
+        "size": 1356
+      },
+      {
+        "name": "customAuthenticationPopup",
+        "filename": "customAuthenticationPopup.html",
+        "mediaType": "text/html",
+        "size": 2445
+      },
+      {
+        "name": "about.html",
+        "filename": "about.html",
+        "mediaType": "text/html",
+        "size": 9517
+      },
+      {
+        "name": "e-rihs-logo.png",
+        "filename": "e-rihs-logo.png",
+        "mediaType": "image/png",
+        "size": 55720
+      },
+      {
+        "name": "defining_services.png",
+        "filename": "defining_services.png",
+        "mediaType": "image/png",
+        "size": 110900
+      },
+      {
+        "name": "about.css",
+        "filename": "about.css",
+        "mediaType": "text/css",
+        "size": 230
+      }
     ]
-}
+  }
