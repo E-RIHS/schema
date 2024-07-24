@@ -332,7 +332,7 @@
                 "properties": {
                     "team_member_id": {
                         "title": "Person ID",
-                        "description": "An actor as defined in the system",
+                        "description": "A person as defined in the system",
                         "type": "string",
                         "cordra": {
                             "type": {
@@ -531,7 +531,7 @@
         },
         "access_unit": {
             "title": "Service Access Period Unit",
-            "description": "For previously defined services this has commonly been defined in days or occasionally hours - but with the development of digital services additional smaller time units might be needed.",
+            "description": "For previously defined services this has commonly been defined in days or occasionally hours - but with the development of digital services additional smaller time units might be needed. The possibility of having the costs 'per sample' is currently being evaluated. For the time being, please calculate your service costs in terms of time units.",
             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/period_unit"
         },
         "hours_per_unit": {
