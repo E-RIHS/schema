@@ -76,6 +76,13 @@
         }
     },
     "definitions": {
+        "connection_via": {
+            "title": "Connection via",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://hdl.handle.net/21.11158/0002-*****"
+            }
+        },
         "country": {
             "title": "Country",
             "type": "string",
@@ -180,6 +187,14 @@
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://hdl.handle.net/21.11158/0002-713f-ec5d-7351"
+            }
+        },
+        "project_class": {
+            "title": "Project class",
+            "description": "Choose 'continuation' if this proposal is a continuation of a long-term E-RIHS project, or 'resubmission' in case the proposal was already submitted in a previeous E-RIHS or IPERION-HS call, but it was not successful for some reason and the User Helpdesk suggests to modify and resubmit the proposal.",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://hdl.handle.net/21.11158/0002-*****"
             }
         },
         "provider_role": {

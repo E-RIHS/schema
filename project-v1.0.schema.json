@@ -6,6 +6,7 @@
     "type": "object",
     "required": [
         "title",
+        "class",
         "summary",
         "participants",
         "scientific_background",
@@ -35,6 +36,22 @@
             "type": "string",
             "minLength": 3,
             "maxLength": 150
+        },
+        "class":{
+            "title": "Project Class",
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/project_class"
+        },
+        "previous_proposal": {
+            "title": "Previous proposal",
+            "description": "If this proposal is a continuation or resubmission of a previous proposal, please provide the internal reference to the previous proposal.",
+            "type": "string",
+            "cordra": {
+                "type": {
+                    "handleReference": {
+                        "types": ["Project"]
+                    }
+                }
+            }
         },
         "summary": {
             "title": "Project Summary",
@@ -130,35 +147,35 @@
             }
         },
         "related_projects": {
-            "title": "Related Projects",
+            "title": "Other Related Projects",
             "description": "A list of relevant related projects, particularly any previous E-RIHS projects",
             "type": "array",
             "items": {
+                "title": "Related Project",
                 "type": "object",
                 "required": [
-                    "title"
+                    "project"
                 ],
                 "properties": {
-                    "title": {
-                        "title": "Related Project Title",
-                        "type": "string"
-                    },
-                    "url": {
-                        "title": "URL",
-                        "description": "URL ideally a PID which links to the description of the defined project.",
+                    "project": {
+                        "title": "Project",
+                        "description": "Internal reference to the related project",
                         "type": "string",
-                        "format": "uri"
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": ["Project", "External project"]
+                                }
+                            }
+                        }
+                    },
+                    "relationship_type": {
+                        "title": "Type of relationship",
+                        "description": "Please describe how is the related project related to this project",
+                        "type": "string"
                     }
                 }
-            },
-
-
-
-            "TODO1": "This needs to be replaced into an array of (1) cordra-links to (a) previous access projects or (b) external projects (using a separate schema),",
-            "TODO2": "and (2) roles/types (e.g. part of a broader project, part of a long-term project, etc.)"
-
-
-
+            }
         },
         "approach": {
             "title": "Project Approach",
@@ -339,18 +356,11 @@
             "format": "textarea"
         },
         "initiated_via": {
-            "title": "E-RIHS Connection",
-            "description": "Flag other E-RIHS connections if applicable. (Would we need a connection note, not sure how important this field is)",
+            "title": "How did you hear about E-RIHS?",
+            "description": "How did you hear about E-RIHS and its services?",
             "type": "array",
             "items": {
-                "type": "string",
-                "enum": [
-                    "personal contact",
-                    "web page",
-                    "conference",
-                    "article",
-                    "other"
-                ]
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/connection_via"
             }
         },
         "related_training": {
@@ -368,6 +378,10 @@
             "items": {
                 "title": "Participant",
                 "type": "object",
+                "required": [
+                    "participant_id",
+                    "roles"
+                ],
                 "properties": {
                     "participant_id": {
                         "title": "Participant ID",
@@ -389,11 +403,7 @@
                             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/person_role"
                         }
                     }
-                },
-                "required": [
-                    "participant_id",
-                    "roles"
-                ]
+                }
             }
         }
     }
