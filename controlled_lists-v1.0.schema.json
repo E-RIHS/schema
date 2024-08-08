@@ -5,6 +5,9 @@
     "title": "Controlled lists",
     "type": "object",
     "properties": {
+        "connection_via": {
+            "$ref": "#/definitions/connection_via"
+        },
         "country": {
             "$ref": "#/definitions/country"
         },
@@ -50,6 +53,9 @@
         "personal_title": {
             "$ref": "#/definitions/personal_title"
         },
+        "project_class": {
+            "$ref": "#/definitions/project_class"
+        },
         "provider_role": {
             "$ref": "#/definitions/provider_role"
         },
@@ -80,7 +86,7 @@
             "title": "Connection via",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://hdl.handle.net/21.11158/0002-*****"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-a6d1-7adb-8dd8"
             }
         },
         "country": {
@@ -194,7 +200,7 @@
             "description": "Choose 'continuation' if this proposal is a continuation of a long-term E-RIHS project, or 'resubmission' in case the proposal was already submitted in a previeous E-RIHS or IPERION-HS call, but it was not successful for some reason and the User Helpdesk suggests to modify and resubmit the proposal.",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://hdl.handle.net/21.11158/0002-*****"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-da49-f6f6-106b"
             }
         },
         "provider_role": {
