@@ -35,7 +35,13 @@
             "description": "Project title",
             "type": "string",
             "minLength": 3,
-            "maxLength": 150
+            "maxLength": 150,
+            "cordra": {
+                "preview": {
+                    "showInPreview": true,
+                    "isPrimary": true
+                }
+            }
         },
         "class":{
             "title": "Project Class",
@@ -109,20 +115,60 @@
             "maxLength": 1500,
             "format": "textarea"
         },
-        "research_focus": {
-            "title": "Research Focus",
+        "research_foci": {
+            "title": "Research Foci",
             "description": "A list of subjects (objects, sites, samples, archives, etc.) that are the focus of the project.",
             "type": "array",
             "items": {
-                "type": "string"
-            },
-
-
-
-            "TODO": "Research focus is a separate model, this is just a placeholder for now"
-
-
-
+                "title": "Research focus",
+                "type": "object",
+                "properties": {
+                    "research_focus": {
+                        "title": "Research focus ID",
+                        "description": "Reference to the research focus as defined in the Knowledge Base",
+                        "type": "string",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": ["Generic research focus"]
+                                }
+                            }
+                        }
+                    },
+                    "permission_statements": {
+                        "title": "Permission statements",
+                        "description": "Permission statements for the research focus",
+                        "type": "array",
+                        "items": {
+                            "title": "Permission statement",
+                            "type": "object",
+                            "properties": {
+                                "permission": {
+                                    "title": "Permission",
+                                    "type": "string",
+                                    "examples": [
+                                        "View",
+                                        "Handle",
+                                        "Sample",
+                                        "Analyse",
+                                        "Drone flight"
+                                    ]
+                                },
+                                "status": {
+                                    "title": "Status",
+                                    "type": "string",
+                                    "enum": [
+                                        "Requested",
+                                        "Received",
+                                        "Declined",
+                                        "Not applicable"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "project_questions": {
             "title": "Research Questions",
@@ -159,12 +205,12 @@
                 "properties": {
                     "project": {
                         "title": "Project",
-                        "description": "Internal reference to the related project",
+                        "description": "Internal reference to the related project. This can be another E-RIHS access project or an external project that is defined in the Knowledge Base as a Simple project.",
                         "type": "string",
                         "cordra": {
                             "type": {
                                 "handleReference": {
-                                    "types": ["Project", "External project"]
+                                    "types": ["Project", "Simple project"]
                                 }
                             }
                         }

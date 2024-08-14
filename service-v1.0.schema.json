@@ -189,7 +189,7 @@
             "description": "Contact details for the service; this can be personal or group contact details.",
             "type": "array",
             "format": "table",
-            "minLength": 1,
+            "minItems": 1,
             "items": {
                 "title": "Service Contact",
                 "type": "object",
@@ -368,7 +368,7 @@
         "links": {
             "title": "Service Links",
             "type": "array",
-            "minLength": 1,
+            "minItems": 1,
             "format": "table",
             "items": {
                 "title": "Link",
