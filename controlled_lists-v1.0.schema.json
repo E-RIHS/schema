@@ -8,6 +8,9 @@
         "connection_via": {
             "$ref": "#/definitions/connection_via"
         },
+        "contact_option": {
+            "$ref": "#/definitions/contact_option"
+        },
         "country": {
             "$ref": "#/definitions/country"
         },
@@ -43,6 +46,9 @@
         },
         "period_unit": {
             "$ref": "#/definitions/period_unit"
+        },
+        "permission_status": {
+            "$ref": "#/definitions/permission_status"
         },
         "persistent_identifier": {
             "$ref": "#/definitions/persistent_identifier"
@@ -87,6 +93,13 @@
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://hdl.handle.net/21.11158/0002-a6d1-7adb-8dd8"
+            }
+        },
+        "contact_option": {
+            "title": "Contact option",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://hdl.handle.net/21.11158/0002-xxxx-xxxx-xxxx"
             }
         },
         "country": {
@@ -172,6 +185,13 @@
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://hdl.handle.net/21.11158/0002-adf6-e851-5b95"
+            }
+        },
+        "permission_status": {
+            "title": "Permission status",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://hdl.handle.net/21.11158/0002-xxxx-xxxx-xxxx"
             }
         },
         "persistent_identifier": {

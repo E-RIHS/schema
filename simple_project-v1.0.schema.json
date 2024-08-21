@@ -89,8 +89,7 @@
                 "type": "object",
                 "properties": {
                     "type": {
-                        "type": "string",
-                        "enum": ["E-mail", "Phone"]
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/contact_option"
                     },
                     "contact": {
                         "title": "Contact",

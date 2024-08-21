@@ -64,7 +64,7 @@
         },
         "location": {
             "title": "Location",
-            "description": "The location of the object (as a free text",
+            "description": "The location of the object (as a free text)",
             "type": "string"
         },
         "location_geonames": {
