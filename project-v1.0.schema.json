@@ -6,14 +6,19 @@
     "type": "object",
     "required": [
         "title",
+        "acronym",
         "class",
-        "summary",
-        "participants",
-        "scientific_background",
         "project_description",
-        "project_questions",
-        "impacts",
-        "research_focus"
+        "summary",
+        "scientific_background",
+        "impact",
+        "dissemination_plan",
+        "dmp",
+        "bibliography",
+        "research_disciplines",
+        "research_focus_subjects",
+        "participants",
+        "initiated_via"
     ],
     "properties": {
         "$schema": {
@@ -35,7 +40,19 @@
             "description": "Project title",
             "type": "string",
             "minLength": 3,
-            "maxLength": 150,
+            "maxLength": 200,
+            "cordra": {
+                "preview": {
+                    "showInPreview": true
+                }
+            }
+        },
+        "acronym": {
+            "title": "Acronym",
+            "description": "Short name for the project",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 25,
             "cordra": {
                 "preview": {
                     "showInPreview": true,
@@ -43,7 +60,7 @@
                 }
             }
         },
-        "class":{
+        "class": {
             "title": "Project Class",
             "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/project_class"
         },
@@ -59,54 +76,151 @@
                 }
             }
         },
-        "summary": {
-            "title": "Project Summary",
-            "description": "A brief description of the projects, including the key activities",
-            "type": "string",
-            "minLength": 100,
-            "maxLength": 300
-        },
-        "participants": {
-            "title": "Participants",
-            "type": "array",
-            "minItems": 1,
-            "items": {
-                "title": "Participant",
-                "type": "object",
-                "required": [
-                    "participant_id",
-                    "roles"
-                ],
-                "properties": {
-                    "participant_id": {
-                        "title": "Participant ID",
-                        "description": "A person as defined in the system",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": ["Person"]
-                                }
-                            }
-                        }
-                    },
-                    "roles": {
-                        "title": "Roles",
-                        "type": "array",
-                        "minItems": 1,
-                        "items": {
-                            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/person_role"
-                        }
-                    }
-                }
-            }
-        },
         "project_justification": {
             "title": "Project Justification",
             "description": "Optional - For re-submissions please provide a brief description of what has been updated or changed. For continuation projects please specify the scientific motivation for continuing the work.",
             "type": "string",
-            "maxLength": 1500,
+            "maxLength": 300,
             "format": "textarea"
+        },
+        "project_description": {
+            "title": "Project Description",
+            "description": "A longer description of the project, including the novelty and/or added value of the proposed work",
+            "type": "string",
+            "minLength": 1,
+            "format": "textarea"
+        },
+        "summary": {
+            "title": "Project Summary",
+            "description": "A brief description of the projects, including the key activities",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2400,
+            "format": "textarea"
+        },
+        "scientific_background": {
+            "title": "Scientific background",
+            "description": "A short description of any relevant scientific research which led to or supports this project",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000,
+            "format": "textarea"
+        },
+        "approach": {
+            "title": "Project Approach",
+            "description": "Procedural description of the planned work and experimental methods (if it is the case)",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4800,
+            "format": "textarea"
+        },
+        "project_questions": {
+            "title": "Research Questions",
+            "description": "Brief descriptions of the research questions, focus, aims or issues that this project is intended to answer or address.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500,
+                "format": "textarea"
+            }
+        },
+        "relevant_research": {
+            "title": "Previous relevant research",
+            "description": "An overview of relevant previous research on the topic of the project",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300,
+                "format": "textarea"
+            }
+        },
+        "impact": {
+            "title": "Expected Impacts and Achievements",
+            "description": "A list of expected impacts and achievements of the project.",
+            "type": "array",
+            "items": {
+                "title": "Impact",
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 300,
+                "format": "textarea"
+            },
+            "minItems": 1
+        },
+        "dissemination_plan": {
+            "title": "Dissemination Plan",
+            "description": "A description of the dissemination plan for the project.",
+            "type": "array",
+            "items": {
+                "title": "Item of the dissemination plan",
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 300,
+                "format": "textarea"
+            },
+            "minItems": 1
+        },
+        "dmp": {
+            "title": "Project Data Management Plan",
+            "description": "An open description of the data management procedures followed with the project, including licence issues, preferred data repositories, publication embargoes, common file formats, software and systems used, etc.",
+            "anyOf": [
+                {
+                    "title": "Textual description",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2400,
+                    "format": "textarea"
+                },
+                {
+                    "title": "Reference to external document",
+                    "type": "object",
+                    "properties": {
+                        "citation": {
+                            "title": "Citation",
+                            "description": "The formatted details for the given reference.",
+                            "type": "string"
+                        },
+                        "url": {
+                            "title": "URL",
+                            "description": "URL",
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                }
+            ]
+        },
+        "bibliography": {
+            "title": "Project bibliography",
+            "description": "Bibliography related to the project. Only the first 5 references will always evaluated by the peer reviewers.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "title": "Reference",
+                "type": "object",
+                "required": ["citation"],
+                "properties": {
+                    "citation": {
+                        "title": "Citation",
+                        "description": "The formatted details for the given reference.",
+                        "type": "string",
+                        "format": "textarea",
+                        "minLength": 1,
+                        "maxLength": 800
+                    },
+                    "url": {
+                        "title": "URL",
+                        "description": "URL",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "role": {
+                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/reference_role"
+                    }
+                }
+            }
         },
         "research_disciplines": {
             "title": "Research Disciplines",
@@ -134,28 +248,13 @@
                 "type": "string"
             }
         },
-        "scientific_background": {
-            "title": "Scientific background",
-            "description": "A short description of any relevant scientific research which led to or supports this project",
-            "type": "string",
-            "minLength": 100,
-            "maxLength": 1500,
-            "format": "textarea"
-        },
-        "project_description": {
-            "title": "Project Description",
-            "description": "A longer description of the project, including the novelty and/or added value of the proposed work",
-            "type": "string",
-            "minLength": 100,
-            "maxLength": 1500,
-            "format": "textarea"
-        },
-        "research_foci": {
-            "title": "Research Foci",
+        "research_focus_subjects": {
+            "title": "Research focus subjects",
             "description": "A list of subjects (objects, sites, samples, archives, etc.) that are the focus of the project.",
             "type": "array",
+            "minItems": 1,
             "items": {
-                "title": "Research focus",
+                "title": "Research Focus",
                 "type": "object",
                 "properties": {
                     "research_focus": {
@@ -195,173 +294,14 @@
                                 }
                             }
                         }
+                    },
+                    "handling_statements": {
+                        "title": "Handling Statements",
+                        "description": "Handling statements for the research focus",
+                        "$comment": "TODO - statements that are in step 1 of the form related to MOLAB and FIXLAB"
                     }
                 }
             }
-        },
-        "project_questions": {
-            "title": "Research Questions",
-            "description": "Brief descriptions of the research questions, focus, aims or issues that this project is intended to answer or address.",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "minLength": 10,
-                "maxLength": 500,
-                "format": "textarea"
-            },
-            "minItems": 1
-        },
-        "previous_relevant_analysis": {
-            "title": "Previous relevant analysis",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "minLength": 1,
-                "maxLength": 500,
-                "format": "textarea"
-            }
-        },
-        "related_projects": {
-            "title": "Other Related Projects",
-            "description": "A list of relevant related projects, particularly any previous E-RIHS projects",
-            "type": "array",
-            "items": {
-                "title": "Related Project",
-                "type": "object",
-                "required": [
-                    "project"
-                ],
-                "properties": {
-                    "project": {
-                        "title": "Project",
-                        "description": "Internal reference to the related project. This can be another E-RIHS access project or an external project that is defined in the Knowledge Base as a Simple project.",
-                        "type": "string",
-                        "cordra": {
-                            "type": {
-                                "handleReference": {
-                                    "types": ["Project", "Simple project"]
-                                }
-                            }
-                        }
-                    },
-                    "relationship_type": {
-                        "title": "Type of relationship",
-                        "description": "Please describe how is the related project related to this project (as keywords)",
-                        "type": "array",
-                        "items": {
-                            "title": "Keyword",
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "approach": {
-            "title": "Project Approach",
-            "description": "Procedural approach to the project, including the methodology, steps, and measurement strategy.",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "title": "Section of the approach",
-                "minLength": 10,
-                "maxLength": 500,
-                "format": "textarea"
-            },
-            "minItems": 1
-        },
-        "impacts": {
-            "title": "Projects Impacts",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "minLength": 10,
-                "maxLength": 300,
-                "format": "textarea"
-            },
-            "minItems": 1
-        },
-        "bibliography": {
-            "title": "Project bibliography",
-            "description": "Bibliography related to the project. Only the first 5 references will always evaluated by the peer reviewers.",
-            "type": "array",
-            "items": {
-                "title": "Reference",
-                "type": "object",
-                "required": ["citation"],
-                "properties": {
-                    "citation": {
-                        "title": "Citation",
-                        "description": "The formatted details for the given reference.",
-                        "type": "string"
-                    },
-                    "url": {
-                        "title": "URL",
-                        "description": "URL",
-                        "type": "string",
-                        "format": "uri"
-                    },
-                    "role": {
-                        "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/reference_role"
-                    }
-                }
-            }
-        },
-        "project_attachment": {
-            "title": "Project Attachments",
-            "description": "",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "required": [
-                    "attachment_file"
-                ],
-                "properties": {
-                    "file": {
-                        "title": "Attachment File",
-                        "description": "Please identify any additional images, files, etc…. A direct URL to the file is preferred, if not submit the files to E-RIHS.",
-                        "type": "string"
-                    },
-                    "description": {
-                        "title": "Attachment Description",
-                        "description": "A brief description of the attached file and its purpose",
-                        "type": "string"
-                    },
-                    "licence": {
-                        "title": "Attachment Licence",
-                        "description": "URL ideally a PID which links to a definition of the selected licence. If this field is left blank, the identified file will be treated as private.",
-                        "type": "string",
-                        "format": "uri"
-                    }
-                }
-            }
-        },
-        "dmp": {
-            "title": "Project Data Management Plan",
-            "description": "An open description of the data management procedures followed with the project, including licence issues, preferred data repositories, publication embargoes, common file formats, software and systems used, etc.",
-            "anyOf": [
-                {
-                    "title": "Textual description",
-                    "type": "string",
-                    "format": "textarea"
-                },
-                {
-                    "title": "Reference to external documents",
-                    "type": "object",
-                    "properties": {
-                        "citation": {
-                            "title": "Citation",
-                            "description": "The formatted details for the given reference.",
-                            "type": "string"
-                        },
-                        "url": {
-                            "title": "URL",
-                            "description": "URL",
-                            "type": "string",
-                            "format": "uri"
-                        }
-                    }
-                }
-            ]
         },
         "selected_services": {
             "title": "Services",
@@ -369,10 +309,7 @@
             "type": "array",
             "items": {
                 "type": "object",
-                "required": [
-                    "service_id",
-                    "helpdesk_assistance"
-                ],
+                "required": ["service_id", "helpdesk_assistance"],
                 "properties": {
                     "service_id": {
                         "title": "Service ID",
@@ -439,6 +376,99 @@
                 }
             }
         },
+        "participants": {
+            "title": "Participants",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "title": "Participant",
+                "type": "object",
+                "required": ["participant_id", "roles"],
+                "properties": {
+                    "participant_id": {
+                        "title": "Participant ID",
+                        "description": "A person as defined in the system",
+                        "type": "string",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": ["Person"]
+                                }
+                            }
+                        }
+                    },
+                    "roles": {
+                        "title": "Roles",
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/person_role"
+                        }
+                    }
+                }
+            }
+        },
+        "related_projects": {
+            "title": "Other Related Projects",
+            "description": "A list of relevant related projects, particularly any previous E-RIHS projects",
+            "type": "array",
+            "items": {
+                "title": "Related Project",
+                "type": "object",
+                "required": ["project"],
+                "properties": {
+                    "project": {
+                        "title": "Project",
+                        "description": "Internal reference to the related project. This can be another E-RIHS access project or an external project that is defined in the Knowledge Base as a Simple project.",
+                        "type": "string",
+                        "cordra": {
+                            "type": {
+                                "handleReference": {
+                                    "types": ["Project", "Simple project"]
+                                }
+                            }
+                        }
+                    },
+                    "relationship_type": {
+                        "title": "Type of relationship",
+                        "description": "Please describe how is the related project related to this project (as keywords)",
+                        "type": "array",
+                        "items": {
+                            "title": "Keyword",
+                            "type": "string"
+                        }
+                    },
+                    "funded_by": {
+                        "title": "Funded by",
+                        "description": "The name of the funding organisation",
+                        "type": "string"
+                    },
+                    "grant_number": {
+                        "title": "Grant number",
+                        "description": "The grant agreement number",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "related_training": {
+            "title": "Related Training Programs",
+            "description": "Describe any directly related initial training (PhD) or a training activities.",
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 1500,
+            "format": "textarea"
+        },
+        "societal_challenges": {
+            "title": "Societal Challenges",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "title": "Societal Challenge",
+                "type": "string",
+                "$comment": "TODO: add controlled list"
+            }
+        },
         "industrial_involvement": {
             "title": "Industrial involvement or sponsorship",
             "description": "Provide any relevant details, an empty field will be treated as indicating no Industrial involvement. (This information is used only for statistical purposes. Your answer will not affect your proposal)",
@@ -451,17 +481,50 @@
             "title": "How did you hear about E-RIHS?",
             "description": "How did you hear about E-RIHS and its services?",
             "type": "array",
+            "minItems": 1,
             "items": {
                 "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/connection_via"
             }
         },
-        "related_training": {
-            "title": "Related Training Programs",
-            "description": "Describe any directly related initial training (PhD) or a training activities.",
-            "type": "string",
-            "minLength": 0,
-            "maxLength": 1500,
-            "format": "textarea"
+        "helpdesk_assistance": {
+            "title": "Helpdesk Assistance",
+            "description": "Did you contact the service manager/s through the User Helpdesk or other mean?",
+            "type": "boolean",
+            "default": false
+        },
+        "service_managers_assistance": {
+            "title": "Service Manager Assistance",
+            "description": "Did you get in touch with the service manager persons?",
+            "type": "boolean",
+            "default": false
+        },
+        "project_attachment": {
+            "title": "Project Attachments",
+            "description": "",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["attachment_file"],
+                "properties": {
+                    "file": {
+                        "title": "Attachment File",
+                        "description": "Please identify any additional images, files, etc…. A direct URL to the file is preferred, if not submit the files to E-RIHS.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "title": "Attachment Description",
+                        "description": "A brief description of the attached file and its purpose",
+                        "type": "string"
+                    },
+                    "licence": {
+                        "title": "Attachment Licence",
+                        "description": "URL ideally a PID which links to a definition of the selected licence. If this field is left blank, the identified file will be treated as private.",
+                        "type": "string",
+                        "format": "uri"
+                    }
+                }
+            }
         }
     }
 }
+
