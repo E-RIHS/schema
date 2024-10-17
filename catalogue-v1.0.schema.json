@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://e-rihs.io/schema/catalogue-v1.0.schema.json",
     "$code": "3a9d",
     "title": "Catalogue",
@@ -109,6 +109,22 @@
                         "description": "When was the description of the service last checked",
                         "type": "string",
                         "format": "date"
+                    }
+                }
+            }
+        },
+        "reviewers": {
+            "title": "Accepted reviewers",
+            "description": "List of people or organisations that can accept or support a proposal to be included in the catalogue",
+            "type": "array",
+            "items": {
+                "title": "Reviewer",
+                "type": "string",
+                "cordra": {
+                    "type": {
+                        "handleReference": {
+                            "types": ["Person", "Organisation"]
+                        }
                     }
                 }
             }
