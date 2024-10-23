@@ -115,15 +115,32 @@
         },
         "reviewers": {
             "title": "Accepted reviewers",
-            "description": "List of people or organisations that can accept or support a proposal to be included in the catalogue",
+            "description": "List of people or organisations that can accept or support a proposal to be included in the catalogue. This can be organised in multiple levels/groups of reviewing (e.g. first group are the national coordinators, second group are the platform managers).",
             "type": "array",
             "items": {
-                "title": "Reviewer",
-                "type": "string",
-                "cordra": {
-                    "type": {
-                        "handleReference": {
-                            "types": ["Person", "Organisation"]
+                "title": "Review Group",
+                "type": "object",
+                "required": ["group_label", "group_reviewers"],
+                "properties": {
+                    "group_label": {
+                        "title": "Group label",
+                        "type": "string",
+                        "description": "A short and descriptive label for the group of reviewers"
+                    },
+                    "group_reviewers": {
+                        "title": "Reviewers in this group",
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "title": "Reviewer",
+                            "type": "string",
+                            "cordra": {
+                                "type": {
+                                    "handleReference": {
+                                        "types": ["Person", "Organisation"]
+                                    }
+                                }
+                            }
                         }
                     }
                 }
