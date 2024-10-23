@@ -223,6 +223,14 @@
                 "enum_source": "https://hdl.handle.net/21.11158/0002-da49-f6f6-106b"
             }
         },
+        "proposal_status": {
+            "title": "Proposal status",
+            "description": "The status of the proposal",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "***"
+            }
+        },
         "provider_role": {
             "title": "Provider role",
             "type": "string",
@@ -250,6 +258,13 @@
             "type": "string",
             "e-rihs": {
                 "enum_source": "https://hdl.handle.net/21.11158/0002-9dc3-7d05-b211"
+            }
+        },
+        "review_status": {
+            "title": "Review status",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "****"
             }
         },
         "support_type": {

@@ -1,10 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://e-rihs.io/schema/catalogue_proposal-v1.0.schema.json",
-    "$code": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "$code": "8972",
     "title": "Catalogue Proposal",
     "type": "object",
-    "required": ["label", "submitted_by", "proposed_catalogue", "proposed_services", "justification"],
+    "required": ["label", "submitted_by", "proposed_catalogue", "proposed_services", "justification", "status"],
     "properties": {
         "$schema": {
             "type": "string",
@@ -44,18 +44,6 @@
                 }
             } 
         },
-        "seconded_by": {
-            "title": "Seconded by",
-            "description": "The person that seconded the proposal",
-            "type": "string",
-            "cordra": {
-                "type": {
-                    "handleReference": {
-                        "types": ["Person", "Organisation"]
-                    }
-                }
-            }
-        },
         "justification": {
             "title": "Justification",
             "description": "Why should the services be added to the catalogue?",
@@ -93,21 +81,7 @@
             }
         },
         "status": {
-            "title": "Status",
-            "description": "The status of the proposal",
-            "type": "string",
-            "enum": ["Submitted", "In Progress", "Updated", "Accepted", "Rejected"],
-            "cordra": {
-                "preview": {
-                    "showInPreview": true
-                }
-            }
-        },
-        "feedback": {
-            "title": "Feedback",
-            "description": "Feedback from the proposal",
-            "type": "string",
-            "format": "textarea"
+            "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/proposal_status"
         },
         "submitted_date": {
             "title": "Submitted Date",
@@ -119,12 +93,6 @@
                     "showInPreview": true
                 }
             }
-        },
-        "updated_date": {
-            "title": "Updated Date",
-            "description": "When was the proposal updated",
-            "type": "string",
-            "format": "date"
         }
     }
 }
