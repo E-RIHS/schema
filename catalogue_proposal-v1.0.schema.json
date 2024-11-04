@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://e-rihs.io/schema/catalogue_proposal-v1.0.schema.json",
     "$code": "8972",
     "title": "Catalogue Proposal",
