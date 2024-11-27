@@ -464,9 +464,7 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-                "title": "Societal Challenge",
-                "type": "string",
-                "$comment": "TODO: add controlled list"
+                "$ref": "https://e-rihs.io/schema/controlled_lists.schema.json#/definitions/societal_challenge"
             }
         },
         "industrial_involvement": {

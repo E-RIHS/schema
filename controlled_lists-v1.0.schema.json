@@ -62,6 +62,9 @@
         "project_class": {
             "$ref": "#/definitions/project_class"
         },
+        "proposal_status": {
+            "$ref": "#/definitions/proposal_status"
+        },
         "provider_role": {
             "$ref": "#/definitions/provider_role"
         },
@@ -73,6 +76,12 @@
         },
         "research_discipline": {
             "$ref": "#/definitions/research_discipline"
+        },
+        "review_status": {
+            "$ref": "#/definitions/review_status"
+        },
+        "societal_challenge": {
+            "$ref": "#/definitions/societal_challenge"
         },
         "support_type": {
             "$ref": "#/definitions/support_type"
@@ -99,7 +108,7 @@
             "title": "Contact option",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://hdl.handle.net/21.11158/0002-xxxx-xxxx-xxxx"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-43e7-6f56-afac"
             }
         },
         "country": {
@@ -191,7 +200,7 @@
             "title": "Permission status",
             "type": "string",
             "e-rihs": {
-                "enum_source": "https://hdl.handle.net/21.11158/0002-xxxx-xxxx-xxxx"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-fc99-bda9-c1f0"
             }
         },
         "persistent_identifier": {
@@ -228,7 +237,7 @@
             "description": "The status of the proposal",
             "type": "string",
             "e-rihs": {
-                "enum_source": "***"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-1bb6-38ad-1a2a"
             }
         },
         "provider_role": {
@@ -264,7 +273,14 @@
             "title": "Review status",
             "type": "string",
             "e-rihs": {
-                "enum_source": "****"
+                "enum_source": "https://hdl.handle.net/21.11158/0002-23d1-70fe-e809"
+            }
+        },
+        "societal_challenge": {
+            "title": "Social challenge",
+            "type": "string",
+            "e-rihs": {
+                "enum_source": "https://hdl.handle.net/21.11158/0002-abcd-e336-352a"
             }
         },
         "support_type": {
